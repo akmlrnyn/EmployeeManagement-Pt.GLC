@@ -10,6 +10,9 @@ use Illuminate\Database\Eloquent\Relations\HasMany;
 class Employee extends Model
 {
     use HasFactory;
+    protected $fillable = [
+        'left_request_left'
+    ];
     
     /**
      * Get the user that owns the Employee

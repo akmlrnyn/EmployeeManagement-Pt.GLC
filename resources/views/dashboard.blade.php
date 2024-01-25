@@ -1,6 +1,6 @@
 <x-app-layout>
 
-    <div class="py-4 px-10 mx-3">
+    <div class="py-4 md:px-10 md:mx-3">
            <!-- start main page -->
     <div class="p-4 bg-gray-100">
       <div class="container mx-auto p-4">
@@ -17,7 +17,7 @@
             <p
               class="text-normal text-gray-700 bg-gray-200 rounded-lg px-3 py-1 mt-3"
             >
-              Administrator
+              {{ Auth::user()->roles }}
             </p>
           </div>
         </div>
@@ -36,7 +36,7 @@
                   Positions & Responsibility
                 </h3>
                 <p class="text-sm text-gray-500 border-l-2 p-2">
-                  10 Employees Now
+                  {{ $total_employee }} Employees Now
                 </p>
               </div>
               <div class="mt-4">
@@ -47,7 +47,7 @@
                   class="mb-3"
                 />
                 <hr />
-                <a href="{{ route('employees') }}">
+                <a href="{{ route('employees.index') }}">
                   <button
                     class="btn bg-red-700 flex items-center gap-2 text-white px-4 py-2 rounded-md mt-4 text-sm"
                   >
@@ -257,7 +257,7 @@
               </ul>
               <hr />
               <a
-                href="leave-requests.html"
+                href="{{ route('leaverequest.index') }}"
                 class="text-gray-700 p-1 text-center"
               >
                 <p>See all leave Requests ></p>
