@@ -17,7 +17,7 @@
             alt="User avatar"
           />
           <div class="flex-1">
-            <h3 class="text-lg font-medium text-gray-800">{{ $item->name }}</h3>
+            <h3 class="text-lg font-medium text-gray-800">{{ $item->user->name }}</h3>
             <p class="text-gray-600 text-base">{{ $item->position }}</p>
           </div>
         </li>

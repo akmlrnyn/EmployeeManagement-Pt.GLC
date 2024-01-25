@@ -18,6 +18,9 @@ Route::get('/', function () {
     return redirect('register');
 });
 Route::get('/employees', [EmployeesController::class,'index'])->name('employees');
+Route::get('/employees/create', [EmployeesController::class, 'create']);
+Route::post('/employees', [EmployeesController::class, 'store']);
+
 
 Route::middleware([
     'auth:sanctum',
