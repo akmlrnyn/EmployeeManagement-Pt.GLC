@@ -11,8 +11,8 @@ class Employee extends Model
 {
     use HasFactory;
 
-    protected $guarded = [
-        'email'
+    protected $fillable = [
+        'leave_request_left'
     ];
     
     /**

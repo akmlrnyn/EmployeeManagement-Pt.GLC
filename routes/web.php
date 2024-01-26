@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\EmployeesController;
+use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\SalarySlipsController;
 use Illuminate\Support\Facades\Route;
 
@@ -15,13 +16,15 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
+
 Route::get('/', function () {
     return redirect('register');
 });
 Route::get('/employees', [EmployeesController::class,'index'])->name('employees');
+Route::get('/employeedetails', [ProfileController::class,'index'])->name('profile.index');
+
 Route::get('/employees/create', [EmployeesController::class, 'create']);
 Route::post('/employees', [EmployeesController::class, 'store']);
-
 
 //Salary Slip Route
 Route::get('/salary-slips', [SalarySlipsController::class, 'index'])->name('salary-slips');

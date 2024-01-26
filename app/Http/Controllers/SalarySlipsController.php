@@ -21,4 +21,10 @@ class SalarySlipsController extends Controller
 
         return redirect('/employees');
     }
+
+    public function show($id) {
+        $slip = SalarySlip::find($id);
+
+        return view('pages.detail', compact('slip'));
+    }
 }
