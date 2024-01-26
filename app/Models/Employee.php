@@ -13,6 +13,7 @@ class Employee extends Model
     protected $fillable = [
         'email','leave_request_left'
     ];
+
     
     /**
      * Get the user that owns the Employee

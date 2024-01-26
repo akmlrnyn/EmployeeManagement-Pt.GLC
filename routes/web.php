@@ -17,7 +17,6 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-
 Route::get('/', function () {
     return redirect('register');
 });
@@ -38,6 +37,7 @@ Route::get('/employeedetails', [ProfileController::class, 'index'])->name('profi
 Route::get('/leaverequests', [LeaveRequestController::class,'index'])->name('leaverequest.index');
 Route::patch('/leaverequests/check/{id}', [LeaveRequestController::class,'check'])->name('leaverequest.check');
 Route::patch('/leaverequests/reject/{id}', [LeaveRequestController::class,'reject'])->name('leaverequest.reject');
+
 
 Route::middleware([
     'auth:sanctum',
