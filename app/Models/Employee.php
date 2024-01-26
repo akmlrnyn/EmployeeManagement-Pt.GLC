@@ -12,7 +12,7 @@ class Employee extends Model
     use HasFactory;
 
     protected $fillable = [
-        'leave_request_left'
+        'email', 'leave_request_left'
     ];
     
     /**
