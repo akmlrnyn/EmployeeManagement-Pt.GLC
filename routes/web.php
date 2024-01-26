@@ -5,6 +5,7 @@ use App\Http\Controllers\LeaveRequestController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\SalarySlipsController;
 use Illuminate\Support\Facades\Route;
+use SebastianBergmann\CodeCoverage\Report\Html\Dashboard;
 
 /*
 |--------------------------------------------------------------------------
@@ -38,7 +39,7 @@ Route::get('/leaverequests', [LeaveRequestController::class,'index'])->name('lea
 Route::patch('/leaverequests/check/{id}', [LeaveRequestController::class,'check'])->name('leaverequest.check');
 Route::patch('/leaverequests/reject/{id}', [LeaveRequestController::class,'reject'])->name('leaverequest.reject');
 
-
+// Dashboard
 Route::middleware([
     'auth:sanctum',
     config('jetstream.auth_session'),
