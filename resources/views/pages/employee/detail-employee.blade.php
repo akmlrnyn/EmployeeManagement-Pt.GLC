@@ -13,10 +13,10 @@
 
           <div class="mt-16">
             <h1 class="font-bold text-center text-lg lg:text-3xl text-gray-900">
-              {{ $employe->user->name }}
+              {{ $employee->user->name }}
             </h1>
             <p class="text-center text-sm text-gray-400 font-medium mt-2">
-              {{ $employe->position }}
+              {{ $employee->position }}
             </p>
 
             <div class="flex justify-between items-center my-5 px-6">
@@ -49,7 +49,7 @@
                     class="rounded-full h-6 shadow-md inline-block mr-2"
                   />
                     Name : 
-                  <span class="text-gray-500 text-xs">{{ $employe->user->name }}</span>
+                  <span class="text-gray-500 text-xs">{{ $employee->user->name }}</span>
                 </a>
 
                 <a
@@ -62,7 +62,7 @@
                     class="rounded-full h-6 shadow-md inline-block mr-2"
                   />
                     Email :
-                  <span class="text-gray-500 text-xs">{{ $employe->user->email }}</span>
+                  <span class="text-gray-500 text-xs">{{ $employee->user->email }}</span>
                 </a>
 
                 <a
@@ -75,7 +75,7 @@
                     class="rounded-full h-6 shadow-md inline-block mr-2"
                   />
                     Position :
-                  <span class="text-gray-500 text-xs">{{ $employe->position }}</span>
+                  <span class="text-gray-500 text-xs">{{ $employee->position }}</span>
                 </a>
 
                 <a
@@ -88,7 +88,7 @@
                     class="rounded-full h-6 shadow-md inline-block mr-2"
                   />
                   Salary :
-                  <span class="text-gray-500 text-xs">{{ $employe->base_salary }}</span>
+                  <span class="text-gray-500 text-xs">{{ $employee->base_salary }}</span>
                 </a>
 
                 <a
