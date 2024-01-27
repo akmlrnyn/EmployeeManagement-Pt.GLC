@@ -1,11 +1,12 @@
 <?php
 
-use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\EmployeesController;
-use App\Http\Controllers\SalarySlipsController;
 use App\Http\Controllers\LeaveRequestController;
+use App\Http\Controllers\ProfileController;
+use App\Http\Controllers\SalarySlipsController;
+use Illuminate\Support\Facades\Route;
+use SebastianBergmann\CodeCoverage\Report\Html\Dashboard;
 
 /*
 |--------------------------------------------------------------------------
@@ -21,7 +22,7 @@ use App\Http\Controllers\LeaveRequestController;
 Route::get('/', function () {
     return redirect('register');
 });
-Route::get('/employees', [EmployeesController::class,'index'])->name('employees');
+Route::get('/employees', [EmployeesController::class,'index'])->name('employees.index');
 Route::get('/employeedetails', [ProfileController::class,'index'])->name('profile.index');
 
 Route::get('/employees/create', [EmployeesController::class, 'create']);
@@ -40,7 +41,7 @@ Route::get('/leaverequests', [LeaveRequestController::class,'index'])->name('lea
 Route::patch('/leaverequests/check/{id}', [LeaveRequestController::class,'check'])->name('leaverequest.check');
 Route::patch('/leaverequests/reject/{id}', [LeaveRequestController::class,'reject'])->name('leaverequest.reject');
 
-
+// Dashboard
 Route::middleware([
     'auth:sanctum',
     config('jetstream.auth_session'),
