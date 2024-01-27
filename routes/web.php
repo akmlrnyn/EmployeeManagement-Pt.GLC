@@ -27,6 +27,7 @@ Route::get('/employeedetails', [ProfileController::class,'index'])->name('profil
 
 Route::get('/employees/create', [EmployeesController::class, 'create']);
 Route::post('/employees', [EmployeesController::class, 'store']);
+Route::get('/employee/{id}', [EmployeesController::class, 'show'])->name('employe.detail');
 
 //Salary Slip Route
 Route::get('/salary-slips', [SalarySlipsController::class, 'index'])->name('salary-slips');
