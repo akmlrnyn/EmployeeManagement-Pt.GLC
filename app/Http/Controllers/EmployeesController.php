@@ -28,4 +28,10 @@ class EmployeesController extends Controller
         $employee = Employee::find($id);
         return view('pages.employee.detail-employee', compact('employee')); 
     }
+
+    public function destroy($id){
+        $employee = Employee::find($id);
+        $employee->delete();
+        return back();
+    }
 }
