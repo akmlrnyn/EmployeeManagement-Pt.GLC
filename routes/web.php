@@ -1,10 +1,11 @@
 <?php
 
-use App\Http\Controllers\EmployeesController;
-use App\Http\Controllers\LeaveRequestController;
-use App\Http\Controllers\ProfileController;
-use App\Http\Controllers\SalarySlipsController;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\ProfileController;
+use App\Http\Controllers\DashboardController;
+use App\Http\Controllers\EmployeesController;
+use App\Http\Controllers\SalarySlipsController;
+use App\Http\Controllers\LeaveRequestController;
 
 /*
 |--------------------------------------------------------------------------
