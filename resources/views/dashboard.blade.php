@@ -178,7 +178,7 @@
                   <div class="flex min-w-0 gap-x-4">
                     <img
                       class="h-12 w-12 flex-none rounded-full bg-gray-50"
-                      src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80"
+                      src="{{ url('img/icon_avatar.png') }}"
                       alt=""
                     />
                     <div class="min-w-0 flex-auto">
@@ -186,7 +186,7 @@
                         {{ $item->employee->name }}
                       </p>
                       <p class="mt-1 truncate text-xs leading-5 text-gray-500">
-                        {{ $item->employee->email }}
+                        {{ $item->reason }}
                       </p>
                     </div>
                   </div>
@@ -207,7 +207,7 @@
               <hr />
               <a
                 href="{{ route('leaverequest.index') }}"
-                class="text-gray-700 p-1 text-center"
+                class="text-blue-700 p-1 text-center"
               >
                 <p>See all leave Requests ></p>
               </a>

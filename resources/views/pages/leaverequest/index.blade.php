@@ -76,7 +76,7 @@
       </ul>
     </div>
     <div
-      class="bg-white shadow-md rounded-md overflow-hidden  mx-auto mt-8"
+      class="bg-white shadow-md rounded-md overflow-hidden  mx-auto mt-8 mb-3"
     >
       <div class="bg-red-200 opacity-90 py-2 px-4">
         <h2 class="text-xl font-semibold text-red-700">Rejected <span class="font-light">Leave Request</span></h2>
@@ -104,6 +104,10 @@
         @php($number++)
         @endforeach
       </ul>
+    </div>
+    <div class="text-end my-5">
+    <a href="{{ route('leaverequest.reset') }}" class="text-sm bg-gray-200  text-gray-700 px-4 py-2 rounded-md font-medium my-5">Reset All Employees Leave Requests To 12 (default)</a>
+    <a href="#" class="text-sm bg-red-800  text-white px-4 py-2 rounded-md font-medium my-5">Remove All Leave Request Recap</a>
     </div>
       </div>
 </x-app-layout>

@@ -15,7 +15,7 @@ class EmployeesController extends Controller
 
     public function create() {
         $user = User::all();
-        return view('pages.create-employee', compact('user'));
+        return view('pages.employee.create', compact('user'));
     }
 
     public function store(Request $request) {

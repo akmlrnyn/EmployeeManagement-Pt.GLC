@@ -25,6 +25,6 @@ class SalarySlipsController extends Controller
     public function show($id) {
         $slip = SalarySlip::find($id);
 
-        return view('pages.detail', compact('slip'));
+        return view('pages.salary-slips.show', compact('slip'));
     }
 }

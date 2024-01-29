@@ -1,9 +1,13 @@
 <x-app-layout>
+  <div class="w-4/5 mx-auto mt-4">
+  <h2 class="text-gray-700 text-3xl font-bold">All Employees </h2>
+  <p>The workers here</p>
     <div
-      class="bg-white shadow-md rounded-md overflow-hidden w-3/4 mx-auto mt-16"
+      class="bg-white shadow-md rounded-md overflow-hidden mx-auto mt-5"
     >
-      <div class="bg-gray-100 py-2 px-4">
-        <h2 class="text-xl font-semibold text-gray-800">Top Users</h2>
+      <div class="bg-gray-200 py-2 px-4">
+        <h2 class="text-xl font-bold text-gray-800">Employee list</h2>
+        <a href="{{ route('employees.create') }}" class="text-blue-700">+ Recriut New Employee</a>
       </div>
 
       <ul class="divide-y divide-gray-200">
@@ -32,4 +36,6 @@
         @endforeach
       </ul>
     </div>
+  </div>
+
 </x-app-layout>

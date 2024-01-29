@@ -23,7 +23,7 @@ class LeaveRequestController extends Controller
         ]);
 
         $employee = Employee::findOrFail($leave_request->employee_id);
-        $leave_request_left = $employee->leave_request_left--;
+        $leave_request_left = $employee->leave_request_left - $leave_request->amount_of_days;
         $employee->update([
             'leave_request_left' => $leave_request_left 
         ]);
@@ -38,5 +38,13 @@ class LeaveRequestController extends Controller
         ]);
         return redirect()->route('leaverequest.index');
 
+    }
+
+    public function reset() {
+        $employee = Employee::all();
+        $employee->update([
+            'leave_request_left' => 12
+        ]);
+        return redirect()->route('leaverequest.index');
     }
 }
