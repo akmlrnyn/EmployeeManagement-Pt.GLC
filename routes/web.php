@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\EmployeesController;
 use App\Http\Controllers\LeaveRequestController;
 use App\Http\Controllers\ProfileController;
@@ -21,14 +22,14 @@ use SebastianBergmann\CodeCoverage\Report\Html\Dashboard;
 Route::get('/', function () {
     return redirect('register');
 });
-Route::get('/employees', [EmployeesController::class,'index'])->name('employees');
+Route::get('/employees', [EmployeesController::class,'index'])->name('employees.index');
 Route::get('/employeedetails', [ProfileController::class,'index'])->name('profile.index');
-
+Route::get('/employees/show/{id}', [EmployeesController::class, 'show'])->name('employees.show');
 Route::get('/employees/create', [EmployeesController::class, 'create']);
 Route::post('/employees', [EmployeesController::class, 'store']);
 
 //Salary Slip Route
-Route::get('/salary-slips', [SalarySlipsController::class, 'index'])->name('salary-slips');
+Route::get('/salary-slips', [SalarySlipsController::class, 'index'])->name('salary-slips.index');
 Route::post('/salary-slips', [SalarySlipsController::class, 'store'])->name('salary-slips.store');
 
 // employee profile for users
@@ -45,7 +46,5 @@ Route::middleware([
     config('jetstream.auth_session'),
     'verified',
 ])->group(function () {
-    Route::get('/dashboard', function () {
-        return view('dashboard');
-    })->name('dashboard');
+    Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard.index');
 });
