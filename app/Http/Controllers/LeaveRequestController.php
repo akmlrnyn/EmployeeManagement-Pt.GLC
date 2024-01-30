@@ -41,10 +41,19 @@ class LeaveRequestController extends Controller
     }
 
     public function reset() {
-        $employee = Employee::all();
+        $employees = Employee::all();
+        foreach ($employees as $employee) {
         $employee->update([
             'leave_request_left' => 12
-        ]);
+        ]);}
+        return redirect()->route('leaverequest.index');
+    }
+
+    public function delete() {
+        $leave_request = LeaveRequest::whereIn('status', ['accepted', 'rejected'])->get();
+        foreach ($leave_request as $item){
+            $item->delete();
+        }
         return redirect()->route('leaverequest.index');
     }
 }

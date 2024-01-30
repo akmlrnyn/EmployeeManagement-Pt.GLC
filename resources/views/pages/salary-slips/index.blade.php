@@ -7,9 +7,9 @@
 
 <div class="mt-4 w-full p-4 bg-white border border-gray-200 rounded-lg shadow-lg sm:p-8 bg-gray-800 border-gray-100">
     <div class="flex items-center justify-between mb-4">
-        <h5 class="text-xl font-bold leading-none text-gray-900 ">Employees Salaries</h5>
-        <a href="#" class="text-sm font-medium text-blue-600 hover:underline dark:text-blue-500">
-            Create New Salary Slip
+        <h5 class="text-xl font-bold leading-none text-gray-900 ">Staff Salaries</h5>
+        <a href="{{ route('salary-slips.create') }}" class="text-sm font-medium text-blue-600 hover:underline dark:text-blue-500">
+            Create New Salary Slip +
         </a>
    </div>
    <div class="flow-root">
@@ -30,12 +30,13 @@
                         </p>
                     </div>
                     <div class="flex gap-2 items-center text-base font-semibold text-gray-900 ">
-                        <div>Rp. {{ $item->salary }}</div>
-                        <div><a href="{{ route('salary-slips.show', $item->id) }}"><button type="button" class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-xs px-5 py-2.5 me-2 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800">Detail</button>
+                        <div>Rp. {{ number_format($item->salary) }}</div>
+                        <div><a href="{{ route('salary-slips.show', $item->id) }}"><button type="button" class="text-white bg-blue-600 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-xs px-5 py-2.5 me-2 dark:bg-blue-500 dark:hover:bg-blue-600 focus:outline-none dark:focus:ring-blue-800">See Detail</button>
                         </a></div>
                     </div>
                 </div>
             </li>      
+            <hr>
             @endforeach
         </ul>
    </div>

@@ -6,7 +6,6 @@ use App\Http\Controllers\LeaveRequestController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\SalarySlipsController;
 use Illuminate\Support\Facades\Route;
-use SebastianBergmann\CodeCoverage\Report\Html\Dashboard;
 
 /*
 |--------------------------------------------------------------------------
@@ -29,6 +28,7 @@ Route::post('/employees', [EmployeesController::class, 'store']);
 
 //Salary Slip Route
 Route::get('/salary-slips', [SalarySlipsController::class, 'index'])->name('salary-slips.index');
+Route::get('/salary-slips/create', [SalarySlipsController::class, 'create'])->name('salary-slips.create');
 Route::post('/salary-slips', [SalarySlipsController::class, 'store'])->name('salary-slips.store');
 Route::get('/salary-slips/{id}', [SalarySlipsController::class, 'show'])->name('salary-slips.show');
 
@@ -43,6 +43,7 @@ Route::get('/leaverequests', [LeaveRequestController::class,'index'])->name('lea
 Route::patch('/leaverequests/check/{id}', [LeaveRequestController::class,'check'])->name('leaverequest.check');
 Route::patch('/leaverequests/reject/{id}', [LeaveRequestController::class,'reject'])->name('leaverequest.reject');
 Route::patch('/leaverequests/reset', [LeaveRequestController::class, 'reset'])->name('leaverequest.reset');
+Route::delete('/leaverequests/delete', [LeaveRequestController::class, 'delete'])->name('leaverequest.delete');
 
 // Dashboard
 Route::middleware([

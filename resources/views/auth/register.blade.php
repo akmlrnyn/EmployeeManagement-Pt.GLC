@@ -2,6 +2,7 @@
     <x-authentication-card>
         <x-slot name="logo">
             <x-authentication-card-logo />
+            <h1 style="font-weight: 700; font-size:1.4rem">PT. GLC Indonesia</h1>
         </x-slot>
 
         <x-validation-errors class="mb-4" />

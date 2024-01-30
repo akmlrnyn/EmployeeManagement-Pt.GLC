@@ -27,4 +27,8 @@ class SalarySlipsController extends Controller
 
         return view('pages.salary-slips.show', compact('slip'));
     }
+
+    public function create() {
+        return view('pages.salary-slips.create');
+    }
 }
