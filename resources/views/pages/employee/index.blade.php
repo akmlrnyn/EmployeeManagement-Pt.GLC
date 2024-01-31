@@ -7,7 +7,7 @@
     >
       <div class="bg-gray-200 py-2 px-4">
         <h2 class="text-xl font-bold text-gray-800">Employee list</h2>
-        <a href="{{ route('employees.create') }}" class="text-blue-700">+ Recriut New Employee</a>
+        <a href="{{ route('employees.create') }}" class="text-blue-700">+ Recruit New Employee</a>
       </div>
 
       <ul class="divide-y divide-gray-200">
