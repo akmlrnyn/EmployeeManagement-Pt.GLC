@@ -6,6 +6,7 @@ use App\Http\Controllers\LeaveRequestController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\SalarySlipsController;
 use Illuminate\Support\Facades\Route;
+use SebastianBergmann\CodeCoverage\Report\Html\Dashboard;
 
 /*
 |--------------------------------------------------------------------------
@@ -25,6 +26,8 @@ Route::get('/employees', [EmployeesController::class,'index'])->name('employees.
 Route::get('/employees/show/{id}', [EmployeesController::class, 'show'])->name('employees.show');
 Route::get('/employees/create', [EmployeesController::class, 'create'])->name('employees.create');
 Route::post('/employees', [EmployeesController::class, 'store']);
+Route::get('/employee/{id}', [EmployeesController::class, 'show'])->name('employee.detail');
+Route::delete('/employee/{id}', [EmployeesController::class, 'destroy'])->name('employee.destroy');
 
 //Salary Slip Route
 Route::get('/salary-slips', [SalarySlipsController::class, 'index'])->name('salary-slips.index');

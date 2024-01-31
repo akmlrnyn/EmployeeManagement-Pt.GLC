@@ -10,8 +10,8 @@ use Illuminate\Database\Eloquent\Relations\HasMany;
 class Employee extends Model
 {
     use HasFactory;
-    protected $fillable = [
-        'email', 'leave_request_left'
+    protected $guarded = [
+        
     ];
 
     

@@ -10,9 +10,7 @@ class SalarySlipsController extends Controller
 {
     public function index() {
         $slips = SalarySlip::all();
-        $employees = Employee::all();
-
-        return view('pages.salary-slips.index', compact('slips', 'employees'));
+        return view('pages.salary-slips', compact('slips'));
     }
 
     public function store(Request $request) {
