@@ -1,9 +1,13 @@
 <x-app-layout>
+  <div class="w-4/5 mx-auto mt-4">
+  <h2 class="text-gray-700 text-3xl font-bold">All Employees </h2>
+  <p>The workers here</p>
     <div
-      class="bg-white shadow-md rounded-md overflow-hidden w-3/4 mx-auto mt-16"
+      class="bg-white shadow-md rounded-md overflow-hidden mx-auto mt-5"
     >
-      <div class="bg-gray-100 py-2 px-4">
-        <h2 class="text-xl font-semibold text-gray-800">Top Users</h2>
+      <div class="bg-gray-200 py-2 px-4">
+        <h2 class="text-xl font-bold text-gray-800">Employee list</h2>
+        <a href="{{ route('employees.create') }}" class="text-blue-700">+ Recriut New Employee</a>
       </div>
 
       <ul class="divide-y divide-gray-200">
@@ -24,7 +28,7 @@
             <form action="{{ route('employee.destroy', $item->id) }}" method="post">
             @csrf
             @method('DELETE')
-
+            
             {{-- button triger for delete-modal --}}
             <button data-modal-target="delete-modal" data-modal-toggle="delete-modal" class="focus:outline-none text-white bg-red-700 hover:bg-red-800 focus:ring-4 focus:ring-red-300 font-medium rounded-lg text-sm px-5 py-2.5 me-2 mb-2 dark:bg-red-600 dark:hover:bg-red-700 dark:focus:ring-red-900" type="button">
             Delete
@@ -64,10 +68,6 @@
         @endforeach
       </ul>
     </div>
-    
+  </div>
+
 </x-app-layout>
-
-
-
-
-
