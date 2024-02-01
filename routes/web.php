@@ -23,10 +23,11 @@ Route::get('/', function () {
     return redirect('register');
 });
 Route::get('/employees', [EmployeesController::class,'index'])->name('employees.index');
-Route::get('/employees/show/{id}', [EmployeesController::class, 'show'])->name('employees.show');
 Route::get('/employees/create', [EmployeesController::class, 'create'])->name('employees.create');
 Route::post('/employees', [EmployeesController::class, 'store']);
 Route::get('/employee/{id}', [EmployeesController::class, 'show'])->name('employee.detail');
+Route::get('/employee/edit/{id}', [EmployeesController::class, 'edit'])->name('employee.edit');
+Route::patch('/employee/update/{id}', [EmployeesController::class, 'update'])->name('employee.update');
 Route::delete('/employee/{id}', [EmployeesController::class, 'destroy'])->name('employee.destroy');
 
 //Salary Slip Route

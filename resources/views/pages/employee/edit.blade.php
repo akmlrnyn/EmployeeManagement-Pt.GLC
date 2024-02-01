@@ -11,7 +11,7 @@
             </div>
 
             <div class="lg:col-span-2">
-                <form action="{{ route('employees.update', $staff->id) }}" method="post">
+                <form action="{{ route('employee.update', $staff->id) }}" method="post">
                 @csrf
                 @method('PATCH')
                 <div class="grid gap-4 gap-y-2 text-sm grid-cols-1 md:grid-cols-5">
