@@ -25,20 +25,20 @@
             <div class="text-sm font-normal mt-2">Email: {{ $slip->employee->email }}</div>
             <div class="text-sm font-normal mt-2">Phone: {{ $slip->employee->phone }}</div>
             <div class="text-sm font-normal mt-2">Month: {{ $slip->month }}</div>
-            <div class="text-sm font-normal mt-2">Gross Salary: {{ number_format($slip->employee->base_salary) }}</div>
+            <div class="text-sm font-normal mt-2">Gross Salary: Rp.{{ number_format($slip->employee->base_salary) }}</div>
             </div>
             <div class="bg-yellow-100 p-3 rounded-lg mb-2">
             <h2 class="font-semibold text-xl text-yellow-900">Staff Stats</h2>
             <hr>
             <div class="text-sm font-normal mt-2">Total Leave Request: {{ $slip->leave_request }}x</div>
-            <div class="text-sm font-normal mt-2">Total Late: {{ $slip->late }}x</div>
-            <div class="text-sm font-normal mt-2">Total Overtime: {{ $slip->overtime }}x</div>
+            <div class="text-sm font-normal mt-2">Total Late: {{ $slip->late }} hour(s)</div>
+            <div class="text-sm font-normal mt-2">Total Overtime: {{ $slip->overtime }} hour(s)</div>
             <div class="text-sm font-normal mt-2">Tax: Rp.{{ $slip->tax }}</div>
             </div>
             <div class="bg-blue-100 p-3 rounded-lg mb-2">
             <h2 class="font-semibold text-xl">The Summary</h2>
             <hr>
-            <div class="text-sm font-normal mt-2">NET Salary: {{ number_format($slip->salary) }}</div>
+            <div class="text-sm font-normal mt-2">NET Salary: Rp.{{ number_format($slip->salary) }}</div>
             </div>
         </div>
     </div>

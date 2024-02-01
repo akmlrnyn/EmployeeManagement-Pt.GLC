@@ -9,6 +9,7 @@
 
         <!-- Fonts -->
         <link rel="preconnect" href="https://fonts.bunny.net">
+        {{-- <link href="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.2.1/flowbite.min.css" rel="stylesheet" /> --}}
         <link href="https://fonts.bunny.net/css?family=figtree:400,500,600&display=swap" rel="stylesheet" />
         <link rel="shortcut icon" href="{{ 'img/logo_company.png' }}" type="image/x-icon">
             <script src="https://cdn.tailwindcss.com"></script>
@@ -43,5 +44,6 @@
         @stack('modals')
 
         @livewireScripts
+        {{-- <script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.2.1/flowbite.min.js"></script> --}}
     </body>
 </html>

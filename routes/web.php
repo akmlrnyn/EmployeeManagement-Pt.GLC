@@ -25,6 +25,8 @@ Route::get('/employees', [EmployeesController::class,'index'])->name('employees.
 Route::get('/employees/show/{id}', [EmployeesController::class, 'show'])->name('employees.show');
 Route::get('/employees/create', [EmployeesController::class, 'create'])->name('employees.create');
 Route::post('/employees', [EmployeesController::class, 'store']);
+Route::get('/employees/edit/{id}', [EmployeesController::class, 'edit'])->name('employees.edit');
+Route::patch('/employees/update/{id}', [EmployeesController::class, 'update'])->name('employees.update');
 
 //Salary Slip Route
 Route::get('/salary-slips', [SalarySlipsController::class, 'index'])->name('salary-slips.index');

@@ -23,4 +23,16 @@ class EmployeesController extends Controller
         Employee::create($input);
         return redirect('/employees');
     }
+
+    public function edit($id) {
+        $staff = Employee::findOrFail($id);
+        return view('pages.employee.edit', compact('staff'));
+    }
+
+    public function update(Request $request, $id) {
+        $data = $request->all();
+        $staff = Employee::findOrFail($id);
+        $staff->update($data);
+        return redirect()->route('employees.index');
+    }
 }

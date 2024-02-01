@@ -95,7 +95,7 @@
         @csrf
         @method('PATCH')
         <button type="submit">
-          <a class="text-sm bg-gray-200  text-gray-700 px-4 py-2 rounded-md font-medium my-5">Reset All Employees Leave Requests To 12 (default)</a>
+          <a class="text-sm bg-gray-200 hover:bg-gray-100 shadow-md text-gray-700 px-4 py-2 rounded-md font-medium my-5">Reset All Employees Leave Requests To 12 (default)</a>
         </button>
       </form>
 
@@ -104,7 +104,7 @@
         @csrf
         @method('DELETE')
         <button type="submit">
-          <a class="text-sm bg-red-800  text-white px-4 py-2 rounded-md font-medium my-5">Remove All Leave Request Recap</a>
+          <a class="text-sm bg-red-800 hover:bg-red-700 shadow-md text-white px-4 py-2 rounded-md font-medium my-5">Remove All Leave Request Recap</a>
         </button>
       </form>
     </div>
