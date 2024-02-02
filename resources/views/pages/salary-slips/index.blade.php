@@ -24,7 +24,7 @@
                                         {{ $item->employee->name }}
                                     </p>
                                     <p class="text-sm text-gray-500 truncate dark:text-gray-400">
-                                        {{ $item->employee->position }}
+                                        {{ $item->month }}
                                     </p>
                                 </div>
                                 <div class="flex gap-2 items-center text-base font-semibold text-gray-900 ">
