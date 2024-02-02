@@ -30,7 +30,7 @@
             <div class="bg-yellow-100 p-3 rounded-lg mb-2">
             <h2 class="font-semibold text-xl text-yellow-900">Staff Stats</h2>
             <hr>
-            <div class="text-sm font-normal mt-2">Total Leave Request: {{ $slip->leave_request }}x</div>
+            <div class="text-sm font-normal mt-2">Total Leave Request: {{ $slip->leave_request }} Day(s)</div>
             <div class="text-sm font-normal mt-2">Total Late: {{ $slip->late }} hour(s)</div>
             <div class="text-sm font-normal mt-2">Total Overtime: {{ $slip->overtime }} hour(s)</div>
             <div class="text-sm font-normal mt-2">Tax: Rp.{{ $slip->tax }}</div>

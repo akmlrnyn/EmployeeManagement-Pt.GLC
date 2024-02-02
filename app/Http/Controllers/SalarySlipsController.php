@@ -10,14 +10,14 @@ class SalarySlipsController extends Controller
 {
     public function index() {
         $slips = SalarySlip::all();
-        return view('pages.salary-slips', compact('slips'));
+        return view('pages.salary-slips.index', compact('slips'));
     }
 
     public function store(Request $request) {
         $data = $request->except(['_token']);
         SalarySlip::create($data);
 
-        return redirect('/employees');
+        return redirect()->route('salary-slips.index');
     }
 
     public function show($id) {
@@ -27,6 +27,12 @@ class SalarySlipsController extends Controller
     }
 
     public function create() {
-        return view('pages.salary-slips.create');
+        $staffs = Employee::all();
+        return view('pages.salary-slips.create', compact('staffs'));
+    }
+
+    public function create_form($id) {
+        $staff = Employee::findOrFail($id);
+        return view('pages.salary-slips.create-form', compact('staff'));
     }
 }
