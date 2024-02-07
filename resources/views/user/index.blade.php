@@ -54,7 +54,7 @@
                     class="rounded-full h-6 shadow-md inline-block mr-2"
                   />
                   Email
-                  <span class="text-gray-500 text-xs">{{ $user->employee->email }}</span>
+                  <span class="text-gray-500 text-xs">{{ $user->email }}</span>
                 </a>
 
                 <a
@@ -94,7 +94,7 @@
                     class="rounded-full h-6 shadow-md inline-block mr-2"
                   />
                   Your Salary
-                  <span class="text-gray-500 text-xs">Rp. {{ $user->employee->base_salary }}</span>
+                  <span class="text-gray-500 text-xs">Rp. {{ number_format($user->employee->base_salary) }}</span>
                 </a>
 
                 <a

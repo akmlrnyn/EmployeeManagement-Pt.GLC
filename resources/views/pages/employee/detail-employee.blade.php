@@ -25,11 +25,6 @@
                 class="text-gray-500 hover:text-gray-900 hover:bg-blue-100 rounded transition duration-150 ease-in font-medium text-sm text-center w-full py-3"
                 >All Details</a
               >
-              <a
-                href=""
-                class="text-gray-500 hover:text-gray-900 hover:bg-blue-100 rounded transition duration-150 ease-in font-medium text-sm text-center w-full py-3"
-                >Ask Leave Requests</a
-              >
             </div>
 
             <div class="w-full">
@@ -88,7 +83,7 @@
                     class="rounded-full h-6 shadow-md inline-block mr-2"
                   />
                   Salary :
-                  <span class="text-gray-500 text-xs">{{ $employee->base_salary }}</span>
+                  <span class="text-gray-500 text-xs">Rp.{{ number_format($employee->base_salary) }}</span>
                 </a>
 
                 <a
@@ -101,7 +96,7 @@
                     class="rounded-full h-6 shadow-md inline-block mr-2"
                   />
                   Leave Requests Left
-                  <span class="text-gray-500 text-xs">5 days ago</span>
+                  <span class="text-gray-500 text-xs">{{ $employee->leave_request_left }} Day(s)</span>
                 </a>
               </div>
             </div>

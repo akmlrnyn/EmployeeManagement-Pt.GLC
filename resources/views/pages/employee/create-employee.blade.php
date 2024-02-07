@@ -15,7 +15,7 @@
                 @csrf
                 <div class="grid gap-4 gap-y-2 text-sm grid-cols-1 md:grid-cols-5">
                         <div class="md:col-span-5">
-                            <label for="user">User</label>
+                            <label for="user">Select User</label>
                             <select id="user" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 mt-1" name="user_id">
                             <option selected>Option</option>
                             @foreach ($user as $item)
@@ -32,6 +32,11 @@
                         <div class="md:col-span-5">
                             <label for="phone">Phone</label>
                             <input type="text" name="phone" id="phone" class="h-10 border mt-1 rounded px-4 w-full bg-gray-50" value="" placeholder="08**********" />
+                        </div>
+
+                        <div class="md:col-span-5">
+                            <label for="base_salary">Current Salary (Rp.)</label>
+                            <input type="text" name="base_salary" id="base_salary" class="h-10 border mt-1 rounded px-4 w-full bg-gray-50" value="" placeholder="Rp." />
                         </div>
                 
                         <div class="md:col-span-5 text-right">
