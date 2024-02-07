@@ -1,5 +1,9 @@
 <x-app-layout>
-<ul class="divide-y divide-gray-200 w-3/5 bg-white mx-auto my-5 rounded-lg shadow-lg">
+  <div class="w-4/5 mx-auto mt-4">
+        <h2 class="text-gray-700 text-3xl font-bold">Choose Staff </h2>
+        <p>To make salary slip</p>
+
+<ul class="divide-y divide-gray-200 bg-white mx-auto my-5 rounded-lg shadow-lg">
         @php($number = 1)
         @foreach ($staffs as $item)
         <li class="flex items-center py-4 px-6">
@@ -21,4 +25,5 @@
         @php($number++)
         @endforeach
       </ul>
+        </div>
 </x-app-layout>

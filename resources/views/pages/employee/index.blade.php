@@ -1,6 +1,6 @@
 <x-app-layout>
   <div class="w-4/5 mx-auto mt-4">
-  <h2 class="text-gray-700 text-3xl font-bold">All Employees </h2>
+  <h2 class="text-gray-700 text-3xl font-bold">All Staffs </h2>
   <p>The workers here</p>
     <div
       class="bg-white shadow-md rounded-md overflow-hidden mx-auto mt-5"

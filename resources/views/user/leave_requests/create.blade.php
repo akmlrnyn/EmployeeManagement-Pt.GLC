@@ -38,12 +38,12 @@
                     </div>
                 </form>
             </div>
-            @endif
-                
-            <div class="text-gray-600">
+            @else
+                <div class="text-gray-600">
                 <h1 class="font-medium text-lg">Sorry, your leave requests chance is over</p>
                 </div>
             </div>
+            @endif
         </div>
     </div>
         </div>

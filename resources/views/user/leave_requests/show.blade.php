@@ -20,7 +20,7 @@
           />
           <div class="flex-1">
             <h4 class="text xl font-semibold text-gray-500 uppercase">{{ $item->status }}</h4>
-            <h3 class="text-sm font-small text-gray-800">{{ $item->created_at->format('d/m/y') }}</h3>
+            <h3 class="text-sm font-small text-gray-800">{{ $item->created_at->format('D/M/Y') }}</h3>
             <h3 class="text-lg font-medium text-gray-800">{{ $item->employee->name }}</h3>
             <p class="text-gray-600 text-base">{{ $item->amount_of_days }} Days</p>
             <p class="text-red-600 text-base">Due To: {{ $item->reason }}</p>
