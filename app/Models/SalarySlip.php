@@ -17,6 +17,7 @@ class SalarySlip extends Model
         'overtime',
         'late',
         'tax',
+        'bpjs',
         'salary',
         'month',
     ];
