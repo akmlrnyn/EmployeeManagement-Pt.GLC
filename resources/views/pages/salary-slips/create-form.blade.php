@@ -99,6 +99,17 @@
           class="pt-3 pb-2 block w-full px-0 mt-0 bg-transparent border-0 border-b-2 appearance-none focus:outline-none focus:ring-0 focus:border-blue border-gray-200"
         />
       </div>
+      <div class="relative z-0 w-full mb-5">
+        <label class="text-gray-500 text-sm" for="tex">BPJS (Rp.)</label>
+        <input
+          type="number"
+          name="bpjs"
+          placeholder="BPJS ( Rp. )"
+          value="{{ old('bpjs') }}"
+          required
+          class="pt-3 pb-2 block w-full px-0 mt-0 bg-transparent border-0 border-b-2 appearance-none focus:outline-none focus:ring-0 focus:border-blue border-gray-200"
+        />
+      </div>
 
       <button
         id="button"

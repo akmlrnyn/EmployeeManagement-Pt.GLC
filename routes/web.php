@@ -26,6 +26,7 @@ Route::get('/', function () {
 // employee profile for users
 Route::get('/employeedetails', [ProfileController::class, 'index'])->name('profile.index');
 Route::get('/employeedetails/create-leave-request', [ProfileController::class,'leave_request'])->name('profile.leave_request');
+Route::get('/employeedetails/my-salary-slip', [ProfileController::class,'salary_slip'])->name('profile.salary_slip');
 Route::post('/employeedetails/create-leave-request/create', [ProfileController::class, 'leave_request_create'])->name('profile.leave_request.create');
 Route::get('employeedetails/leave-requests', [ProfileController::class, 'leave_request_show'])->name('profile.leave_requests.show');
 

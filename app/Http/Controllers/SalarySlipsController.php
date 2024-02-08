@@ -15,7 +15,21 @@ class SalarySlipsController extends Controller
 
     public function store(Request $request) {
         $data = $request->except(['_token']);
+       
+
+        $total_potongan_terlambat = $request['late'] * 20_000;
+        $total_bonus_overtime = $request['overtime'] * 20_000;
+
+        $gaji_bersih = $request['salary'] 
+        - $total_potongan_terlambat 
+        + $total_bonus_overtime 
+        - $request['tax'] 
+        - $request['bpjs'];
+
+
+        $data['salary'] = $gaji_bersih;
         SalarySlip::create($data);
+
 
         return redirect()->route('salary-slips.index');
     }

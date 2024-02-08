@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Employee;
 use App\Models\LeaveRequest;
+use App\Models\SalarySlip;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
@@ -27,5 +28,10 @@ class ProfileController extends Controller
         $leave_requests = LeaveRequest::all()->where('employee_id', Auth::user()->employee->id);
         $leave_requests_total = $leave_requests->count();
         return view('user.leave_requests.show', compact('leave_requests', 'leave_requests_total'));
+    }
+
+    public function salary_slip() {
+        $slips = SalarySlip::where('employee_id', Auth::user()->employee->id)->get();
+        return view('user.salary_slip.index', compact('slips'));
     }
 }
