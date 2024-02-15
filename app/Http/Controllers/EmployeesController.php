@@ -26,7 +26,7 @@ class EmployeesController extends Controller
 
     public function show($id) {
         $employee = Employee::find($id);
-        return view('pages.employee.detail-employee', compact('employee')); 
+        return view('pages.employee.show', compact('employee')); 
     }
 
     public function destroy($id){

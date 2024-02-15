@@ -36,8 +36,8 @@
                 
                         <div class="md:col-span-5 text-right">
                             <div class="inline-flex items-end gap-3">
-                            <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded" type="submit">Submit</button>
-                            <a href="{{ route('employees.index') }}" class="bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-4 rounded" >Cancel</a>
+                            <button class="bg-blue-500 hover:bg-blue-700 text-white py-2 px-4 rounded" type="submit">Submit</button>
+                            <a href="{{ route('employees.index') }}" class="bg-red-500 hover:bg-red-700 text-white py-2 px-4 rounded" >Cancel</a>
                             </div>
                         </div>
                     </div>

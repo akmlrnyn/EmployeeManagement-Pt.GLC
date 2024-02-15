@@ -3,8 +3,10 @@
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\EmployeesController;
 use App\Http\Controllers\LeaveRequestController;
+use App\Http\Controllers\PotonganBonusController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\SalarySlipsController;
+use App\Models\PotonganBonus;
 use Illuminate\Support\Facades\Route;
 use SebastianBergmann\CodeCoverage\Report\Html\Dashboard;
 
@@ -53,6 +55,10 @@ Route::middleware([
     Route::get('/salary-slips/create/{id}', [SalarySlipsController::class, 'create_form'])->name('salary-slips.create_form');
     Route::post('/salary-slips', [SalarySlipsController::class, 'store'])->name('salary-slips.store');
     Route::get('/salary-slips/{id}', [SalarySlipsController::class, 'show'])->name('salary-slips.show');
+
+    // PotonganBonus Route
+    Route::get('bonus-cut/{id}', [PotonganBonusController::class, 'edit'])->name('potongan-bonus.edit');
+    Route::patch('/bonus-cut/{id}', [PotonganBonusController::class, 'update'])->name('potongan-bonus.update');
 
     // leave requests
     Route::get('/leaverequests', [LeaveRequestController::class,'index'])->name('leaverequest.index');

@@ -18,7 +18,7 @@
                     <input type="hidden" name="employee_id" value="{{ Auth::user()->employee->id }}">
                         <div class="md:col-span-5">
                             <label for="name">Name</label>
-                            <input type="text" disabled name="name" id="name" class="h-10 border mt-1 rounded px-4 w-full bg-gray-50" value="{{ Auth::user()->name }}" />
+                            <input type="text" disabled name="name" id="name" class="h-10 border mt-1 rounded px-4 w-full bg-gray-50" value="{{ Auth::user()->employee->name }}" />
                         </div>
                         <div class="md:col-span-5">
                             <label for="amount_of_days">How many days you'd like to take?</label>
