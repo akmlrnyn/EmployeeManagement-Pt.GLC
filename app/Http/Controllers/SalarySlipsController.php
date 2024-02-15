@@ -3,22 +3,28 @@
 namespace App\Http\Controllers;
 
 use App\Models\Employee;
+use App\Models\PotonganBonus;
 use App\Models\SalarySlip;
 use Illuminate\Http\Request;
+use Illuminate\Support\Carbon;
 
 class SalarySlipsController extends Controller
 {
     public function index() {
-        $slips = SalarySlip::all();
-        return view('pages.salary-slips.index', compact('slips'));
+        $potongan_terlambat = PotonganBonus::all()->first();
+        $bonus_overtime = PotonganBonus::all()->first();
+        $slips = SalarySlip::simplePaginate(10);
+        return view('pages.salary-slips.index', compact('slips', 'potongan_terlambat', 'bonus_overtime'));
     }
 
     public function store(Request $request) {
         $data = $request->except(['_token']);
+        $potongan_terlambat = PotonganBonus::all()->first();
+        $bonus_overtime = PotonganBonus::all()->first();
        
 
-        $total_potongan_terlambat = $request['late'] * 20_000;
-        $total_bonus_overtime = $request['overtime'] * 20_000;
+        $total_potongan_terlambat = $request['late'] * $potongan_terlambat['potongan_terlambat'];
+        $total_bonus_overtime = $request['overtime'] * $bonus_overtime['bonus_overtime'];
 
         $gaji_bersih = $request['salary'] 
         - $total_potongan_terlambat 
@@ -46,7 +52,8 @@ class SalarySlipsController extends Controller
     }
 
     public function create_form($id) {
+        $currentMonth = Carbon::now()->format('F');
         $staff = Employee::findOrFail($id);
-        return view('pages.salary-slips.create-form', compact('staff'));
+        return view('pages.salary-slips.create-form', compact('staff', 'currentMonth'));
     }
 }
