@@ -1,3 +1,5 @@
+![PT GLC Indonesia HR Application](/public/img/thumbnail.png)
+
 ## Collaborative Project
 
 This is a website-based application that we created for the needs of PT GLC Indonesia, this is an HR application for managing employee data there.
