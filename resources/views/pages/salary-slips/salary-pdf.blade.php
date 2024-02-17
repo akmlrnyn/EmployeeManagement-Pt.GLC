@@ -1,4 +1,59 @@
-@section('pdf')
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <!-- PDF Style -->
+    <style>
+        .logo-title {
+            margin-top: 10px;
+            margin-bottom: 10px;
+            text-decoration: underline;
+            display: flex;
+            justify-content: center;
+        }
+
+        .container-title {
+            display: flex;
+            justify-content: center;
+            margin-top: 10px;
+            margin-bottom: 10px;
+        }
+
+        .table-pdf {
+            border: 1px solid #ddd;
+            /* Add a thin border */
+            border-collapse: collapse;
+            /* Remove gaps between cells */
+        }
+
+        .header-table,
+        .description-table {
+            text-align: left;
+            /* Align content left by default */
+            padding: 8px;
+            /* Add some padding for readability */
+            border: 1px solid #ddd;
+            /* Add borders to each cell */
+        }
+
+        .header-table {
+            background-color: #f2f2f2;
+            /* Light background for headers */
+            font-weight: bold;
+            /* Bold text for headers */
+        }
+
+        .row-table:nth-child(even) {
+            background-color: #f9f9f9;
+            /* Alternate row colors for readability */
+        }
+
+    </style>
+</head>
 
 <body>
     <div class="container-title">
@@ -37,6 +92,6 @@
             </tr>
         </tbody>
     </table>
-
 </body>
 
+</html>
