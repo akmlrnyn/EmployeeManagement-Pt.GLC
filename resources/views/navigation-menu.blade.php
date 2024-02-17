@@ -25,6 +25,9 @@
                     <x-nav-link href="{{ route('salary-slips.index') }}" :active="request()->routeIs('salary-slips.index')">
                         {{ __('Salary Slips') }}
                     </x-nav-link>
+                    <x-nav-link href="{{ route('permission.index') }}" :active="request()->routeIs('permission.index')">
+                        {{ __('Permission') }}
+                    </x-nav-link>
                 </div>
                 @endif
                 
