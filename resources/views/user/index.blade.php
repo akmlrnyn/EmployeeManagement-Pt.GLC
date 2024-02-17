@@ -22,6 +22,7 @@
                                 <p class="text-gray-500 rounded transition duration-150 ease-in font-medium text-sm text-center w-full py-3">All Details</p>
                                 <a href="{{ route('profile.leave_request') }}" class="text-gray-500 hover:text-gray-900 hover:bg-blue-100 rounded transition duration-150 ease-in font-medium text-sm text-center w-full py-3">Ask Leave Requests</a>
                                 <a href="{{ route('profile.salary_slip') }}" class="text-gray-500 hover:text-gray-900 hover:bg-blue-100 rounded transition duration-150 ease-in font-medium text-sm text-center w-full py-3">My Salary Slips</a>
+                                <a href="{{ route('profile.permission') }}" class="text-gray-500 hover:text-gray-900 hover:bg-blue-100 rounded transition duration-150 ease-in font-medium text-sm text-center w-full py-3">Ask Permission</a>
                             </div>
 
                             <div class="w-full">
@@ -62,6 +63,7 @@
                                         Leave Requests Left
                                         <span class="text-gray-500 text-xs">{{ $user->employee->leave_request_left }}</span>
                                         <a href="{{ route('profile.leave_requests.show') }}" class="text-sm text-blue-600 my-2">See all my leave requests</a>
+                                        <a href="{{ route('profile.permission.show') }}" class="text-sm text-blue-600 my-2">See all my permissions</a>
                                     </a>
                                 </div>
                             </div>
