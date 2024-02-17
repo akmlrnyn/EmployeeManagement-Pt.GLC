@@ -58,6 +58,7 @@ Route::middleware([
     Route::get('/salary-slips/create', [SalarySlipsController::class, 'create'])->name('salary-slips.create');
     Route::get('/salary-slips/create/{id}', [SalarySlipsController::class, 'create_form'])->name('salary-slips.create_form');
     Route::post('/salary-slips', [SalarySlipsController::class, 'store'])->name('salary-slips.store');
+    Route::get('/salary-slips/print/{id}', [SalarySlipsController::class, 'print_pdf'])->name('salary-slips.print_pdf');
     Route::get('/salary-slips/{id}', [SalarySlipsController::class, 'show'])->name('salary-slips.show');
 
     // PotonganBonus Route
