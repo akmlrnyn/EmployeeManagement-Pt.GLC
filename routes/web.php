@@ -3,6 +3,7 @@
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\EmployeesController;
 use App\Http\Controllers\LeaveRequestController;
+use App\Http\Controllers\PermissionController;
 use App\Http\Controllers\PotonganBonusController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\SalarySlipsController;
@@ -66,4 +67,8 @@ Route::middleware([
     Route::patch('/leaverequests/reject/{id}', [LeaveRequestController::class,'reject'])->name('leaverequest.reject');
     Route::patch('/leaverequests/reset', [LeaveRequestController::class, 'reset'])->name('leaverequest.reset');
     Route::delete('/leaverequests/delete', [LeaveRequestController::class, 'delete'])->name('leaverequest.delete');
+
+    // permission
+    Route::get('/permission/create/{id}', [PermissionController::class, 'create'])->name('permission.create_form');
+    Route::post('/permission/{id}', [PermissionController::class, 'store'])->name('permission.store');
 });
