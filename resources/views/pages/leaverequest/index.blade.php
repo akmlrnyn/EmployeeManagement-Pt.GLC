@@ -1,5 +1,4 @@
 <x-app-layout>
-
   <div class="w-4/5 mx-auto mt-4">
     <h2 class="text-gray-700 text-2xl sm:text-3xl font-bold">All Leave Requests </h2>
     <p>From the staffs</p>
