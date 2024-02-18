@@ -2,9 +2,11 @@
 
 namespace App\Http\Controllers;
 
+
 use App\Models\Employee;
 use App\Models\PotonganBonus;
 use App\Models\SalarySlip;
+use Barryvdh\DomPDF\Facade\Pdf as FacadePdf;
 use Illuminate\Http\Request;
 use Illuminate\Support\Carbon;
 
@@ -55,5 +57,11 @@ class SalarySlipsController extends Controller
         $currentMonth = Carbon::now()->format('F');
         $staff = Employee::findOrFail($id);
         return view('pages.salary-slips.create-form', compact('staff', 'currentMonth'));
+    }
+
+    public function print_pdf($id) {
+        $slips = SalarySlip::find($id);
+        $pdf = FacadePdf::loadView('pages.salary-slips.salary-pdf', ['slips' => $slips]);
+        return $pdf->stream($slips->employee->name.'_'.$slips->month. '.pdf');
     }
 }

@@ -2,8 +2,9 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Employee;
 use App\Models\User;
+use App\Models\Employee;
+use App\Models\LeaveRequest;
 use Illuminate\Http\Request;
 
 class EmployeesController extends Controller
