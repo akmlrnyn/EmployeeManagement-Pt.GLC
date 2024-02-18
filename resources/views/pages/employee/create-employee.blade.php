@@ -35,6 +35,11 @@
                         </div>
 
                         <div class="md:col-span-5">
+                            <label class="text-xs" for="position">Position</label>
+                            <input type="text" name="position" id="position" class="h-10 border mt-1 rounded px-4 w-full bg-gray-50 text-xs" value="" placeholder="Crewing Lead" />
+                        </div>
+
+                        <div class="md:col-span-5">
                             <label class="text-xs" for="base_salary">Current Salary (Rp.)</label>
                             <input type="text" name="base_salary" id="base_salary" class="h-10 border mt-1 rounded px-4 w-full bg-gray-50 text-xs" value="" placeholder="Rp." />
                         </div>
