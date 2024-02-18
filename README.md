@@ -6,6 +6,7 @@ This is a website-based application that we created for the needs of PT GLC Indo
 
 ### Contributors
 
+-   **[Abdillah Naufal](https://github.com/abdfal)**
 -   **[Akmal Ranyan](https://github.com/akmlrnyn)**
 -   **[Muhammad Fathir](https://github.com/mfathirr)**
 
