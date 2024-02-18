@@ -83,7 +83,7 @@
                 >
                     Create New Slip
                 </button>
-                <a href="{{ route('employees.index') }}" class="text-xs bg-red-500 hover:bg-red-700 text-white py-2 px-4 rounded">Cancel</a>
+                <a href="{{ route('permission.index') }}" class="text-xs bg-red-500 hover:bg-red-700 text-white py-2 px-4 rounded">Cancel</a>
             </form>
         </div>
     </div>

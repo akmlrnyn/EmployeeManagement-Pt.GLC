@@ -16,12 +16,18 @@ class PermissionController extends Controller
         return view('pages.permission.index', compact('permission', 'permission_accepted', 'permission_rejected'));
     }
 
-    public function create($id) {
+    public function create() {
+        $employee = Employee::all();
+        return view('pages.permission.create', compact('employee'));
+    }
+
+    public function create_form($id){
         $currentMonth = Carbon::now()->format('F');
         $employee = Employee::find($id);
         return view('pages.permission.create-form', compact('employee', 'currentMonth'));
+        
     }
-
+    
     public function store($id, Request $request){
         $data = $request->all();
         $employee = Employee::find($id);
@@ -57,6 +63,11 @@ class PermissionController extends Controller
                 'status' => 'rejected'
             ]);
         }
+        return back();
+    }
+
+    public function delete(){
+        $permissions = Permission::whereIn('status', ['accepted', 'rejected'])->delete();
         return back();
     }
 }
