@@ -27,10 +27,6 @@
                 class="text-gray-500 hover:text-gray-900 hover:bg-blue-100 rounded transition duration-150 ease-in font-medium text-sm text-center w-full py-3"
                 >All Details</p
               >
-              <a
-                href="{{ route('permission.create_form', $employee->id) }}" class="text-gray-500 hover:text-gray-900 hover:bg-blue-100 rounded transition duration-150 ease-in font-medium text-sm text-center w-full py-3"
-                >Add Permission
-              </a>
             </div>
 
             <div class="w-full">

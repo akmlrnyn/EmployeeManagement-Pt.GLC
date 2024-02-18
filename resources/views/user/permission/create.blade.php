@@ -21,6 +21,11 @@
                         </div>
 
                         <div class="md:col-span-5">
+                            <label for="amount_of_times ">Permits</label>
+                            <input type="number" name="amount_of_times" placeholder="Permits ( Minutes )" class="h-10 border mt-1 rounded px-4 w-full bg-gray-50" value="" placeholder="Write your reason for taking permit" required/>
+                        </div>
+
+                        <div class="md:col-span-5">
                             <label for="reason">Reason</label>
                             <input type="text" name="reason" id="reason" class="h-10 border mt-1 rounded px-4 w-full bg-gray-50" value="" placeholder="Write your reason for taking permit" required/>
                         </div>
