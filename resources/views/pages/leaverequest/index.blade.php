@@ -4,7 +4,7 @@
     <h2 class="text-gray-700 text-2xl sm:text-3xl font-bold">All Leave Requests </h2>
     <p>From the staffs</p>
 
-    <div class="bg-white shadow-md rounded-md overflow-hidden mx-auto mt-8">
+    <div class="bg-white shadow-md rounded-md overflow-hidden mx-auto mt-5">
       <div class="bg-yellow-200 opacity-90 py-2 px-4">
         <h2 class="text-base sm:text-xl font-semibold text-yellow-700">Pending <span class="font-light">Leave Request ({{ $leave_request_amount }})</span></h2>
       </div>

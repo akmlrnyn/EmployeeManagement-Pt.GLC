@@ -1,5 +1,5 @@
 <x-app-layout>
-    <div class="container mx-auto my-32">
+    <div class="container mx-auto py-32">
         <div>
             <div class="bg-white relative shadow-lg rounded-lg w-5/6 md:w-5/6 lg:w-4/6 xl:w-3/6 mx-auto">
                 <div class="flex justify-center">

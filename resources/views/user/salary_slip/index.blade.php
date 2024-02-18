@@ -7,16 +7,13 @@
         <h2 class="text-gray-700 text-xl sm:text-3xl font-bold px-4 py-1 pt-3">Salary Details</h2>
         <p class="text-gray-700 text-xs sm:text-base font-normal px-4 ">{{ date('d M Y', strtotime($item->created_at) )}}</p>
         <hr>
-        
-
-        <div class="flex justify-end px-4 pt-4">
-            <button id="dropdownButton" data-dropdown-toggle="dropdown" class="inline-block text-gray-500 dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-gray-700 focus:ring-4 focus:outline-none focus:ring-gray-200 dark:focus:ring-gray-700 rounded-lg text-sm p-1.5" type="button">
-            </button>
-        </div>
         <div class="flex flex-col items-start pb-5 px-5">
-            <img class="w-12 h-12 sm:w-16 sm:h-16 mb-3 rounded-full shadow-lg" src="{{ url('img/icon_avatar.png') }}" alt="Bonnie image"/>
+            <img class="mt-5 w-12 h-12 sm:w-16 sm:h-16 mb-3 rounded-full shadow-lg" src="{{ url('img/icon_avatar.png') }}" alt="Bonnie image"/>
             <h5 class="sm:mb-1 text-base sm:text-xl font-normal text-gray-900">{{ $item->employee->name }}</h5>
             <span class="text-xs sm:text-sm text-gray-500 dark:text-gray-500">{{ $item->employee->position }}</span>
+            <div class="flex mt-4 md:mt-6 gap-5">
+            <a class="px-2 sm:px-3 py-2 sm:py-2.5 bg-blue-500 rounded text-white text-xs" href="{{route('salary-slips.print_pdf', $item->id)}}" target="_blank">Print Salary Slip</a>
+        </div>
         </div>
         <hr>
         <div class="flex flex-col sm:flex-row gap-x-3 px-5 sm:px-3 py-3 justify-start items-start sm:items-center">

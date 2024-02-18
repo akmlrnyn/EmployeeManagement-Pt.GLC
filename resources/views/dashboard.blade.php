@@ -140,10 +140,11 @@
               </div>
             </div>
           </div>
+          <div class="flex flex-col w-full gap-y-3">
           <!-- Leave Request Section -->
-          <div class="card w-full bg-white p-4 rounded-lg border-b-4">
+          <div class="card w-full bg-white p-4 rounded-lg border-b-1 shadow-md">
             <h2 class="text-base sm:text-xl font-semibold mb-2">
-              Employees's Leave Request
+              Staff's Leave Request
             </h2>
             <h5 class="text-sm sm:text-base text-gray-600 font-normal">Pending Request Permission({{ $total_pending_request_new }})</h5>
             <div class="mt-4">
@@ -187,6 +188,55 @@
                 <p>See all leave Requests ></p>
               </a>
             </div>
+          </div>
+          {{-- Permission section --}}
+          <div class="card w-full bg-white p-4 rounded-lg border-b-1 shadow-md">
+            <h2 class="text-base sm:text-xl font-semibold mb-2">
+              Staff's Permits
+            </h2>
+            <h5 class="text-sm sm:text-base text-gray-600 font-normal">Pending Permission({{ $total_permission_new }})</h5>
+            <div class="mt-4">
+              <ul role="list" class="divide-y divide-gray-100">
+                @foreach ($permission_new as $item)
+                <li class="flex flex-col sm:flex-row justify-between gap-x-6 py-5">
+                  <div class="flex min-w-0 gap-x-4">
+                    <img
+                      class="h-12 w-12 flex-none rounded-full bg-gray-50"
+                      src="{{ url('img/icon_avatar.png') }}"
+                      alt=""
+                    />
+                    <div class="min-w-0 flex-auto">
+                      <p class="text-sm font-semibold leading-6 text-gray-900">
+                        {{ $item->employee->name }}
+                      </p>
+                      <p class="mt-1 truncate text-xs leading-5 text-gray-500">
+                        {{ $item->reason }}
+                      </p>
+                    </div>
+                  </div>
+                  <div class="md:flex md:flex-col md:items-end mt-1 sm:mt-0">
+                    <div class="mt-1 flex items-center gap-x-1.5">
+                      <div class="flex-none rounded-full bg-yellow-500/20 p-1">
+                        <div
+                          class="h-1.5 w-1.5 rounded-full bg-yellow-500"
+                        ></div>
+                      </div>
+                      <p class="text-xs leading-5 text-gray-500">{{ $item->status }}</p>
+                    </div>
+                  </div>
+                </li>
+                @endforeach
+                
+              </ul>
+              <hr />
+              <a
+                href="{{ route('leaverequest.index') }}"
+                class="text-sm sm:text-base text-blue-700 p-1 text-center"
+              >
+                <p>See all permissions ></p>
+              </a>
+            </div>
+          </div>
           </div>
         </div>
       </div>
