@@ -18,6 +18,9 @@ class SalarySlip extends Model
         'late',
         'tax',
         'bpjs',
+        'bonus',
+        'deduction',
+        'information',
         'salary',
         'month',
     ];

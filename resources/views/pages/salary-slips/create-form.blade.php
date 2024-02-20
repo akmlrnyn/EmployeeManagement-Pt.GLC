@@ -110,6 +110,39 @@
                         class="pt-3 pb-2 block text-sm sm:text-base w-full px-0 mt-0 bg-transparent border-0 border-b-2 appearance-none focus:outline-none focus:ring-0 focus:border-blue border-gray-200"
                     />
                 </div>
+                <div class="relative z-0 w-full mb-5">
+                    <label class="text-gray-500 text-xs sm:text-sm" for="bonus">Bonus (Rp.)</label>
+                    <input
+                        type="number"
+                        name="bonus"
+                        placeholder="Bonus ( Rp. )"
+                        value="{{ old('bonus') }}"
+                        required
+                        class="pt-3 pb-2 block text-sm sm:text-base w-full px-0 mt-0 bg-transparent border-0 border-b-2 appearance-none focus:outline-none focus:ring-0 focus:border-blue border-gray-200"
+                    />
+                </div>
+                <div class="relative z-0 w-full mb-5">
+                    <label class="text-gray-500 text-xs sm:text-sm" for="deduction">Deduction (Rp.)</label>
+                    <input
+                        type="number"
+                        name="deduction"
+                        placeholder="Salary Deduction ( Rp. )"
+                        value="{{ old('deduction') }}"
+                        required
+                        class="pt-3 pb-2 block text-sm sm:text-base w-full px-0 mt-0 bg-transparent border-0 border-b-2 appearance-none focus:outline-none focus:ring-0 focus:border-blue border-gray-200"
+                    />
+                </div>
+                <div class="relative z-0 w-full mb-5">
+                    <label class="text-gray-500 text-xs sm:text-sm" for="information">Bonus-Deduction information</label>
+                    <input
+                        type="text"
+                        name="information"
+                        placeholder="Late without permission, etc"
+                        value="{{ old('information') }}"
+                        required
+                        class="pt-3 pb-2 block text-sm sm:text-base w-full px-0 mt-0 bg-transparent border-0 border-b-2 appearance-none focus:outline-none focus:ring-0 focus:border-blue border-gray-200"
+                    />
+                </div>
 
                 <button
                     id="button"
