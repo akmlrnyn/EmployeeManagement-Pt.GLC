@@ -129,7 +129,7 @@
             </tr>
             <tr>
                 <th class="description-table">Bonus</th>
-                <td class="description-table">Rp. {{number_format($slips->tax)}},00</td>
+                <td class="description-table">Rp. {{number_format($slips->bonus)}},00</td>
             </tr>
             <tr>
                 <th class="description-table">Late</th>
@@ -137,7 +137,7 @@
             </tr>
             <tr>
                 <th class="description-table">Deduction</th>
-                <td class="description-table">Rp. {{number_format($slips->tax)}},00</td>
+                <td class="description-table">Rp. {{number_format($slips->deduction)}},00</td>
             </tr>
             <tr>
                 <th class="description-table">Tax</th>
@@ -148,29 +148,14 @@
                 <td class="description-table">Rp. {{number_format($slips->bpjs)}},00</td>
             </tr>
             <tr>
-                <th class="header-table">Salary Bonus</th>
-                <td class="description-table">Rp. {{$slips->bonus}},00</td>
-            </tr>
-            <tr>
-                <th class="header-table">Salary Deduction</th>
-                <td class="description-table">Rp. {{$slips->deduction}},00</td>
-            </tr>
-            <tr>
-                <th class="header-table">Salary Bonus</th>
-                <td class="description-table">Rp. {{$slips->bonus}},00</td>
-            </tr>
-            <tr>
-                <th class="header-table">Salary Deduction</th>
-                <td class="description-table">Rp. {{$slips->deduction}},00</td>
-            </tr>
-            <tr>
                 <th class="description-table">Net Salary</th>
                 <td class="description-table">Rp. {{number_format($slips->salary)}},00</td>
             </tr>
     </table>
     <div class="">
         <p>
-            Additional Information: Late deductions are calculated per day and overtime is calculated per hour
+            Additional Information: Late deductions are calculated per day and overtime is calculated per hour <br>
+            Then all BPJS and taxes are borne by the company
         </p>
     </div>
 </body>
