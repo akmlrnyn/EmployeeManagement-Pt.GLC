@@ -6,7 +6,7 @@
 
       <div class="flex flex-col items-start text-start sm:text-end mt-4">
         <a href="{{ route('permission.create') }}">
-          <p class="text-xs sm:text-sm bg-blue-800 hover:bg-blue-700 shadow-md text-white px-4 py-2 rounded-md  ">Add Permisssion</p>
+          <p class="text-xs sm:text-sm bg-blue-700 hover:bg-blue-600 shadow-md text-white px-4 py-2 rounded-md  ">Add Permisssion</p>
         </a>
       </div>
 

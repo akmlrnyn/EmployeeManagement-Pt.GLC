@@ -10,7 +10,7 @@
 
       <ul class="divide-y divide-gray-200">
         @php($number = 1)
-        @foreach ($leave_request as $item)
+        @foreach ($leave_request->reverse() as $item)
         <li class="flex lg:flex-row flex-col items-center py-4 px-6">
           <span class="text-gray-700 text-base sm:text-lg font-medium mr-4">{{ $number }}</span>
           <img class="w-12 h-12 rounded-full object-cover mr-4" src="{{ url('img/icon_avatar.png') }}" alt="User avatar" />
@@ -24,12 +24,12 @@
             <form action="{{ route('leaverequest.check', $item->id) }}" method="POST">
               @csrf
               @method('PATCH')
-              <button type="submit" class="text-white bg-emerald-600 hover:bg-emerald-600 focus:ring-4 focus:ring-emerald-300 font-medium rounded-lg text-xs sm:text-sm px-5 py-2.5 me-2 mb-2 dark:bg-emerald-500 dark:hover:bg-emerald-600 focus:outline-none dark:focus:ring-blue-800">Accept</button>
+              <button type="submit" class="text-white bg-emerald-500 hover:bg-emerald-600 focus:ring-4 focus:ring-emerald-300 rounded-lg text-xs sm:text-sm px-5 py-2.5 me-2 mb-2 focus:outline-none dark:focus:ring-blue-800">Accept</button>
             </form>
             <form action="{{ route('leaverequest.reject', $item->id) }}" method="POST">
               @csrf
               @method('PATCH')
-              <button type="submit" class="text-white bg-red-600 hover:bg-red-600 focus:ring-4 focus:ring-red-300 font-medium rounded-lg text-xs sm:text-sm px-5 py-2.5 me-2 mb-2 dark:bg-red-500 dark:hover:bg-red-600 focus:outline-none dark:focus:ring-blue-800">Reject</button>
+              <button type="submit" class="text-white bg-red-600 hover:bg-red-600 focus:ring-4 focus:ring-red-300 rounded-lg text-xs sm:text-sm px-5 py-2.5 me-2 mb-2 dark:bg-red-500 dark:hover:bg-red-600 focus:outline-none dark:focus:ring-blue-800">Reject</button>
             </form>
           </div>
         </li>
@@ -45,7 +45,7 @@
 
       <ul class="divide-y divide-gray-200">
         @php($number = 1)
-        @foreach ($accepted_leave_request as $item)
+        @foreach ($accepted_leave_request->reverse() as $item)
         <li class="flex flex-col sm:flex-row items-center py-4 sm:px-6">
           <span class="text-gray-700 text-lg font-medium mr-4">{{ $number }}</span>
           <img class="w-12 h-12 rounded-full object-cover mr-4" src="{{ url('img/icon_avatar.png') }}" alt="User avatar" />
@@ -70,7 +70,7 @@
 
       <ul class="divide-y divide-gray-200">
         @php($number = 1)
-        @foreach ($rejected_leave_request as $item)
+        @foreach ($rejected_leave_request->reverse() as $item)
         <li class="flex items-center py-4 px-6">
           <span class="text-gray-700 text-lg font-medium mr-4">{{ $number }}</span>
           <img class="w-12 h-12 rounded-full object-cover mr-4" src="{{ url('img/icon_avatar.png') }}" alt="User avatar" />

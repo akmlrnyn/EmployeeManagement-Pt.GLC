@@ -11,8 +11,8 @@
             <h5 class="sm:mb-1 text-base sm:text-xl font-normal text-gray-900">{{ $slip->employee->name }}</h5>
             <span class="text-xs sm:text-sm text-gray-500 dark:text-gray-500">{{ $slip->employee->position }}</span>
             <div class="flex mt-4 md:mt-6 gap-3">
-                <a href="{{ route('employees.index') }}" class="inline-flex items-center px-4 py-2 text-xs text-center text-gray-900 bg-white border border-gray-300 rounded hover:bg-gray-100 focus:ring-4 focus:outline-none focus:ring-gray-200 dark:bg-gray-800 dark:text-white dark:border-gray-600 dark:hover:bg-gray-700 dark:hover:border-gray-700 dark:focus:ring-gray-700">Manage Staff</a>
-            <a class="px-2 sm:px-3 py-2 sm:py-2.5 bg-blue-500 rounded text-xs text-white" href="{{route('salary-slips.print_pdf', $slip->id)}}" target="_blank">Print Salary Slip</a>
+                <a href="{{ route('employees.index') }}" class="inline-flex items-center px-4 py-2 text-xs text-center text-gray-900 bg-white border border-gray-300 rounded hover:bg-gray-100 focus:ring-4 focus:outline-none focus:ring-gray-200 dark:bg-gray-800 dark:text-white dark:border-gray-600 dark:hover:bg-gray-700 dark:hover:border-gray-700 dark:focus:ring-gray-700 shadow">Manage Staff</a>
+            <a class="px-2 sm:px-3 py-2 sm:py-2.5 bg-blue-500 rounded text-xs text-white shadow" href="{{route('salary-slips.print_pdf', $slip->id)}}" target="_blank">Print Salary Slip</a>
         </div>
         </div>
         <hr>
@@ -29,7 +29,7 @@
         </div>
         <div>
             <div class="information py-2 px-5">
-                <div class="bg-gray-100 p-2.5 sm:p-3 rounded-lg mb-2">
+                <div class="bg-gray-100 p-2.5 sm:p-3 rounded-lg mb-2 shadow">
                     <h2 class="font-semibold text-base sm:text-xl">Basic Information</h2>
                     <hr>
                     <div class="text-xs sm:text-sm mt-2">Name: {{ $slip->employee->name }}</div>
@@ -38,16 +38,18 @@
                     <div class="text-xs sm:text-sm mt-2">Month: {{ $slip->month }}</div>
                     <div class="text-xs sm:text-sm mt-2">Gross Salary: Rp.{{ number_format($slip->employee->base_salary) }}</div>
                 </div>
-                <div class="bg-yellow-100 p-3 rounded-lg mb-2">
+                <div class="bg-yellow-100 p-3 rounded-lg mb-2 shadow">
                     <h2 class="font-semibold text-base sm:text-xl text-yellow-900">Staff Stats</h2>
                     <hr>
                     <div class="text-xs sm:text-sm mt-2">Total Leave Request: {{ $slip->leave_request }} Day(s)</div>
                     <div class="text-xs sm:text-sm mt-2">Total Late: {{ $slip->late }} hour(s)</div>
                     <div class="text-xs sm:text-sm mt-2">Total Overtime: {{ $slip->overtime }} hour(s)</div>
+                    <div class="text-xs sm:text-sm mt-2">Bonus: Rp.0</div>
+                    <div class="text-xs sm:text-sm mt-2">Deduction: Rp.0</div>
                     <div class="text-xs sm:text-sm mt-2">Tax: Rp.{{ $slip->tax }}</div>
                     <div class="text-xs sm:text-sm mt-2">BPJS: Rp.{{ $slip->bpjs }}</div>
                 </div>
-                <div class="bg-blue-100 p-3 rounded-lg mb-2">
+                <div class="bg-blue-100 p-3 rounded-lg mb-2 shadow">
                     <h2 class="font-semibold text-base sm:text-xl">The Summary</h2>
                     <hr>
                     <div class="text-xs sm:text-sm mt-2">NET Salary: Rp.{{ number_format($slip->salary) }}</div>

@@ -43,6 +43,7 @@ Route::middleware([
 ])->group(function () {
     // Dashboard
     Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard.index');
+    Route::get('ccCache', [DashboardController::class, 'ccCache'])->name('dashboard.ccCache');
 
     // Staffs
     Route::get('/employees', [EmployeesController::class,'index'])->name('employees.index');

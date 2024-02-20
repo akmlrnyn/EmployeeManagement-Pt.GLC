@@ -39,7 +39,7 @@
             border-collapse: collapse;
             width: 500px;
             margin: auto;
-
+            margin-bottom: 1rem;
         }
 
         .header-table,
@@ -93,54 +93,70 @@
 
     <div class="">
         <h2 style="text-align: center; margin-top: 20px;">Salary Slip of {{$slips->month}}</h2>
+        <p style="text-align: center">{{ date('d M Y', strtotime($slips->created_at)) }}</p>
     </div>
 
     <table class="table-slip">
             <tr class="row-table">
-                <th class="header-table">Name</th>
+                <th class="header-table">Information</th>
+                <th class="header-table">Details</th>
+            </tr>
+            <tr>
+                <th class="description-table">Name</th>
                 <td class="description-table">{{$slips->employee->name}}</td>
             </tr>
             <tr>
-                <th class="header-table">Month</th>
+                <th class="description-table">Position</th>
+                <td class="description-table">{{$slips->employee->position}}</td>
+            </tr>
+            <tr>
+                <th class="description-table">Month</th>
                 <td class="description-table">{{$slips->month}}</td>
             </tr>
+    </table>
+    <table class="table-slip">
             <tr>
-                <th class="header-table">Gross Salary</th>
-                <td class="description-table">Rp. {{$slips->employee->base_salary}},00</td>
+                <th class="header-table">Salary Details</th>
+                <th class="header-table">Amount</th>
             </tr>
             <tr>
-                <th class="header-table">Leave Requests</th>
-                <td class="description-table">{{$slips->leave_request}} times</td>
+                <th class="description-table">Gross Salary</th>
+                <td class="description-table">Rp. {{number_format($slips->employee->base_salary)}},00</td>
             </tr>
             <tr>
-                <th class="header-table">Overtime</th>
+                <th class="description-table">Overtime</th>
                 <td class="description-table">{{$slips->overtime}} times</td>
             </tr>
             <tr>
-                <th class="header-table">Late</th>
+                <th class="description-table">Bonus</th>
+                <td class="description-table">Rp. {{number_format($slips->tax)}},00</td>
+            </tr>
+            <tr>
+                <th class="description-table">Late</th>
                 <td class="description-table">{{$slips->late}} times</td>
             </tr>
             <tr>
-                <th class="header-table">Bonus</th>
-                <td class="description-table">Rp. {{$slips->tax}},00</td>
+                <th class="description-table">Deduction</th>
+                <td class="description-table">Rp. {{number_format($slips->tax)}},00</td>
             </tr>
             <tr>
-                <th class="header-table">Deduction</th>
-                <td class="description-table">Rp. {{$slips->tax}},00</td>
+                <th class="description-table">Tax</th>
+                <td class="description-table">Rp. {{number_format($slips->tax)}},00</td>
             </tr>
             <tr>
-                <th class="header-table">Tax</th>
-                <td class="description-table">Rp. {{$slips->tax}},00</td>
+                <th class="description-table">BPJS</th>
+                <td class="description-table">Rp. {{number_format($slips->bpjs)}},00</td>
             </tr>
             <tr>
-                <th class="header-table">BPJS</th>
-                <td class="description-table">Rp. {{$slips->bpjs}},00</td>
-            </tr>
-            <tr>
-                <th class="header-table">Net Salary</th>
-                <td class="description-table">Rp. {{$slips->salary}},00</td>
+                <th class="description-table">Net Salary</th>
+                <td class="description-table">Rp. {{number_format($slips->salary)}},00</td>
             </tr>
     </table>
+    <div class="">
+        <p>
+            Additional Information: Late deductions are calculated per day and overtime is calculated per hour
+        </p>
+    </div>
 </body>
 
 </html>

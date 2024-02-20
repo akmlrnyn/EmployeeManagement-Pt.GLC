@@ -3,8 +3,8 @@
         <h2 class="text-gray-700 text-2xl sm:text-3xl font-bold">All Salary Slips </h2>
         <p>Belongs to the staff</p>
 
-        <div class="my-5 w-full bg-white border border-gray-200 rounded-lg shadow-lg p-8 bg-gray-800 border-gray-100">
-            <div class="flex flex-col sm:flex-row items-center justify-between mb-4">
+        <div class="my-5 w-full bg-white border border-gray-200 rounded-lg shadow-lg p-8 border-gray-100">
+            <div class="flex flex-col sm:flex-row items-center justify-between pb-4 border-b-2">
                 <h5 class="text-lg sm:text-xl font-bold leading-none text-gray-900 ">Staff Salaries</h5>
                 <a href="{{ route('salary-slips.create') }}" class="mt-1 sm:mt-0 text-xs sm:text-sm font-medium text-blue-600 hover:underline dark:text-blue-500">
                     Create New Salary Slip +

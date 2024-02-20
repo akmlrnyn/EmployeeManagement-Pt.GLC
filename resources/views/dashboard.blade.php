@@ -14,18 +14,19 @@
           </div>
           <div>
             <p
-              class="text-xs sm:text-sm text-gray-700 bg-gray-200 rounded-md px-3 py-1 mt-4"
+              class="text-xs sm:text-sm text-gray-700 bg-gray-200 rounded-md px-3 py-1 mt-4 shadow"
             >
               Administrator
             </p>
           </div>
         </div>
+        {{-- Dasboard --}}
         <div
           class="dashboard content mt-5 flex flex-col md:flex-row justify-start gap-4"
         >
           <div class="flex w-full flex-col gap-3">
             <div
-              class="card w-auto md:w-auto h-fit bg-white p-4 rounded-lg border-b-4 shadow-sm"
+              class="card w-auto md:w-auto h-fit bg-white p-4 rounded-lg shadow-md"
             >
               <h2 class="text-base md:text-xl font-semibold">
                 Employees in PT.GLC Indonesia
@@ -35,7 +36,7 @@
                   Positions & Jobs
                 </h3>
                 <p class="text-xs text-gray-500 border-l-2 p-2">
-                  {{ $total_employee }} Employees Now
+                  {{ $total_employee }} Workers Now
                 </p>
               </div>
               <div class="mt-4">
@@ -47,7 +48,7 @@
                 <div class="flex flex-col sm:flex-row gap-1 sm:gap-3">
                 <a href="{{ route('employees.index') }}">
                   <button
-                    class="btn bg-red-600 hover:bg-red-700 flex items-center gap-2 text-white px-4 py-2 rounded-md mt-4 text-xs sm:text-sm"
+                    class="btn bg-red-600 hover:bg-red-800 flex items-center gap-2 text-white px-4 py-2 rounded-md mt-4 text-xs sm:text-sm transition-all ease-in-out"
                   >
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
@@ -65,7 +66,7 @@
                 </a>
                 <a href="{{ route('employees.create') }}">
                   <button
-                    class="btn bg-blue-600 hover:bg-blue-700 flex items-center gap-2 text-white px-4 py-2 rounded-md sm:mt-4 text-xs sm:text-sm"
+                    class="btn bg-blue-600 hover:bg-blue-700 flex items-center gap-2 text-white px-4 py-2 rounded-md sm:mt-4 text-xs sm:text-sm transition-all ease-in-out"
                   >
                     + Recruit New
                   </button>
@@ -138,18 +139,37 @@
                   </div>
                 </div>
               </div>
+              <!-- Tile 3 -->
+              <div class="flex items-center p-4 bg-white rounded shadow-md">
+                <div
+                  class="flex flex-shrink-0 items-center justify-center bg-gray-100 h-12 w-12 sm:h-16 sm:w-16 rounded"
+                >
+                  <svg xmlns="http://www.w3.org/2000/svg" class="w-3 sm:w-6" viewBox="0 0 512 512"><!--!Font Awesome Free 6.5.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.--><path fill="#63E6BE" d="M105.1 202.6c7.7-21.8 20.2-42.3 37.8-59.8c62.5-62.5 163.8-62.5 226.3 0L386.3 160H352c-17.7 0-32 14.3-32 32s14.3 32 32 32H463.5c0 0 0 0 0 0h.4c17.7 0 32-14.3 32-32V80c0-17.7-14.3-32-32-32s-32 14.3-32 32v35.2L414.4 97.6c-87.5-87.5-229.3-87.5-316.8 0C73.2 122 55.6 150.7 44.8 181.4c-5.9 16.7 2.9 34.9 19.5 40.8s34.9-2.9 40.8-19.5zM39 289.3c-5 1.5-9.8 4.2-13.7 8.2c-4 4-6.7 8.8-8.1 14c-.3 1.2-.6 2.5-.8 3.8c-.3 1.7-.4 3.4-.4 5.1V432c0 17.7 14.3 32 32 32s32-14.3 32-32V396.9l17.6 17.5 0 0c87.5 87.4 229.3 87.4 316.7 0c24.4-24.4 42.1-53.1 52.9-83.7c5.9-16.7-2.9-34.9-19.5-40.8s-34.9 2.9-40.8 19.5c-7.7 21.8-20.2 42.3-37.8 59.8c-62.5 62.5-163.8 62.5-226.3 0l-.1-.1L125.6 352H160c17.7 0 32-14.3 32-32s-14.3-32-32-32H48.4c-1.6 0-3.2 .1-4.8 .3s-3.1 .5-4.6 1z"/></svg>
+                </div>
+                <div class="flex-grow flex flex-col ml-4">
+                  <span class="text-xs sm:text-base font-bold">Refresh app cache</span>
+                  <div class="flex items-center justify-between">
+                    <span class="text-xs sm:text-base text-gray-500 text-sm"
+                      >With One Click</span
+                    >
+                    <span class="text-emerald-600 text-xs sm:text-sm font-semibold ml-2"
+                      ><a href="{{ route('dashboard.ccCache') }}">Refresh</a></span
+                    >
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
           <div class="flex flex-col w-full gap-y-3">
           <!-- Leave Request Section -->
           <div class="card w-full bg-white p-4 rounded-lg border-b-1 shadow-md">
-            <h2 class="text-base sm:text-xl font-semibold mb-2">
+            <h2 class="text-base sm:text-xl font-semibold mb-1">
               Staff's Leave Request
             </h2>
-            <h5 class="text-sm sm:text-base text-gray-600 font-normal">Pending Request Permission({{ $total_pending_request_new }})</h5>
+            <h5 class="text-sm sm:text-base text-gray-600 font-light">Pending Request Permission({{ $total_pending_request_new }})</h5>
             <div class="mt-4">
               <ul role="list" class="divide-y divide-gray-100">
-                @foreach ($pending_request_new as $item)
+                @foreach ($pending_request_new->reverse() as $item)
                 <li class="flex flex-col sm:flex-row justify-between gap-x-6 py-5">
                   <div class="flex min-w-0 gap-x-4">
                     <img
@@ -191,13 +211,13 @@
           </div>
           {{-- Permission section --}}
           <div class="card w-full bg-white p-4 rounded-lg border-b-1 shadow-md">
-            <h2 class="text-base sm:text-xl font-semibold mb-2">
+            <h2 class="text-base sm:text-xl font-semibold mb-1">
               Staff's Permits
             </h2>
-            <h5 class="text-sm sm:text-base text-gray-600 font-normal">Pending Permission({{ $total_permission_new }})</h5>
+            <h5 class="text-sm sm:text-base text-gray-600 font-light">Pending Permission({{ $total_permission_new }})</h5>
             <div class="mt-4">
               <ul role="list" class="divide-y divide-gray-100">
-                @foreach ($permission_new as $item)
+                @foreach ($permission_new->reverse() as $item)
                 <li class="flex flex-col sm:flex-row justify-between gap-x-6 py-5">
                   <div class="flex min-w-0 gap-x-4">
                     <img
@@ -231,7 +251,7 @@
               <hr />
               <a
                 href="{{ route('leaverequest.index') }}"
-                class="text-sm sm:text-base text-blue-700 p-1 text-center"
+                class="text-sm sm:text-base text-violet-700 p-1 text-center"
               >
                 <p>See all permissions ></p>
               </a>
