@@ -48,6 +48,9 @@
                     <div class="text-xs sm:text-sm mt-2">Deduction: Rp.0</div>
                     <div class="text-xs sm:text-sm mt-2">Tax: Rp.{{ $slip->tax }}</div>
                     <div class="text-xs sm:text-sm mt-2">BPJS: Rp.{{ $slip->bpjs }}</div>
+                    <div class="text-xs sm:text-sm mt-2">Salary Bonus: Rp.{{ $slip->bonus }}</div>
+                    <div class="text-xs sm:text-sm mt-2">Salary Deduction: Rp.{{ $slip->deduction }}</div>
+                    <div class="text-xs sm:text-sm mt-2">Bonus and Deduction Info: {{ $slip->information }}</div>
                 </div>
                 <div class="bg-blue-100 p-3 rounded-lg mb-2 shadow">
                     <h2 class="font-semibold text-base sm:text-xl">The Summary</h2>

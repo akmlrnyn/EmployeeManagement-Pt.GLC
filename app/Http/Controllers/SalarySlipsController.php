@@ -31,8 +31,8 @@ class SalarySlipsController extends Controller
         $gaji_bersih = $request['salary'] 
         - $total_potongan_terlambat 
         + $total_bonus_overtime 
-        - $request['tax'] 
-        - $request['bpjs'];
+        - $request['deduction'] 
+        + $request['bonus'];
 
 
         $data['salary'] = $gaji_bersih;
@@ -50,18 +50,21 @@ class SalarySlipsController extends Controller
 
     public function create() {
         $staffs = Employee::all();
+
         return view('pages.salary-slips.create', compact('staffs'));
     }
 
     public function create_form($id) {
         $currentMonth = Carbon::now()->format('F');
         $staff = Employee::findOrFail($id);
+
         return view('pages.salary-slips.create-form', compact('staff', 'currentMonth'));
     }
 
     public function print_pdf($id) {
         $slips = SalarySlip::find($id);
         $pdf = FacadePdf::loadView('pages.salary-slips.salary-pdf', ['slips' => $slips]);
+        
         return $pdf->download($slips->employee->name.'_'.$slips->month. '.pdf');
     }
 }

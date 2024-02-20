@@ -148,6 +148,22 @@
                 <td class="description-table">Rp. {{number_format($slips->bpjs)}},00</td>
             </tr>
             <tr>
+                <th class="header-table">Salary Bonus</th>
+                <td class="description-table">Rp. {{$slips->bonus}},00</td>
+            </tr>
+            <tr>
+                <th class="header-table">Salary Deduction</th>
+                <td class="description-table">Rp. {{$slips->deduction}},00</td>
+            </tr>
+            <tr>
+                <th class="header-table">Salary Bonus</th>
+                <td class="description-table">Rp. {{$slips->bonus}},00</td>
+            </tr>
+            <tr>
+                <th class="header-table">Salary Deduction</th>
+                <td class="description-table">Rp. {{$slips->deduction}},00</td>
+            </tr>
+            <tr>
                 <th class="description-table">Net Salary</th>
                 <td class="description-table">Rp. {{number_format($slips->salary)}},00</td>
             </tr>

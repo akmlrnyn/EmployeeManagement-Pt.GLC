@@ -75,7 +75,7 @@ Route::middleware([
 
     // permission
     Route::get('/permissions', [PermissionController::class, 'index'])->name('permission.index');
-    Route::get('permissoin/create', [PermissionController::class, 'create'])->name('permission.create');
+    Route::get('permission/create', [PermissionController::class, 'create'])->name('permission.create');
     Route::get('/permission/create/{id}', [PermissionController::class, 'create_form'])->name('permission.create_form');
     Route::post('/permission/{id}', [PermissionController::class, 'store'])->name('permission.store');
     Route::patch('/permission/check/{id}', [PermissionController::class, 'check'])->name('permission.check');
