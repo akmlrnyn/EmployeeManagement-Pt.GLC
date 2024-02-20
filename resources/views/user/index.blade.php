@@ -3,7 +3,7 @@
         <div>
             <div class="bg-white relative shadow-lg rounded-lg w-5/6 md:w-5/6 lg:w-4/6 xl:w-3/6 mx-auto">
                 <div class="flex justify-center">
-                    <img src="{{ url('img/logo_company.png') }}" alt="" class="rounded-full mx-auto absolute -top-20 w-32 h-32 shadow-md border-4 border-white" />
+                    <img src="{{ url('img/icon_avatar.png') }}" alt="" class="rounded-full mx-auto absolute -top-5 sm:-top-20 w-16 sm:w-32 h-16 sm:h-32 shadow-md border-4 border-white" />
                 </div>
                 @if (Auth::user()->id)
                     @php
@@ -14,56 +14,56 @@
                     @if ($employee)
                         @if (Auth::user()->roles == 'user')
                         <div class="mt-16">
-                            <h1 class="font-bold text-center text-lg lg:text-3xl text-gray-900">{{ $user->employee->name }}</h1>
-                            <p class="text-center text-sm text-gray-400 font-medium mt-2">{{ $user->employee->position }}</p>
+                            <h1 class="font-bold text-center text-base lg:text-2xl text-gray-900">{{ $user->employee->name }}</h1>
+                            <p class="text-center text-xs sm:text-sm text-gray-400 font-normal mt-2">{{ $user->employee->position }}</p>
                             <p><span></span></p>
 
-                            <div class="flex justify-between items-center my-5 px-6">
-                                <p class="text-gray-500 rounded transition duration-150 ease-in font-medium text-sm text-center w-full py-3">All Details</p>
-                                <a href="{{ route('profile.leave_request') }}" class="text-gray-500 hover:text-gray-900 hover:bg-blue-100 rounded transition duration-150 ease-in font-medium text-sm text-center w-full py-3">Ask Leave Requests</a>
-                                <a href="{{ route('profile.salary_slip') }}" class="text-gray-500 hover:text-gray-900 hover:bg-blue-100 rounded transition duration-150 ease-in font-medium text-sm text-center w-full py-3">My Salary Slips</a>
-                                <a href="{{ route('profile.permission') }}" class="text-gray-500 hover:text-gray-900 hover:bg-blue-100 rounded transition duration-150 ease-in font-medium text-sm text-center w-full py-3">Ask Permission</a>
+                            <div class="flex flex-wrap justify-between items-center my-5 px-6">
+                                <p class="text-gray-500 rounded transition duration-150 ease-in font-medium text-xs sm:text-sm text-center w-1/2 sm:w-1/4 py-3">All Details</p>
+                                <a href="{{ route('profile.leave_request') }}" class="text-gray-500 hover:text-gray-900 hover:bg-blue-100 rounded transition duration-150 ease-in font-medium text-xs sm:text-sm text-center w-1/2 sm:w-1/4 py-3">Ask Leave Requests</a>
+                                <a href="{{ route('profile.salary_slip') }}" class="text-gray-500 hover:text-gray-900 hover:bg-blue-100 rounded transition duration-150 ease-in font-medium text-xs sm:text-sm text-center w-1/2 sm:w-1/4 py-3">My Salary Slips</a>
+                                <a href="{{ route('profile.permission') }}" class="text-gray-500 hover:text-gray-900 hover:bg-blue-100 rounded transition duration-150 ease-in font-medium text-xs sm:text-sm text-center w-1/2 sm:w-1/4 py-3">Ask Permission</a>
                             </div>
 
                             <div class="w-full">
-                                <h3 class="font-medium text-gray-900 text-left px-6">Employee Detail</h3>
-                                <div class="mt-5 w-full flex flex-col items-center overflow-hidden text-sm">
-                                    <a href="#" class="w-full border-t font-semibold border-gray-100 text-gray-700 py-4 pl-6 pr-3 w-full block hover:bg-gray-100 transition duration-150">
+                                <h3 class="text-sm sm:text-lg font-medium text-gray-900 text-left px-6">Employee Detail</h3>
+                                <div class="mt-5 w-full flex flex-col items-center overflow-hidden text-xs sm:text-sm">
+                                    <p class="w-full border-t font-semibold border-gray-100 text-gray-700 py-4 pl-6 pr-3 w-full block hover:bg-gray-100 transition duration-150">
                                         <img src="{{ url('img/logo_company.png') }}" alt="" class="rounded-full h-6 shadow-md inline-block mr-2" />
                                         Email
                                         <span class="text-gray-500 text-xs">{{ $user->email }}</span>
-                                    </a>
+                                    </p>
 
-                                    <a href="#" class="w-full border-t font-semibold border-gray-100 text-gray-700 py-4 pl-6 pr-3 w-full block hover:bg-gray-100 transition duration-150">
+                                    <p class="w-full border-t font-semibold border-gray-100 text-gray-700 py-4 pl-6 pr-3 w-full block hover:bg-gray-100 transition duration-150">
                                         <img src="{{ url('img/logo_company.png') }}" alt="" class="rounded-full h-6 shadow-md inline-block mr-2" />
                                         Phone
                                         <span class="text-gray-500 text-xs">{{ $user->employee->phone }}</span>
-                                    </a>
+                                    </p>
 
-                                    <a href="#" class="w-full border-t font-semibold border-gray-100 text-gray-700 py-4 pl-6 pr-3 w-full block hover:bg-gray-100 transition duration-150">
+                                    <p class="w-full border-t font-semibold border-gray-100 text-gray-700 py-4 pl-6 pr-3 w-full block hover:bg-gray-100 transition duration-150">
                                         <img src="{{ url('img/logo_company.png') }}" alt="" class="rounded-full h-6 shadow-md inline-block mr-2" />
                                         Position
                                         <span class="text-gray-500 text-xs">{{ $user->employee->position }}</span>
-                                    </a>
+                                    </p>
 
-                                    <a href="#" class="w-full border-t font-semibold border-gray-100 text-gray-700 py-4 pl-6 pr-3 w-full block hover:bg-gray-100 transition duration-150">
+                                    <p class="w-full border-t font-semibold border-gray-100 text-gray-700 py-4 pl-6 pr-3 w-full block hover:bg-gray-100 transition duration-150">
                                         <img src="{{ url('img/logo_company.png') }}" alt="" class="rounded-full h-6 shadow-md inline-block mr-2" />
                                         Your Salary
                                         <span class="text-gray-500 text-xs">Rp. {{ number_format($user->employee->base_salary) }}</span>
-                                    </a>
+                                    </p>
 
-                                    <a href="#" class="w-full border-t font-semibold border-gray-100 text-gray-700 py-4 pl-6 pr-3 w-full block hover:bg-gray-100 transition duration-150">
+                                    <p class="w-full border-t font-semibold border-gray-100 text-gray-700 py-4 pl-6 pr-3 w-full block hover:bg-gray-100 transition duration-150">
                                         <img src="{{ url('img/logo_company.png') }}" alt="" class="rounded-full h-6 shadow-md inline-block mr-2" />
                                         Current QPA Score
                                         <span class="text-gray-500 text-xs">{{ $user->employee->qpa }}</span>
-                                    </a>
+                                    </p>
 
                                     <a href="#" class="w-full border-t font-semibold border-gray-100 text-gray-700 py-4 pl-6 pr-3 w-full block hover:bg-gray-100 transition duration-150 overflow-hidden">
                                         <img src="{{ url('img/logo_company.png') }}" alt="" class="rounded-full h-6 shadow-md inline-block mr-2" />
                                         Leave Requests Left
                                         <span class="text-gray-500 text-xs">{{ $user->employee->leave_request_left }}</span>
-                                        <a href="{{ route('profile.leave_requests.show') }}" class="text-sm text-blue-600 my-2">See all my leave requests</a>
-                                        <a href="{{ route('profile.permission.show') }}" class="text-sm text-blue-600 my-2">See all my permissions</a>
+                                        <a href="{{ route('profile.leave_requests.show') }}" class="text-xs sm:text-sm text-blue-600 my-2">See all my leave requests</a>
+                                        <a href="{{ route('profile.permission.show') }}" class="text-xs sm:text-sm text-blue-600 my-2">See all my permissions</a>
                                     </a>
                                 </div>
                             </div>

@@ -65,6 +65,6 @@ class SalarySlipsController extends Controller
         $slips = SalarySlip::find($id);
         $pdf = FacadePdf::loadView('pages.salary-slips.salary-pdf', ['slips' => $slips]);
         
-        return $pdf->stream($slips->employee->name.'_'.$slips->month. '.pdf');
+        return $pdf->download($slips->employee->name.'_'.$slips->month. '.pdf');
     }
 }
