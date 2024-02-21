@@ -35,6 +35,8 @@ Route::get('employeedetails/leave-requests', [ProfileController::class, 'leave_r
 Route::get('/employeedetails/permission', [ProfileController::class, 'permission'])->name('profile.permission');
 Route::post('/employeedetails/permission/create', [ProfileController::class, 'permission_create'])->name('profile.permission.create');
 Route::get('/employeedetails/permission/show', [ProfileController::class, 'permission_show'])->name('profile.permission.show');
+// print pdf salary
+Route::get('/salary-slips/print/{id}', [SalarySlipsController::class, 'print_pdf'])->name('salary-slips.print_pdf');
 
 Route::middleware([
     'auth:sanctum','is_admin',
@@ -59,7 +61,6 @@ Route::middleware([
     Route::get('/salary-slips/create', [SalarySlipsController::class, 'create'])->name('salary-slips.create');
     Route::get('/salary-slips/create/{id}', [SalarySlipsController::class, 'create_form'])->name('salary-slips.create_form');
     Route::post('/salary-slips', [SalarySlipsController::class, 'store'])->name('salary-slips.store');
-    Route::get('/salary-slips/print/{id}', [SalarySlipsController::class, 'print_pdf'])->name('salary-slips.print_pdf');
     Route::get('/salary-slips/{id}', [SalarySlipsController::class, 'show'])->name('salary-slips.show');
 
     // PotonganBonus Route

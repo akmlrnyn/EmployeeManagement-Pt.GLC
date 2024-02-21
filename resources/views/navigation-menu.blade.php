@@ -156,19 +156,19 @@
     @if (Auth::user()->roles == 'admin')
 
         <div class="pt-2 pb-3 space-y-1">
-            <x-responsive-nav-link href="{{ route('dashboard.index') }}" :active="request()->routeIs('dashboard.index')">
+            <x-responsive-nav-link href="{{ route('dashboard.index') }}" :active="request()->routeIs('dashboard.index')" class="text-xs">
                 {{ __('Dashboard') }}
             </x-responsive-nav-link>
-            <x-responsive-nav-link href="{{ route('employees.index') }}" :active="request()->routeIs('employees.index')">
+            <x-responsive-nav-link href="{{ route('employees.index') }}" :active="request()->routeIs('employees.index')" class="text-xs">
                 {{ __('Employees') }}
             </x-responsive-nav-link>
-            <x-responsive-nav-link href="{{ route('leaverequest.index') }}" :active="request()->routeIs('leaverequest.index')">
+            <x-responsive-nav-link href="{{ route('leaverequest.index') }}" :active="request()->routeIs('leaverequest.index')" class="text-xs">
                 {{ __('Leave Request') }}
             </x-responsive-nav-link>
-            <x-responsive-nav-link href="{{ route('permission.index') }}" :active="request()->routeIs('permission.index')">
+            <x-responsive-nav-link href="{{ route('permission.index') }}" :active="request()->routeIs('permission.index')" class="text-xs">
                 {{ __('Permission') }}
             </x-responsive-nav-link>
-            <x-responsive-nav-link href="{{ route('salary-slips.index') }}" :active="request()->routeIs('salary-slips.index')">
+            <x-responsive-nav-link href="{{ route('salary-slips.index') }}" :active="request()->routeIs('salary-slips.index')" class="text-xs">
                 {{ __('Salary Slips') }}
             </x-responsive-nav-link>
         </div>
@@ -184,14 +184,14 @@
                 @endif
 
                 <div>
-                    <div class="font-medium text-base text-gray-800">{{ Auth::user()->name }}</div>
-                    <div class="font-medium text-sm text-gray-500">{{ Auth::user()->email }}</div>
+                    <div class="font-medium text-xs text-gray-800">{{ Auth::user()->name }}</div>
+                    <div class="font-medium text-xs text-gray-500">{{ Auth::user()->email }}</div>
                 </div>
             </div>
 
-            <div class="mt-3 space-y-1">
+            <div class="mt-3 space-y-1 text-xs">
                 <!-- Account Management -->
-                <x-responsive-nav-link href="{{ route('profile.show') }}" :active="request()->routeIs('profile.show')">
+                <x-responsive-nav-link href="{{ route('profile.show') }}" :active="request()->routeIs('profile.show')" class="text-xs">
                     {{ __('Profile') }}
                 </x-responsive-nav-link>
 
@@ -206,7 +206,7 @@
                     @csrf
 
                     <x-responsive-nav-link href="{{ route('logout') }}"
-                                   @click.prevent="$root.submit();">
+                                   @click.prevent="$root.submit();" class="text-xs">
                         {{ __('Log Out') }}
                     </x-responsive-nav-link>
                 </form>

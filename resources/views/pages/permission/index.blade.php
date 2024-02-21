@@ -18,7 +18,7 @@
       <ul class="divide-y divide-gray-200">
         @php($number = 1)
         @foreach ($permission as $item)
-        <li class="flex lg:flex-row flex-col items-center py-4 px-6">
+        <li class="flex sm:flex-row flex-col items-center py-4 px-6">
           <span class="text-gray-700 text-base sm:text-lg font-medium mr-4">{{ $number }}</span>
           <img class="w-12 h-12 rounded-full object-cover mr-4" src="{{ url('img/icon_avatar.png') }}" alt="User avatar" />
           <div class="flex-1">
