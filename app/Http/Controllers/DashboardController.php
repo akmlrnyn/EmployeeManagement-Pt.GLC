@@ -24,4 +24,8 @@ class DashboardController extends Controller
         Artisan::call('cache:clear');
         return redirect()->back()->withSuccess('Cache Cleared!');
     }
+
+    public function qpa() {
+        return view('pages.qpa.index');
+    }
 }

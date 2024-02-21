@@ -47,6 +47,9 @@ Route::middleware([
     Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard.index');
     Route::get('ccCache', [DashboardController::class, 'ccCache'])->name('dashboard.ccCache');
 
+    // QPA
+    Route::get('/qpa', [DashboardController::class, 'qpa'])->name('qpa.index');
+
     // Staffs
     Route::get('/employees', [EmployeesController::class,'index'])->name('employees.index');
     Route::get('/employees/create', [EmployeesController::class, 'create'])->name('employees.create');

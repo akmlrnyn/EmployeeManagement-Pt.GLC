@@ -19,6 +19,9 @@
                     <x-nav-link href="{{ route('employees.index') }}" :active="request()->routeIs('employees.index')">
                         {{ __('Employees') }}
                     </x-nav-link>
+                    <x-nav-link href="{{ route('qpa.index') }}" :active="request()->routeIs('qpa.index')">
+                        {{ __('QPA') }}
+                    </x-nav-link>
                     <x-nav-link href="{{ route('leaverequest.index') }}" :active="request()->routeIs('leaverequest.index')">
                         {{ __('Leave Requests') }}
                     </x-nav-link>
@@ -161,6 +164,9 @@
             </x-responsive-nav-link>
             <x-responsive-nav-link href="{{ route('employees.index') }}" :active="request()->routeIs('employees.index')" class="text-xs">
                 {{ __('Employees') }}
+            </x-responsive-nav-link>
+            <x-responsive-nav-link href="{{ route('qpa.index') }}" :active="request()->routeIs('qpa.index')" class="text-xs">
+                {{ __('QPA') }}
             </x-responsive-nav-link>
             <x-responsive-nav-link href="{{ route('leaverequest.index') }}" :active="request()->routeIs('leaverequest.index')" class="text-xs">
                 {{ __('Leave Request') }}

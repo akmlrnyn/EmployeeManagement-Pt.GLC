@@ -7,7 +7,7 @@
           class="dashboard-title mb-5 md:pb-4 flex flex-col items-start md:flex-row md:items-center md:justify-between"
         >
           <div>
-            <h1 class="text-3xl sm:text-4xl font-bold">Welcome, <span class="text-2xl sm:text-3xl">{{ Auth::user()->name }}</span></h1>
+            <h1 class="text-gray-700 text-3xl sm:text-4xl font-bold">Welcome, <span class="text-2xl sm:text-3xl">{{ Auth::user()->name }}</span></h1>
             <p class="text-sm sm:text-base text-gray-700">
               Welcome to the PT GLC Indonesia Employees Dashboard
             </p>
@@ -114,8 +114,8 @@
                     <span class="text-xs sm:text-base text-gray-500 text-sm"
                       >Staff Performance</span
                     >
-                    <span class="text-purple-500 text-xs sm:text-sm font-semibold ml-2"
-                      >See more...</span
+                    <a href="{{ route('qpa.index') }}" class="text-purple-500 text-xs sm:text-sm font-semibold ml-2"
+                      >See more...</a
                     >
                   </div>
                 </div>
