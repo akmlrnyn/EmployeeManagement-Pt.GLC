@@ -7,6 +7,7 @@ use App\Models\Employee;
 use App\Models\PotonganBonus;
 use App\Models\SalarySlip;
 use Barryvdh\DomPDF\Facade\Pdf as FacadePdf;
+use DateTime;
 use Illuminate\Http\Request;
 use Illuminate\Support\Carbon;
 
@@ -44,8 +45,10 @@ class SalarySlipsController extends Controller
 
     public function show($id) {
         $slip = SalarySlip::find($id);
+        $now = new DateTime();
+        $currentMonth = $now->format('F');
 
-        return view('pages.salary-slips.show', compact('slip'));
+        return view('pages.salary-slips.show', compact('slip', 'currentMonth'));
     }
 
     public function create() {
