@@ -29,7 +29,7 @@
                         {{ __('Permission') }}
                     </x-nav-link>
                     <x-nav-link href="{{ route('salary-slips.index') }}" :active="request()->routeIs('salary-slips.index')">
-                        {{ __('Salary Slips') }}
+                        {{ __('Salary') }}
                     </x-nav-link>
                 </div>
                 @endif
@@ -175,7 +175,7 @@
                 {{ __('Permission') }}
             </x-responsive-nav-link>
             <x-responsive-nav-link href="{{ route('salary-slips.index') }}" :active="request()->routeIs('salary-slips.index')" class="text-xs">
-                {{ __('Salary Slips') }}
+                {{ __('Salary') }}
             </x-responsive-nav-link>
         </div>
         @endif

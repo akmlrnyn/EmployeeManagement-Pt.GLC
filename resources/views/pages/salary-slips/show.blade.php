@@ -17,12 +17,12 @@
                 src="{{ url('img/icon_avatar.png') }}" alt="Bonnie image" />
             <h5 class="sm:mb-1 text-base sm:text-xl font-normal text-gray-900">{{ $slip->employee->name }}</h5>
             <span class="text-xs sm:text-sm text-gray-500 dark:text-gray-500">{{ $slip->employee->position }}</span>
-            <div class="flex mt-4 md:mt-6 gap-3">
+            <div class="flex flex-col sm:flex-row mt-4 md:mt-6 gap-3">
                 <a href="{{ route('employees.index') }}"
-                    class="inline-flex items-center px-4 py-2 text-xs text-center text-gray-900 bg-white border border-gray-300 rounded hover:bg-gray-100 focus:ring-4 focus:outline-none focus:ring-gray-200 dark:bg-gray-800 dark:text-white dark:border-gray-600 dark:hover:bg-gray-700 dark:hover:border-gray-700 dark:focus:ring-gray-700 shadow">Manage
+                    class="px-4 py-2 text-xs text-center text-gray-900 border border-gray-300 rounded focus:ring-4 focus:outline-none focus:ring-gray-200 dark:bg-gray-800 dark:text-white dark:border-gray-600 dark:hover:bg-gray-700 dark:hover:border-gray-700 dark:focus:ring-gray-700 shadow">Manage
                     Staff</a>
                 @if($currentMonth === $slip->month)
-                <a class="px-2 sm:px-3 py-2 sm:py-2.5 bg-blue-500 rounded text-xs text-white shadow"
+                <a class="px-2 sm:px-3 py-2 sm:py-2.5 bg-blue-500 rounded text-center text-xs text-white shadow"
                     href="{{route('salary-slips.print_pdf', $slip->id)}}" target="_blank">Print Salary Slip</a>
                 @endif
             </div>
