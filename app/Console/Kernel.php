@@ -2,6 +2,8 @@
 
 namespace App\Console;
 
+use App\Console\Commands\ResetQpa;
+use App\Models\Employee;
 use Illuminate\Console\Scheduling\Schedule;
 use Illuminate\Foundation\Console\Kernel as ConsoleKernel;
 
@@ -12,7 +14,8 @@ class Kernel extends ConsoleKernel
      */
     protected function schedule(Schedule $schedule): void
     {
-         $schedule->command('app:send-emails')->monthlyOn('25', '00:00');
+        $schedule->command(ResetQpa::class)->monthlyOn(25, '00:00');
+
     }
 
     /**
