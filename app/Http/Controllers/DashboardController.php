@@ -29,16 +29,23 @@ class DashboardController extends Controller
         $staffs = Employee::all();
         $total_staff = $staffs->count();
 
+        if ($total_staff === 0) {
+            return view('pages.qpa.index', compact('staffs', 'total_staff'));
+        } else {
+        
         // devide grade
         $great_grades = Employee::where('qpa', '>=', 90)->count();
         $bad_grades = Employee::where('qpa', '<', 70)->count();
+
+        //average
         $average = (($staffs->sum('qpa')) / $total_staff);
 
-        // percentage
+        //percentage
         $percentage_great = ($great_grades / $total_staff) * 100;
         $percentage_bad = ($bad_grades / $total_staff) * 100;
 
-        
+        }
+
         return view('pages.qpa.index', compact('staffs', 'total_staff', 'great_grades', 'bad_grades', 'percentage_great', 'percentage_bad', 'average'));
     }
 }
