@@ -37,6 +37,9 @@
             <a href="{{ route('employee.edit', $item->id) }}" type="button" class="text-white bg-gray-700 hover:bg-gray-800 focus:ring-4 focus:ring-gray-300 sm:font-medium rounded sm:rounded-lg text-xs px-3 sm:px-5 py-1 sm:py-2.5 mb-2 dark:bg-gray-600 dark:hover:bg-gray-700 focus:outline-none dark:focus:ring-gray-800">Edit</a>
           </div>
           {{-- modal for delete --}}
+        <form action="{{ route('employee.destroy', $item->id) }}" method="post">
+          @method('DELETE')
+          @csrf
           <div id="delete-modal" tabindex="1" class="hidden overflow-y-auto overflow-x-hidden fixed top-0 right-0 left-0 z-50 justify-center items-center w-full md:inset-0 h-[calc(100%-1rem)] max-h-full">
             <div class="relative p-4 w-full max-w-md max-h-full">
               <div class="relative bg-white rounded-lg shadow ">
