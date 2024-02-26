@@ -45,4 +45,14 @@ class Employee extends Model
         return $this->hasMany(LeaveRequest::class, 'employee_id', 'id');
     }
 
+    /**
+     * Get all of the permission for the Employee
+     *
+     * @return \Illuminate\Database\Eloquent\Relations\HasMany
+     */
+    public function permission(): HasMany
+    {
+        return $this->hasMany(Permission::class, 'employee_id', 'id');
+    }
+
 }

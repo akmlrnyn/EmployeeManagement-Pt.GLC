@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 
 use App\Models\Employee;
+use App\Models\Permission;
 use App\Models\PotonganBonus;
 use App\Models\SalarySlip;
 use Barryvdh\DomPDF\Facade\Pdf as FacadePdf;
@@ -66,8 +67,10 @@ class SalarySlipsController extends Controller
 
     public function print_pdf($id) {
         $slips = SalarySlip::find($id);
-        $pdf = FacadePdf::loadView('pages.salary-slips.salary-pdf', ['slips' => $slips]);
+        $currentMonth = Carbon::now()->format('F');
+        $staff_permit = Permission::where([['employee_id', $slips->employee->id], ['month', $currentMonth], ['status', 'accepted']])->count();
+        $pdf = FacadePdf::loadView('pages.salary-slips.salary-pdf', ['slips' => $slips, 'staff_permit' => $staff_permit]);
         
-        return $pdf->download($slips->employee->name.'_'.$slips->month. '.pdf');
+        return $pdf->stream($slips->employee->name.'_'.$slips->month. '.pdf');
     }
 }
