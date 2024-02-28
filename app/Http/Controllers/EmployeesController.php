@@ -20,6 +20,15 @@ class EmployeesController extends Controller
     }
 
     public function store(Request $request) {
+
+        $request->validate([
+            'user_id' => 'required|unique:employees,user_id',
+            'name' => 'required|unique:employees,name',
+            'phone' => 'required|integer',
+            'position' => 'required',
+            'base_salary' => 'required|integer',
+        ]);
+
         $input = $request->all();   
         Employee::create($input);
         return redirect()->route('employees.index');
