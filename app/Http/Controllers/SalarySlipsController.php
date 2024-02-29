@@ -71,6 +71,6 @@ class SalarySlipsController extends Controller
         $staff_permit = Permission::where([['employee_id', $slips->employee->id], ['month', $currentMonth], ['status', 'accepted']])->count();
         $pdf = FacadePdf::loadView('pages.salary-slips.salary-pdf', ['slips' => $slips, 'staff_permit' => $staff_permit]);
         
-        return $pdf->stream($slips->employee->name.'_'.$slips->month. '.pdf');
+        return $pdf->download($slips->employee->name.'_'.$slips->month. '.pdf');
     }
 }

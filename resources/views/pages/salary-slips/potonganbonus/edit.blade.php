@@ -21,7 +21,7 @@
                         </div>
 
                         <div class="md:col-span-5">
-                            <label class="text-xs sm:text-base" for="potongan_terlambat">Late Cut / hour</label>
+                            <label class="text-xs sm:text-base" for="potongan_terlambat">Late Cut / times</label>
                             <input type="text" name="potongan_terlambat" id="potongan_terlambat" class="text-xs sm:text-base h-10 border mt-1 rounded px-4 w-full bg-gray-50" value="{{ old('potongan_terlambat') ?? $item->potongan_terlambat }}" />
                         </div>
                 

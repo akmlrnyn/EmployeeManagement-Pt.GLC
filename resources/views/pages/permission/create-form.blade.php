@@ -81,7 +81,7 @@
                     type="submit"
                     class="px-4 py-2 mt-3 text-xs text-lg text-white transition-all duration-150 ease-linear rounded shadow outline-none bg-blue-500 hover:bg-blue-600 hover:shadow-lg focus:outline-none"
                 >
-                    Create New Slip
+                    Create New Permission
                 </button>
                 <a href="{{ route('permission.index') }}" class="text-xs bg-red-500 hover:bg-red-700 text-white py-2 px-4 rounded">Cancel</a>
             </form>

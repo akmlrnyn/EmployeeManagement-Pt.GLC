@@ -1,6 +1,6 @@
 <x-app-layout>
     <div class="w-5/6 sm:w-4/5 mx-auto mt-4 pb-6">
-        <h2 class="text-gray-700 text-2xl sm:text-3xl font-bold">Quality Practice Accreditation</h2>
+        <h2 class="text-gray-700 text-2xl sm:text-3xl font-bold">Quality Practice Accreditation (QPA)</h2>
         <p>Staffs predicate</p>
 
         @if($total_staff === 0)

@@ -44,6 +44,7 @@ class ProfileController extends Controller
     public function permission_create(Request $request) {
         $data = $request->all();
         $data['month'] = Carbon::now()->format('F');
+        $data['qpa'] = 3;
         Permission::create($data);
         return redirect()->route('profile.index');
     }
