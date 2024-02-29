@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 
 use App\Models\Employee;
+use App\Models\Permission;
 use App\Models\PotonganBonus;
 use App\Models\SalarySlip;
 use Barryvdh\DomPDF\Facade\Pdf as FacadePdf;
@@ -40,7 +41,7 @@ class SalarySlipsController extends Controller
         SalarySlip::create($data);
 
 
-        return redirect()->route('salary-slips.index');
+        return redirect()->route('salary-slips.index')->withInput();
     }
 
     public function show($id) {
@@ -64,10 +65,42 @@ class SalarySlipsController extends Controller
         return view('pages.salary-slips.create-form', compact('staff', 'currentMonth'));
     }
 
+    public function edit ($id) {
+        $slip = SalarySlip::find($id);
+
+        $now = new DateTime();
+        $currentMonth = $now->format('F');
+
+        return view('pages.salary-slips.edit-form', compact('slip', 'currentMonth')); 
+    }
+
+    public function update (Request $request, $id) {
+        $data = $request->all();
+        $slip = SalarySlip::findOrFail($id);
+        $potongan_terlambat = PotonganBonus::all()->first();
+        $bonus_overtime = PotonganBonus::all()->first();
+       
+
+        $total_potongan_terlambat = $request['late'] * $potongan_terlambat['potongan_terlambat'];
+        $total_bonus_overtime = $request['overtime'] * $bonus_overtime['bonus_overtime'];
+
+        $gaji_bersih = $request['salary'] 
+        - $total_potongan_terlambat 
+        + $total_bonus_overtime 
+        - $request['deduction'] 
+        + $request['bonus'];
+
+        $data['salary'] = $gaji_bersih;
+        $slip->update($data);
+        return redirect()->route('salary-slips.index');
+    }
+
     public function print_pdf($id) {
         $slips = SalarySlip::find($id);
-        $pdf = FacadePdf::loadView('pages.salary-slips.salary-pdf', ['slips' => $slips]);
+        $currentMonth = Carbon::now()->format('F');
+        $staff_permit = Permission::where([['employee_id', $slips->employee->id], ['month', $currentMonth], ['status', 'accepted']])->count();
+        $pdf = FacadePdf::loadView('pages.salary-slips.salary-pdf', ['slips' => $slips, 'staff_permit' => $staff_permit]);
         
-        return $pdf->download($slips->employee->name.'_'.$slips->month. '.pdf');
+        return $pdf->stream($slips->employee->name.'_'.$slips->month. '.pdf');
     }
 }

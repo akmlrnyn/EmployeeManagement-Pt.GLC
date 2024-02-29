@@ -6,6 +6,7 @@ use App\Models\Employee;
 use App\Models\LeaveRequest;
 use App\Models\Permission;
 use App\Models\SalarySlip;
+use Carbon\Carbon;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
@@ -42,6 +43,7 @@ class ProfileController extends Controller
 
     public function permission_create(Request $request) {
         $data = $request->all();
+        $data['month'] = Carbon::now()->format('F');
         Permission::create($data);
         return redirect()->route('profile.index');
     }
