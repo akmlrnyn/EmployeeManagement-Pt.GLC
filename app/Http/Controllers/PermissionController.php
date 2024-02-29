@@ -22,9 +22,8 @@ class PermissionController extends Controller
     }
 
     public function create_form($id){
-        $currentMonth = Carbon::now()->format('F');
         $employee = Employee::find($id);
-        return view('pages.permission.create-form', compact('employee', 'currentMonth'));
+        return view('pages.permission.create-form', compact('employee'));
         
     }
     
