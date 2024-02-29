@@ -61,6 +61,8 @@ Route::middleware([
 
     //Salary Slip Route
     Route::get('/salary-slips', [SalarySlipsController::class, 'index'])->name('salary-slips.index');
+    Route::get('/salary-slips/edit/{id}', [SalarySlipsController::class, 'edit'])->name('salary-slips.edit_form');
+    Route::patch('/salary-slips/update/{id}', [SalarySlipsController::class, 'update'])->name('salary-slips.update');
     Route::get('/salary-slips/create', [SalarySlipsController::class, 'create'])->name('salary-slips.create');
     Route::get('/salary-slips/create/{id}', [SalarySlipsController::class, 'create_form'])->name('salary-slips.create_form');
     Route::post('/salary-slips', [SalarySlipsController::class, 'store'])->name('salary-slips.store');

@@ -24,7 +24,7 @@ class EmployeesController extends Controller
         $request->validate([
             'user_id' => 'required|unique:employees,user_id',
             'name' => 'required|unique:employees,name',
-            'phone' => 'required|integer',
+            'phone' => 'required',
             'position' => 'required',
             'base_salary' => 'required|integer',
         ]);
