@@ -20,6 +20,20 @@
                 <x-input id="email" class="block mt-1 w-full" type="email" name="email" :value="old('email')" required autocomplete="username" />
             </div>
 
+            <div class="flex flex-wrap justify-between">
+
+                <div class="w-full md:w-48 mt-4">
+                    <x-label class="text-xs" for="phone" value="{{ __('Phone') }}" />
+                    <x-input id="phone" class="w-full block mt-1" type="number" name="phone" :value="old('phone')" required />
+                </div>
+
+                <div class="w-full md:w-48 mt-4">
+                    <x-label class="text-xs" for="phone" value="{{ __('Secondary Phone (Optional)') }}" />
+                    <x-input id="phone" class="w-full block mt-1" type="number" name="phone" :value="old('phone')" required />
+                </div>
+
+            </div>
+
             <div class="mt-4">
                 <x-label class="text-xs" for="password" value="{{ __('Password') }}" />
                 <x-input id="password" class="block mt-1 w-full" type="password" name="password" required autocomplete="new-password" />

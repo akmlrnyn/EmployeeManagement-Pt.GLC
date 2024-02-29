@@ -30,11 +30,6 @@
                         </div>
 
                         <div class="md:col-span-5">
-                            <label class="text-xs" for="phone">Phone</label>
-                            <input type="number" name="phone" id="phone" class="h-10 border mt-1 rounded px-4 w-full bg-gray-50 text-xs" value="" placeholder="08**********" />
-                        </div>
-
-                        <div class="md:col-span-5">
                             <label class="text-xs" for="position">Position</label>
                             <input type="text" name="position" id="position" class="h-10 border mt-1 rounded px-4 w-full bg-gray-50 text-xs" value="" placeholder="Crewing Lead" />
                         </div>
