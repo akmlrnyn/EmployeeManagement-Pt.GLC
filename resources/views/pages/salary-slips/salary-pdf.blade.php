@@ -156,6 +156,10 @@
                 <th class="description-table">Net Salary</th>
                 <td class="description-table">Rp. {{number_format($slips->salary)}},00</td>
             </tr>
+            <tr>
+                <th class="description-table">Bonus - Deduction Info</th>
+                <td class="description-table">{{ $slips->information }}</td>
+            </tr>
     </table>
     <table class="table-slip">
             <tr>
