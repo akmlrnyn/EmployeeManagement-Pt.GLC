@@ -20,14 +20,25 @@
                             <label for="name">Name</label>
                             <input type="text" disabled name="name" id="name" class="h-10 border mt-1 rounded px-4 w-full bg-gray-50 text-sm" value="{{ Auth::user()->employee->name }}" />
                         </div>
+
+                        <div class="md:col-span-5">
+                            <label class="text-xs" for="category">Select Categories</label>
+                            <select id="category" class="h-10 border mt-1 rounded px-4 w-full bg-gray-50 text-sm" name="category">
+                            <option selected>Option</option>
+                            <option value="sick">Sick</option>
+                            <option value="permit">Permit</option>
+                            <option value="leave">Paid Leave</option>
+                            </select>
+                        </div>
+
                         <div class="md:col-span-5">
                             <label for="amount_of_days">How many days you'd like to take?</label>
-                            <input type="number" name="amount_of_days" id="amount_of_days" class="h-10 border mt-1 rounded px-4 w-full bg-gray-50 text-sm" value="amount_of_days" required />
+                            <input type="number" name="amount_of_days" id="amount_of_days" class="h-10 border mt-1 rounded px-4 w-full bg-gray-50 text-sm" value="amount_of_days" placeholder="2" required />
                         </div>
 
                         <div class="md:col-span-5">
                             <label for="reason">Reason</label>
-                            <input type="text" name="reason" id="reason" class="h-10 border mt-1 rounded px-4 w-full bg-gray-50 text-sm" value="" placeholder="im gotta Haji" required/>
+                            <input type="text" name="reason" id="reason" class="h-10 border mt-1 rounded px-4 w-full bg-gray-50 text-sm" value="" placeholder="I need to go to the hospitol" required/>
                         </div>
                 
                         <div class="md:col-span-5 text-right">

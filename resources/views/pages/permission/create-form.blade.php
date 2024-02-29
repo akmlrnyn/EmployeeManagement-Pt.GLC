@@ -24,25 +24,6 @@
                 </div>
 
                 <div class="relative z-0 w-full mb-5">
-                    <label class="text-gray-500 text-xs sm:text-sm" for="month">Choose Month</label>
-                    <select id="month" name="month" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 mt-1">
-                        <option disabled><--------></option>
-                        <option value="january"{{ $currentMonth == 'January' ? 'selected' : '' }}>January</option>
-                        <option value="february"{{ $currentMonth == 'February' ? 'selected' : '' }}>February</option>
-                        <option value="march"{{ $currentMonth == 'March' ? 'selected' : '' }}>March</option>
-                        <option value="april"{{ $currentMonth == 'April' ? 'selected' : '' }}>April</option>
-                        <option value="may"{{ $currentMonth == 'May' ? 'selected' : '' }}>May</option>
-                        <option value="june"{{ $currentMonth == 'June' ? 'selected' : '' }}>June</option>
-                        <option value="july"{{ $currentMonth == 'July' ? 'selected' : '' }}>July</option>
-                        <option value="august"{{ $currentMonth == 'August' ? 'selected' : '' }}>August</option>
-                        <option value="september"{{ $currentMonth == 'September' ? 'selected' : '' }}>September</option>
-                        <option value="october"{{ $currentMonth == 'October' ? 'selected' : '' }}>October</option>
-                        <option value="november"{{ $currentMonth == 'November' ? 'selected' : '' }}>November</option>
-                        <option value="december"{{ $currentMonth == 'December' ? 'selected' : '' }}>December</option>
-                    </select>
-                </div>
-
-                <div class="relative z-0 w-full mb-5">
                     <label class="text-gray-500 text-xs sm:text-sm" for="permits">Permits</label>
                     <input
                         type="number"

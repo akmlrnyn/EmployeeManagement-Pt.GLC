@@ -11,7 +11,6 @@ class SalarySlip extends Model
     use HasFactory;
 
     protected $fillable = [
-        '_token',
         'employee_id',
         'leave_request',
         'overtime',
