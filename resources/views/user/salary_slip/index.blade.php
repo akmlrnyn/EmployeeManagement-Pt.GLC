@@ -46,6 +46,9 @@
                     <div class="text-xs sm:text-sm mt-2">Total Overtime: {{ $item->overtime }} hour(s)</div>
                     <div class="text-xs sm:text-sm mt-2">Tax: Rp.{{ $item->tax }}</div>
                     <div class="text-xs sm:text-sm mt-2">BPJS: Rp.{{ $item->bpjs }}</div>
+                    <div class="text-xs sm:text-sm mt-2">Bonus: Rp.{{ $item->bonus }}</div>
+                    <div class="text-xs sm:text-sm mt-2">Deduction: Rp.{{ $item->deduction }}</div>
+                    <div class="text-xs sm:text-sm mt-2">Information Bonus/Deduction:{{ $item->information }}</div>
                 </div>
                 <div class="bg-blue-100 p-3 rounded-lg mb-2">
                     <h2 class="font-semibold text-base sm:text-xl">The Summary</h2>

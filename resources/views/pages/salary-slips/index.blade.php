@@ -13,11 +13,12 @@
 
             <div class="flow-root">
                 <ul role="list">
+                    @php($number = 1)
                     @foreach ($slips->reverse() as $item)
                         <li class="py-3 sm:py-4">
                             <div class="flex flex-col sm:flex-row items-center">
                                 <div class="flex-shrink-0">
-                                    <img class="w-6 h-6 sm:w-8 sm:h-8 rounded-full" src="{{ url('img/logo_company.png') }}" alt="Neil image">
+                                    <span class="text-gray-800 text-sm sm:text-base mr-4">{{ $number }}</span>
                                 </div>
                                 <div class="flex-1 min-w-0 sm:ms-4">
                                     <p class="text-sm font-medium text-gray-900 truncate ">
@@ -31,7 +32,7 @@
                                     <div>Rp. {{ number_format($item->salary) }}</div>
                                     <div>
                                         <a href="{{ route('salary-slips.show', $item->id) }}">
-                                            <button type="button" class="text-white bg-blue-600 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 sm:font-medium rounded-md sm:rounded-lg text-xs px-3 sm:px-5 py-2 sm:py-2.5 sm:me-2 dark:bg-blue-500 dark:hover:bg-blue-600 focus:outline-none dark:focus:ring-blue-800">
+                                            <button type="button" class="text-white bg-blue-600 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 sm:font-medium shadow-lg rounded-md sm:rounded-lg text-xs px-3 sm:px-5 py-2 sm:py-2.5 sm:me-2 dark:bg-blue-500 dark:hover:bg-blue-600 focus:outline-none dark:focus:ring-blue-800">
                                                 See Detail
                                             </button>
                                         </a>
@@ -40,6 +41,7 @@
                             </div>
                         </li>
                         <hr>
+                    @php($number++)
                     @endforeach
                 </ul>
             </div>
@@ -48,8 +50,8 @@
             </div>
             <div class="flex flex-col sm:flex-row gap-2 justify-center pt-5">
             <p class="text-xs font-medium text-gray-600">Bonus overtime Rp.{{ number_format($bonus_overtime['bonus_overtime']) }}(hour)</p>
-            <p class="text-xs font-medium text-gray-600">Late Cut Rp.{{ number_format($potongan_terlambat['potongan_terlambat']) }}(hour)</p>
-            <a href="{{ route('potongan-bonus.edit', $potongan_terlambat['id']) }}" class="text-xs text-gray-600 font-bold">Edit?</a>
+            <p class="text-xs font-medium text-gray-600">Late Cut Rp.{{ number_format($potongan_terlambat['potongan_terlambat']) }}(times)</p>
+            <a href="{{ route('potongan-bonus.edit', $potongan_terlambat['id']) }}" class="text-xs text-red-600 font-bold">Edit?</a>
             </div>
         </div>
     </div>

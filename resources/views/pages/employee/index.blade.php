@@ -4,8 +4,8 @@
     <p>The workers here</p>
     <div class="bg-white shadow-md rounded-md overflow-hidden mx-auto mt-5">
       <div class="bg-gray-200 py-2 px-4">
-        <h2 class="text-lg sm:text-xl font-bold text-gray-800">Employee list</h2>
-        <a href="{{ route('employees.create') }}" class="text-sm sm:text-base text-blue-700">+ Recruit New Employee</a>
+        <h2 class="text-lg sm:text-xl font-bold text-gray-800">Staff list</h2>
+        <a href="{{ route('employees.create') }}" class="text-sm sm:text-base text-blue-700">+ Recruit New Staff</a>
       </div>
 
       <ul class="divide-y divide-gray-200">
