@@ -22,12 +22,14 @@ class LeaveRequestController extends Controller
             'status' => 'accepted'
         ]);
 
-        $employee = Employee::findOrFail($leave_request->employee_id);
-        $leave_request_left = $employee->leave_request_left - $leave_request->amount_of_days;
-        $employee->update([
-            'leave_request_left' => $leave_request_left 
-        ]);
-
+        if ($leave_request['category'] == 'leave') {
+            $employee = Employee::findOrFail($leave_request->employee_id);
+            $leave_request_left = $employee->leave_request_left - $leave_request->amount_of_days;
+            $employee->update([
+                'leave_request_left' => $leave_request_left 
+            ]);
+        }
+        
         return redirect()->route('leaverequest.index');
     }
 
