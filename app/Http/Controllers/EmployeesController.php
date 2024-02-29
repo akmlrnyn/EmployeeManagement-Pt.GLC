@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\StoreEmployeeRequest;
 use App\Models\User;
 use App\Models\Employee;
 use App\Models\LeaveRequest;
@@ -19,18 +20,10 @@ class EmployeesController extends Controller
         return view('pages.employee.create-employee', compact('user'));
     }
 
-    public function store(Request $request) {
+    public function store(StoreEmployeeRequest $request) {
 
-        $request->validate([
-            'user_id' => 'required|unique:employees,user_id',
-            'name' => 'required|unique:employees,name',
-            'phone' => 'required',
-            'position' => 'required',
-            'base_salary' => 'required|integer',
-        ]);
-
-        $input = $request->all();   
-        Employee::create($input);
+        $validated = $request->validated();
+        Employee::create($validated);
         return redirect()->route('employees.index');
     }
 
@@ -51,6 +44,12 @@ class EmployeesController extends Controller
     }
 
     public function update(Request $request, $id) {
+
+        $request->validate([
+            'name' => 'required',
+            'phone' => 'required',
+        ]);
+
         $data = $request->all();
         $staff = Employee::findOrFail($id);
         $staff->update($data);
