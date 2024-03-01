@@ -55,7 +55,19 @@
                 >
 
                     Phone :
-                  <span class="text-gray-500 text-xs">{{ $employee->phone }}</span>
+                  <span class="text-gray-500 text-xs">{{ $employee->user->phone }}</span>
+          </p>
+
+          <p
+                  class="w-full border-t font-semibold border-gray-100 text-gray-700 py-4 pl-6 pr-3 w-full block hover:bg-gray-100 transition duration-150"
+                >
+
+                    Secondary Phone :
+                    @if ($employee->user->secondary_phone)
+                    <span class="text-gray-500 text-xs">{{ $employee->user->secondary_phone }}</span>
+                    @else
+                        <span class="text-gray-500 text-xs">Staff doesn't input secondary phone</span>
+                    @endif
           </p>
 
                 <p
