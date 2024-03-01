@@ -28,7 +28,7 @@
               @method('DELETE')
               
               {{-- button trigger for delete-modal --}}
-              <button data-modal-target="delete-modal" data-modal-toggle="delete-modal" class="focus:outline-none text-white bg-red-700 hover:bg-red-800 focus:ring-4 focus:ring-red-300 sm:font-medium rounded sm:rounded-lg text-xs px-3 sm:px-5 py-1 sm:py-2.5 sm:me-2 mb-2 dark:bg-red-600 dark:hover:bg-red-700 dark:focus:ring-red-900" type="button">
+              <button data-modal-target="delete-modal-{{$item->id}}" data-modal-toggle="delete-modal-{{$item->id}}" class="focus:outline-none text-white bg-red-700 hover:bg-red-800 focus:ring-4 focus:ring-red-300 sm:font-medium rounded sm:rounded-lg text-xs px-3 sm:px-5 py-1 sm:py-2.5 sm:me-2 mb-2 dark:bg-red-600 dark:hover:bg-red-700 dark:focus:ring-red-900" type="button">
                 Remove
               </button>
             </form>
@@ -40,7 +40,7 @@
         <form action="{{ route('employee.destroy', $item->id) }}" method="post">
           @method('DELETE')
           @csrf
-          <div id="delete-modal" tabindex="1" class="hidden overflow-y-auto overflow-x-hidden fixed top-0 right-0 left-0 z-50 justify-center items-center w-full md:inset-0 h-[calc(100%-1rem)] max-h-full">
+          <div id="delete-modal-{{$item->id}}" tabindex="1" class="hidden overflow-y-auto overflow-x-hidden fixed top-0 right-0 left-0 z-50 justify-center items-center w-full md:inset-0 h-[calc(100%-1rem)] max-h-full">
             <div class="relative p-4 w-full max-w-md max-h-full">
               <div class="relative bg-white rounded-lg shadow ">
                 <button type="button" class="absolute top-3 end-2.5 text-gray-400 bg-transparent hover:bg-gray-200 hover:text-gray-900 rounded-lg text-sm w-8 h-8 ms-auto inline-flex justify-center items-center dark:hover:bg-gray-600 dark:hover:text-white" data-modal-hide="delete-modal">
@@ -63,6 +63,7 @@
               </div>
             </div>
           </div>
+        </form>
         </li>
         @php($number++)
         @endforeach
