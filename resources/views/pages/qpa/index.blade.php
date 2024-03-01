@@ -55,7 +55,7 @@
                 <div class="pb-3 pt-1">
                     <p class="text-gray-600 text-sm sm:text-base">What things that would impact the QPA Score?</p>
                     <div>
-                        <p class="text-gray-600 text-xs sm:text-sm">- Once Late will decrease of 5 points</p>
+                        <p class="text-gray-600 text-xs sm:text-sm">- Once Late without permission will decrease of 5 points</p>
                         <p class="text-gray-600 text-xs sm:text-sm">- Once Take Permission will decrease of 3 points</p>
                     </div>
                 </div>
@@ -185,7 +185,7 @@
             <div class="pb-3 pt-1">
                 <p class="text-gray-600 text-sm sm:text-base">What things that would impact the QPA Score?</p>
                 <div>
-                    <p class="text-gray-600 text-xs sm:text-sm">- Once Late will decrease of 5 points</p>
+                    <p class="text-gray-600 text-xs sm:text-sm">- Once Late without permission will decrease of 5 points</p>
                     <p class="text-gray-600 text-xs sm:text-sm">- Once Take Permission will decrease of 3 points</p>
                 </div>
             </div>
