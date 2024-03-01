@@ -44,7 +44,6 @@ class ProfileController extends Controller
     public function permission_create(Request $request) {
         $data = $request->all();
         $data['qpa'] = 3;
-
         Permission::create($data);
         return redirect()->route('profile.index');
     }
