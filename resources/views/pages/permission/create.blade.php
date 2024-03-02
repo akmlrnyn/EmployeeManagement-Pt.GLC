@@ -5,6 +5,28 @@
     </a>
         <h2 class="text-gray-700 text-xl sm:text-3xl font-bold mt-2">Choose Staff </h2>
         <p class="text-sm sm:text-base">To make new permission</p>
+        @if($employee->count() === 0)
+        <div class="mt-6">
+            <section class="grid gap-6 my-6 md:grid-cols-3">
+                <div
+                    class="p-3 sm:p-6 bg-white transition ease-in duration-200 shadow hover:shadow-xl rounded sm:rounded-2xl">
+                    <dl class="sm:space-y-2">
+                        <div class="flex gap-2">
+                            <svg xmlns="http://www.w3.org/2000/svg" height="19" width="12" viewBox="0 0 512 512">
+                                <!--!Font Awesome Free 6.5.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.-->
+                                <path fill="#b11b1b"
+                                    d="M256 512A256 256 0 1 0 256 0a256 256 0 1 0 0 512zM216 336h24V272H216c-13.3 0-24-10.7-24-24s10.7-24 24-24h48c13.3 0 24 10.7 24 24v88h8c13.3 0 24 10.7 24 24s-10.7 24-24 24H216c-13.3 0-24-10.7-24-24s10.7-24 24-24zm40-208a32 32 0 1 1 0 64 32 32 0 1 1 0-64z" />
+                            </svg>
+                            <dt class="text-xs sm:text-sm font-medium text-red-500">You don't have employees yet</dt>
+                        </div>
+                        <dd class="text-xl md:text-3xl"></dd>
+                        <dd class="flex items-center space-x-1 text-xs sm:text-sm font-medium text-blue-500">
+                            <a href="{{route('employees.create')}}">Make employee +</a>
+                        </dd>
+                    </dl>
+                </div>
+            </section>
+            @endif
 
         <ul class="divide-y divide-gray-200 bg-white mx-auto my-2 sm:my-5 rounded-lg shadow-lg">
             @php($number = 1)

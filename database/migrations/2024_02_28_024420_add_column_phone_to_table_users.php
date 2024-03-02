@@ -12,8 +12,8 @@ return new class extends Migration
     public function up(): void
     {
         Schema::table('users', function (Blueprint $table) {
-            $table->integer('phone');
-            $table->integer('secondary_phone')->nullable();
+            $table->bigInteger('phone');
+            $table->bigInteger('secondary_phone')->nullable();
         });
     }
 

@@ -28,8 +28,8 @@
                 </div>
 
                 <div class="w-full md:w-48 mt-4">
-                    <x-label class="text-xs" for="phone" value="{{ __('Secondary Phone (Optional)') }}" />
-                    <x-input id="phone" class="w-full block mt-1" type="number" name="phone" :value="old('phone')" required />
+                    <x-label class="text-xs" for="secondary_phone" value="{{ __('Secondary Phone (Optional)') }}" />
+                    <x-input id="secondary_phone" class="w-full block mt-1" type="number" name="secondary_phone" :value="old('secondary_phone')"  />
                 </div>
 
             </div>
