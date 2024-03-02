@@ -250,7 +250,7 @@
               </ul>
               <hr />
               <a
-                href="{{ route('leaverequest.index') }}"
+                href="{{ route('permission.index') }}"
                 class="text-sm sm:text-base text-violet-700 p-1 text-center"
               >
                 <p>See all permissions ></p>
