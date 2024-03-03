@@ -23,8 +23,8 @@
 
                         <div class="md:col-span-5">
                             <label class="text-xs" for="category">Select Categories</label>
-                            <select id="category" class="h-10 border mt-1 rounded px-4 w-full bg-gray-50 text-sm" name="category">
-                            <option selected>Option</option>
+                            <select id="category" class="h-10 border mt-1 rounded px-4 w-full bg-gray-50 text-sm" name="category" required>
+                            <option disabled>Option</option>
                             <option value="sick">Sick</option>
                             <option value="permit">Permit</option>
                             <option value="leave">Paid Leave</option>

@@ -2,12 +2,12 @@
 
     <div class="py-1 md:px-10 md:mx-3">
     <div class="p-1 sm:p-4 bg-gray-100">
-      <div class="container mx-auto p-4">
+      <div class="container mx-auto p-2 sm:p-4">
         <div
           class="dashboard-title mb-5 md:pb-4 flex flex-col items-start md:flex-row md:items-center md:justify-between"
         >
           <div>
-            <h1 class="text-gray-700 text-3xl sm:text-4xl font-bold">Welcome, <span class="text-2xl sm:text-3xl">{{ Auth::user()->name }}</span></h1>
+            <h1 class="text-gray-700 text-2xl sm:text-4xl font-bold">Welcome, <span class="text-xl sm:text-3xl">{{ Auth::user()->name }}</span></h1>
             <p class="text-sm sm:text-base text-gray-700">
               Welcome to the PT GLC Indonesia Employees Dashboard
             </p>

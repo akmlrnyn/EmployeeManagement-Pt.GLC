@@ -14,11 +14,16 @@ return new class extends Migration
         Schema::create('salary_slips', function (Blueprint $table) {
             $table->id();
             $table->unsignedBigInteger('employee_id');
+            $table->enum('month', ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December']);
             $table->integer('leave_request');
             $table->integer('overtime')->nullable();
             $table->integer('late')->nullable();
-            $table->integer('tax');
-            $table->integer('salary');
+            $table->bigInteger('tax');  
+            $table->integer('bpjs');
+            $table->bigInteger('salary');
+            $table->bigInteger('bonus')->nullable();
+            $table->bigInteger('deduction')->nullable();
+            $table->string('information');
             $table->timestamps();
 
             $table->foreign('employee_id')->references('id')->on('employees')->onDelete('cascade');

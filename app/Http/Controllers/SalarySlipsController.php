@@ -48,12 +48,13 @@ class SalarySlipsController extends Controller
         $slip = SalarySlip::find($id);
         $now = new DateTime();
         $currentMonth = $now->format('F');
+        $permission = $slip->employee->permission->where('month', $currentMonth)->count();
 
-        return view('pages.salary-slips.show', compact('slip', 'currentMonth'));
+        return view('pages.salary-slips.show', compact('slip', 'currentMonth', 'permission'));
     }
 
     public function create() {
-        $staffs = Employee::all();
+        $staffs = Employee::whereDoesntHave('salary_slip')->get();
 
         return view('pages.salary-slips.create', compact('staffs'));
     }
@@ -97,7 +98,8 @@ class SalarySlipsController extends Controller
 
     public function print_pdf($id) {
         $slips = SalarySlip::find($id);
-        $staff_permit = Permission::where([['employee_id', $slips->employee->id], ['status', 'accepted']])->count();
+        $currentMonth = Carbon::now()->format('F');
+        $staff_permit = Permission::where([['employee_id', $slips->employee->id],['month', $currentMonth], ['status', 'accepted']])->count();
         $pdf = FacadePdf::loadView('pages.salary-slips.salary-pdf', ['slips' => $slips, 'staff_permit' => $staff_permit]);
         
         return $pdf->download($slips->employee->name.'_'.$slips->month. '.pdf');

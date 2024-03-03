@@ -35,6 +35,8 @@ Route::get('employeedetails/leave-requests', [ProfileController::class, 'leave_r
 Route::get('/employeedetails/permission', [ProfileController::class, 'permission'])->name('profile.permission');
 Route::post('/employeedetails/permission/create', [ProfileController::class, 'permission_create'])->name('profile.permission.create');
 Route::get('/employeedetails/permission/show', [ProfileController::class, 'permission_show'])->name('profile.permission.show');
+Route::get('/employeedetaild/qpa', [ProfileController::class,'qpa'])->name('profile.qpa.index');
+
 // print pdf salary
 Route::get('/salary-slips/print/{id}', [SalarySlipsController::class, 'print_pdf'])->name('salary-slips.print_pdf');
 

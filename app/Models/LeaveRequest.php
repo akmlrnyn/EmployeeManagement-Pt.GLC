@@ -11,7 +11,7 @@ class LeaveRequest extends Model
 {
     use HasFactory;
 
-    protected $fillable= ['employee_id','status', 'amount_of_days', 'reason'];
+    protected $fillable= ['employee_id','status','category', 'amount_of_days', 'reason'];
 
     /**
      * Get the employee that owns the LeaveRequest

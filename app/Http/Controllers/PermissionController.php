@@ -30,8 +30,10 @@ class PermissionController extends Controller
     public function store($id, Request $request){
         $data = $request->all();
         $employee = Employee::find($id);
+        $currentMonth = Carbon::now()->format('F');
 
         $data['status'] = 'accepted';
+        $data['month'] = $currentMonth;
 
         $qpaScore = $employee->qpa;
         $qpaScore -= $request['qpa'];
@@ -40,7 +42,7 @@ class PermissionController extends Controller
         ]);
 
         Permission::create($data);
-        return redirect()->route('employee.detail', $id);
+        return redirect()->route('permission.index');
     }
 
     public function check($id, Request $request) {

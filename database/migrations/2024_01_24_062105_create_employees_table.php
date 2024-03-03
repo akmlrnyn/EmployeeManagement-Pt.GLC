@@ -15,10 +15,10 @@ return new class extends Migration
             $table->id();
             $table->unsignedBigInteger('user_id');
             $table->string('name', 100);
-            $table->string('email')->unique();
-            $table->bigInteger('phone');
             $table->string('position', 100)->default('employee');
             $table->integer('leave_request_left')->default(12);
+            $table->bigInteger('base_salary');
+            $table->integer('qpa')->default(100);
             $table->timestamps();
 
             $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');

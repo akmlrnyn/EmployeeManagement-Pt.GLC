@@ -15,6 +15,8 @@ return new class extends Migration
             $table->id();
             $table->unsignedBigInteger('employee_id');
             $table->integer('amount_of_days')->nullable()->default(1);
+            $table->enum('category', ['sick', 'permit', 'leave'])->nullable();
+            $table->string('reason', 100);
             $table->string('status', 100)->enum('pending', 'accepted')->default('pending');
             $table->timestamps();
 

@@ -29,7 +29,7 @@
                         id="salary"
                         type="number"
                         name="salary"
-                        value="{{ $slip->salary }}"
+                        value="{{ $slip->employee->base_salary }}"
                         class="pb-2 block text-sm sm:text-base w-full px-0 mt-0 bg-transparent border-0 border-b-2 appearance-none focus:outline-none focus:ring-0 focus:border-blue border-gray-200"
                     />
                 </div>
@@ -70,7 +70,7 @@
                         type="number"
                         name="overtime"
                         placeholder="Overtime ( Hours )"
-                        value="{{ old('overtime') }}"
+                        value="{{ old('overtime') ?? $slip->overtime}}"
                         required
                         class="pt-3 pb-2 block text-sm sm:text-base w-full px-0 mt-0 bg-transparent border-0 border-b-2 appearance-none focus:outline-none focus:ring-0 focus:border-blue border-gray-200"
                     />
@@ -82,7 +82,7 @@
                         type="number"
                         name="late"
                         placeholder="Late ( Hours )"
-                        value="{{ old('late') }}"
+                        value="{{ old('late') ?? $slip->late}}"
                         required
                         class="pt-3 pb-2 block text-sm sm:text-base w-full px-0 mt-0 bg-transparent border-0 border-b-2 appearance-none focus:outline-none focus:ring-0 focus:border-blue border-gray-200"
                     />
@@ -94,7 +94,7 @@
                         type="number"
                         name="tax"
                         placeholder="Tax ( Rp. )"
-                        value="{{ old('tax') }}"
+                        value="{{ old('tax') ?? $slip->tax}}"
                         required
                         class="pt-3 pb-2 block text-sm sm:text-base w-full px-0 mt-0 bg-transparent border-0 border-b-2 appearance-none focus:outline-none focus:ring-0 focus:border-blue border-gray-200"
                     />
@@ -106,7 +106,7 @@
                         type="number"
                         name="bpjs"
                         placeholder="BPJS ( Rp. )"
-                        value="{{ old('bpjs') }}"
+                        value="{{ old('bpjs') ?? $slip->bpjs}}"
                         required
                         class="pt-3 pb-2 block text-sm sm:text-base w-full px-0 mt-0 bg-transparent border-0 border-b-2 appearance-none focus:outline-none focus:ring-0 focus:border-blue border-gray-200"
                     />
@@ -117,7 +117,7 @@
                         type="number"
                         name="bonus"
                         placeholder="Bonus ( Rp. )"
-                        value="{{ old('bonus') }}"
+                        value="{{ old('bonus') ?? $slip->bonus}}"
                         required
                         class="pt-3 pb-2 block text-sm sm:text-base w-full px-0 mt-0 bg-transparent border-0 border-b-2 appearance-none focus:outline-none focus:ring-0 focus:border-blue border-gray-200"
                     />
@@ -128,7 +128,7 @@
                         type="number"
                         name="deduction"
                         placeholder="Salary Deduction ( Rp. )"
-                        value="{{ old('deduction') }}"
+                        value="{{ old('deduction') ?? $slip->deduction}}"
                         required
                         class="pt-3 pb-2 block text-sm sm:text-base w-full px-0 mt-0 bg-transparent border-0 border-b-2 appearance-none focus:outline-none focus:ring-0 focus:border-blue border-gray-200"
                     />
@@ -152,7 +152,7 @@
                 >
                     Edit Slip 
                 </button>
-                <a href="{{ route('salary-slips.create') }}" class="text-xs bg-red-500 hover:bg-red-700 text-white py-2 px-4 rounded">Cancel</a>
+                <a href="{{ route('salary-slips.show', $slip->id) }}" class="text-xs bg-red-500 hover:bg-red-700 text-white py-2 px-4 rounded">Cancel</a>
             </form>
         </div>
     </div>

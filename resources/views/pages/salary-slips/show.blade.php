@@ -47,32 +47,36 @@
             </div>
         </div>
         <div>
-            <div class="information py-2 px-5">
+            <div class="information py-2 px-3 sm:px-5">
                 <div class="bg-gray-100 p-2.5 sm:p-3 rounded-lg mb-2 shadow">
                     <h2 class="font-semibold text-base sm:text-xl">Basic Information</h2>
                     <hr>
                     <div class="text-xs sm:text-sm mt-2">Name: {{ $slip->employee->name }}</div>
                     <div class="text-xs sm:text-sm mt-2">Email: {{ $slip->employee->user->email }}</div>
-                    <div class="text-xs sm:text-sm mt-2">Phone: {{ $slip->employee->phone }}</div>
+                    <div class="text-xs sm:text-sm mt-2">Phone: {{ $slip->employee->user->phone }} / 
+                    @if ($slip->employee->user->secondary_phone)
+                        {{ $slip->employee->user->secondary_phone}}
+                    @endif
+                    </div>
                     <div class="text-xs sm:text-sm mt-2">Month: {{ $slip->month }}</div>
                     <div class="text-xs sm:text-sm mt-2">Gross Salary:
                         Rp.{{ number_format($slip->employee->base_salary) }}</div>
                 </div>
-                <div class="bg-yellow-100 p-3 rounded-lg mb-2 shadow">
+                <div class="bg-yellow-100 p-2.5 sm:p-3 rounded-lg mb-2 shadow">
                     <h2 class="font-semibold text-base sm:text-xl text-yellow-900">Staff Stats</h2>
                     <hr>
                     <div class="text-xs sm:text-sm mt-2">Total Leave Request: {{ $slip->leave_request }} Day(s)</div>
                     <div class="text-xs sm:text-sm mt-2">Total Late: {{ $slip->late }} hour(s)</div>
                     <div class="text-xs sm:text-sm mt-2">Total Overtime: {{ $slip->overtime }} hour(s)</div>
-                    <div class="text-xs sm:text-sm mt-2">Bonus: Rp.0</div>
-                    <div class="text-xs sm:text-sm mt-2">Deduction: Rp.0</div>
-                    <div class="text-xs sm:text-sm mt-2">Tax: Rp.{{ $slip->tax }}</div>
-                    <div class="text-xs sm:text-sm mt-2">BPJS: Rp.{{ $slip->bpjs }}</div>
-                    <div class="text-xs sm:text-sm mt-2">Salary Bonus: Rp.{{ $slip->bonus }}</div>
-                    <div class="text-xs sm:text-sm mt-2">Salary Deduction: Rp.{{ $slip->deduction }}</div>
+                    <div class="text-xs sm:text-sm mt-2">Tax: Rp.{{ number_format($slip->tax) }}</div>
+                    <div class="text-xs sm:text-sm mt-2">BPJS: Rp.{{ number_format($slip->bpjs) }}</div>
+                    <div class="text-xs sm:text-sm mt-2">Salary Bonus: Rp.{{ number_format($slip->bonus) }}</div>
+                    <div class="text-xs sm:text-sm mt-2">Salary Deduction: Rp.{{ number_format($slip->deduction) }}</div>
                     <div class="text-xs sm:text-sm mt-2">Bonus and Deduction Info: {{ $slip->information }}</div>
+                    <div class="text-xs sm:text-sm mt-2">Permission on this Month: {{ $permission }} Time(s)</div>
+                    <div class="text-xs sm:text-sm mt-2">QPA on this Month: {{ $slip->employee->qpa }}</div>
                 </div>
-                <div class="bg-blue-100 p-3 rounded-lg mb-2 shadow">
+                <div class="bg-blue-100 p-2.5 sm:p-3 rounded-lg mb-2 shadow">
                     <h2 class="font-semibold text-base sm:text-xl">The Summary</h2>
                     <hr>
                     <div class="text-xs sm:text-sm mt-2">NET Salary: Rp.{{ number_format($slip->salary) }}</div>

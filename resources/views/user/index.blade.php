@@ -21,8 +21,8 @@
                             <div class="flex flex-wrap justify-between items-center my-3 sm:my-5 px-6">
                                 <p class="text-gray-500 rounded transition duration-150 ease-in font-medium text-xs sm:text-sm text-center w-1/2 sm:w-1/4 py-3">All Details</p>
                                 <a href="{{ route('profile.leave_request') }}" class="text-gray-500 hover:text-gray-900 hover:bg-blue-100 rounded transition duration-150 ease-in font-medium text-xs sm:text-sm text-center w-1/2 sm:w-1/4 py-3">Ask Leave Requests</a>
-                                <a href="{{ route('profile.salary_slip') }}" class="text-gray-500 hover:text-gray-900 hover:bg-blue-100 rounded transition duration-150 ease-in font-medium text-xs sm:text-sm text-center w-1/2 sm:w-1/4 py-3">My Salary Slips</a>
                                 <a href="{{ route('profile.permission') }}" class="text-gray-500 hover:text-gray-900 hover:bg-blue-100 rounded transition duration-150 ease-in font-medium text-xs sm:text-sm text-center w-1/2 sm:w-1/4 py-3">Ask Permission</a>
+                                <a href="{{ route('profile.salary_slip') }}" class="text-gray-500 hover:text-gray-900 hover:bg-blue-100 rounded transition duration-150 ease-in font-medium text-xs sm:text-sm text-center w-1/2 sm:w-1/4 py-3">My Salary Slips</a>
                             </div>
 
                             <div class="w-full">
@@ -66,7 +66,7 @@
                                     <p class="w-full border-t font-semibold border-gray-100 text-gray-700 py-4 pl-6 pr-3 w-full block hover:bg-gray-100 transition duration-150">
                                         <img src="{{ url('img/logo_company.png') }}" alt="" class="rounded-full h-6 shadow-md inline-block mr-2" />
                                         Current QPA Score
-                                        <span class="text-gray-500 text-xs">{{ $user->employee->qpa }}</span>
+                                        <span class="text-gray-500 text-xs">{{ $user->employee->qpa }}</span><a href= "{{ route('profile.qpa.index') }}" class="rounded p-1 text-center text-xs bg-gray-300 m-2">?</a>
                                     </p>
 
                                     <p class="w-full border-t font-semibold border-gray-100 text-gray-700 py-4 pl-6 pr-3 w-full block hover:bg-gray-100 transition duration-150 overflow-hidden">

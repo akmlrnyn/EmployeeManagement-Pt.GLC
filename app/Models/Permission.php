@@ -12,7 +12,7 @@ class Permission extends Model
 {
     use HasFactory;
 
-    protected $fillable= ['employee_id','status', 'amount_of_times', 'reason'];
+    protected $fillable= ['employee_id','status','month', 'amount_of_times', 'reason'];
 
     public function employee(): BelongsTo
     {

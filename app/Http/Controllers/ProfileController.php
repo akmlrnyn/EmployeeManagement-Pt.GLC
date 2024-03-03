@@ -2,13 +2,13 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Employee;
 use App\Models\LeaveRequest;
 use App\Models\Permission;
 use App\Models\SalarySlip;
-use Carbon\Carbon;
 use Illuminate\Http\Request;
+use Illuminate\Support\Carbon;
 use Illuminate\Support\Facades\Auth;
+
 
 class ProfileController extends Controller
 {
@@ -33,8 +33,9 @@ class ProfileController extends Controller
     }
 
     public function salary_slip() {
-        $slips = SalarySlip::where('employee_id', Auth::user()->employee->id)->get();
-        return view('user.salary_slip.index', compact('slips'));
+        $slip = SalarySlip::where('employee_id', Auth::user()->employee->id)->first();
+        $permission = $slip->employee->permission->where('month', Carbon::now()->format('F'))->count();
+        return view('user.salary_slip.index', compact('slip', 'permission'));
     }
 
     public function permission() {
@@ -43,7 +44,9 @@ class ProfileController extends Controller
 
     public function permission_create(Request $request) {
         $data = $request->all();
+        $currentMonth = Carbon::now()->format('F');
         $data['qpa'] = 3;
+        $data['month'] = $currentMonth;
         Permission::create($data);
         return redirect()->route('profile.index');
     }
@@ -51,5 +54,9 @@ class ProfileController extends Controller
     public function permission_show() {
         $permission = Permission::all()->where('employee_id', Auth::user()->employee->id);
         return view('user.permission.show', compact('permission'));
+    }
+
+    public function qpa() {
+        return view('user.qpa.index');
     }
 }

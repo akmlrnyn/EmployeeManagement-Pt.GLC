@@ -17,6 +17,8 @@ return new class extends Migration
             $table->integer('amount_of_times')->nullable()->default(1);
             $table->string('status', 100)->enum('pending', 'accepted')->default('pending');
             $table->string('reason', 100);
+            $table->integer('qpa')->default(5);
+            $table->enum('month', ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December']);
             $table->timestamps();
 
             $table->foreign('employee_id')->references('id')->on('employees')->onDelete('cascade');

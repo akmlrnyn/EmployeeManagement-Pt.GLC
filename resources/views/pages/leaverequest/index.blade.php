@@ -18,6 +18,7 @@
             <h3 class="text-xs sm:text-sm font-small text-gray-800">{{ date('d M Y', strtotime($item->created_at)) }}</h3>
             <h3 class="text-base sm:text-lg font-medium text-gray-800">{{ $item->employee->name }}</h3>
             <p class="text-gray-600 text-xs sm:text-base">{{ $item->amount_of_days }} Days</p>
+            <p class="text-gray-600 text-xs sm:text-base">Category: {{ $item->category }}</p>
             <p class="text-red-600 text-sm sm:text-base">Due To: {{ $item->reason }}</p>
           </div>
           <div class="flex lg:mt-0 mt-3">
@@ -53,6 +54,7 @@
             <h3 class="text-xs sm:text-sm font-small text-gray-800">{{ date('d M Y', strtotime($item->created_at)) }}</h3>
             <h3 class="text-base sm:text-lg font-medium text-gray-800">{{ $item->employee->name }}</h3>
             <p class="text-gray-600 text-xs sm:text-base">{{ $item->amount_of_days }} Days</p>
+            <p class="text-gray-600 text-xs sm:text-base">Category: {{ $item->category }}</p>
             <p class="text-red-600 text-sm sm:text-base">Due To: {{ $item->reason }}</p>
           </div>
           <div>
@@ -78,6 +80,7 @@
             <h3 class="text-xs sm:text-sm font-small text-gray-800">{{ date('d M Y', strtotime($item->created_at)) }}</h3>
             <h3 class="text-base sm:text-lg font-medium text-gray-800">{{ $item->employee->name }}</h3>
             <p class="text-gray-600 text-xs sm:text-base">{{ $item->amount_of_days }} Days</p>
+            <p class="text-gray-600 text-xs sm:text-base">Category: {{ $item->category }}</p>
             <p class="text-red-600 text-sm sm:text-base">Due To: {{ $item->reason }}</p>
           </div>
           <div>
