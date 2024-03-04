@@ -27,9 +27,10 @@ class SalarySlipsController extends Controller
         $data = $request->except(['_token']);
         $potongan_terlambat = PotonganBonus::all()->first();
         $bonus_overtime = PotonganBonus::all()->first();
+        $late = Permission::all()->count();
        
 
-        $total_potongan_terlambat = $request['late'] * $potongan_terlambat['potongan_terlambat'];
+        $total_potongan_terlambat = $late  * $potongan_terlambat['potongan_terlambat'];
         $total_bonus_overtime = $request['overtime'] * $bonus_overtime['bonus_overtime'];
 
         $gaji_bersih = $request['salary'] 
@@ -65,8 +66,9 @@ class SalarySlipsController extends Controller
         $currentMonth = Carbon::now()->format('F');
         $staff = Employee::findOrFail($id);
         $leaveRequest = 12 - $staff->leave_request_left;
+        $late = Permission::all()->count();
 
-        return view('pages.salary-slips.create-form', compact('staff', 'currentMonth', 'leaveRequest'));
+        return view('pages.salary-slips.create-form', compact('staff', 'currentMonth', 'leaveRequest', 'late'));
     }
 
     public function edit ($id) {
