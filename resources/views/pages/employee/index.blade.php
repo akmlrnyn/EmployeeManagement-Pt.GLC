@@ -3,6 +3,9 @@
     <h2 class="text-gray-700 text-2xl sm:text-3xl font-bold">All Staffs </h2>
     <p>The workers here</p>
     <div class="bg-white shadow-md rounded-md overflow-hidden mx-auto mt-5">
+      <div class="px-4 mx-auto my-2">
+        <input type="text" id="search" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded w-full" placeholder="Search staff..." onkeyup="search_staff()">
+    </div>
       <div class="bg-gray-200 py-2 px-4">
         <h2 class="text-lg sm:text-xl font-bold text-gray-800">Staff list</h2>
         <a href="{{ route('employees.create') }}" class="text-sm sm:text-base text-blue-700">+ Recruit New Staff</a>
@@ -11,7 +14,7 @@
       <ul class="divide-y divide-gray-200">
         @php($number = 1)
         @foreach ($employees as $item)
-        <li class="flex flex-col sm:flex-row items-center py-4 px-6">
+        <li class="staff flex flex-col sm:flex-row items-center py-4 px-6">
           <span class="text-gray-700 text-base sm:text-lg font-medium sm:mr-4 mb-2 sm:mb-0">{{ $number }}</span>
           <img
             class="w-9 h-9 sm:w-12 sm:h-12 rounded-full object-cover sm:mr-4 mb-2 sm:mb-0"
@@ -71,3 +74,18 @@
     </div>
   </div>
 </x-app-layout>
+<script type="text/javascript">
+  function search_staff() {
+      let input = document.getElementById("search").value;
+      input = input.toLowerCase();
+      let x = document.getElementsByClassName("staff");
+
+      for (let i = 0; i < x.length; i++) {
+        if (!x[i].innerHTML.toLowerCase().includes(input)) {
+          x[i].style.display = "none";
+        } else {
+          x[i].style.display = "flex";
+        }
+      }
+    }
+</script>
