@@ -12,6 +12,8 @@ use DateTime;
 use Illuminate\Http\Request;
 use Illuminate\Support\Carbon;
 
+use function PHPUnit\Framework\isNull;
+
 class SalarySlipsController extends Controller
 {
     public function index() {
@@ -62,8 +64,9 @@ class SalarySlipsController extends Controller
     public function create_form($id) {
         $currentMonth = Carbon::now()->format('F');
         $staff = Employee::findOrFail($id);
+        $leaveRequest = 12 - $staff->leave_request_left;
 
-        return view('pages.salary-slips.create-form', compact('staff', 'currentMonth'));
+        return view('pages.salary-slips.create-form', compact('staff', 'currentMonth', 'leaveRequest'));
     }
 
     public function edit ($id) {
