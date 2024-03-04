@@ -33,9 +33,14 @@ class ProfileController extends Controller
     }
 
     public function salary_slip() {
-        $slip = SalarySlip::where('employee_id', Auth::user()->employee->id)->first();
-        $permission = $slip->employee->permission->where('month', Carbon::now()->format('F'))->count();
-        return view('user.salary_slip.index', compact('slip', 'permission'));
+        $slip = SalarySlip::with('employee.permission')->where('employee_id', Auth::user()->employee->id)->first();
+
+        if ($slip) {
+            $permission = $slip->employee->permission->where('month', Carbon::now()->format('F'))->count();
+            return view('user.salary_slip.index', compact('slip', 'permission'));
+        }
+
+        return view('user.salary_slip.index', compact('slip'));
     }
 
     public function permission() {
