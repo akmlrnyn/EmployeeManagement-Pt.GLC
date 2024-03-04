@@ -49,9 +49,6 @@
                     @endforeach
                 </ul>
             </div>
-            <div class="my-4">
-                {{ $slips->links() }}
-            </div>
             <div class="flex flex-col sm:flex-row gap-2 justify-center pt-5">
                 <p class="text-xs font-medium text-gray-600">Bonus overtime
                     Rp.{{ number_format($bonus_overtime['bonus_overtime']) }}(hour)</p>

@@ -12,14 +12,12 @@ use DateTime;
 use Illuminate\Http\Request;
 use Illuminate\Support\Carbon;
 
-use function PHPUnit\Framework\isNull;
-
 class SalarySlipsController extends Controller
 {
     public function index() {
         $potongan_terlambat = PotonganBonus::all()->first();
         $bonus_overtime = PotonganBonus::all()->first();
-        $slips = SalarySlip::simplePaginate(10);
+        $slips = SalarySlip::all();
         return view('pages.salary-slips.index', compact('slips', 'potongan_terlambat', 'bonus_overtime'));
     }
 

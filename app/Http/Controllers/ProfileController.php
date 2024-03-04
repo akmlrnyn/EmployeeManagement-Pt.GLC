@@ -62,6 +62,7 @@ class ProfileController extends Controller
     }
 
     public function qpa() {
-        return view('user.qpa.index');
+        $qpa = Auth::user()->employee->qpa;
+        return view('user.qpa.index', compact('qpa'));
     }
 }

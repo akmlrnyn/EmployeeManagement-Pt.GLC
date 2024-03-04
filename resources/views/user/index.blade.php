@@ -74,8 +74,8 @@
                                         Leave Requests Left
                                         <span class="text-gray-500 text-xs">{{ $user->employee->leave_request_left }}</span>
                                     </p>
-                                        <a href="{{ route('profile.leave_requests.show') }}" class="text-xs sm:text-sm text-blue-600 my-2">See all my leave requests</a>
-                                        <a href="{{ route('profile.permission.show') }}" class="text-xs sm:text-sm text-blue-600 my-2">See all my permissions</a>
+                                        <a href="{{ route('profile.leave_requests.show') }}" class="bg-blue-100 py-1 sm:py-2 px-2 sm:px-3 rounded text-xs sm:text-sm text-blue-600 my-1">See all my leave requests</a>
+                                        <a href="{{ route('profile.permission.show') }}" class="bg-blue-100 py-1 sm:py-2 px-2 sm:px-3 rounded text-xs sm:text-sm text-blue-600 mb-2">See all my permissions</a>
                                 </div>
                             </div>
                         </div>

@@ -9,6 +9,7 @@
                 <div class="">
                     <p class="text-sm sm:text-base text-slate-800">How the <strong>QPA</strong> works to calculate
                         employee predicates?</p>
+                    <div class="text-sm sm:text-base text-slate-800 my-1">Your Current QPA Score: {{ $qpa }}</div>
                 </div>
                 <div class="flex flex-col sm:flex-row justify-around text-center">
                     <div class="py-8 px-5 w-full sm:w-1/4">
