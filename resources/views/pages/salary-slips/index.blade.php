@@ -49,9 +49,9 @@
             {{ $slips->links() }}
             </div>
             <div class="flex flex-col sm:flex-row gap-2 justify-center pt-5">
-            <p class="text-xs font-medium text-gray-600">Bonus overtime Rp.{{ number_format($bonus_overtime['bonus_overtime']) }}(hour)</p>
-            <p class="text-xs font-medium text-gray-600">Late Cut Rp.{{ number_format($potongan_terlambat['potongan_terlambat']) }}(times)</p>
-            <a href="{{ route('potongan-bonus.edit', $potongan_terlambat['id']) }}" class="text-xs text-red-600 font-bold">Edit?</a>
+            {{-- <p class="text-xs font-medium text-gray-600">Bonus overtime Rp.{{ number_format($bonus_overtime['bonus_overtime']) }}(hour)</p>
+            <p class="text-xs font-medium text-gray-600">Late Cut Rp.{{ number_format($potongan_terlambat['potongan_terlambat']) }}(times)</p> --}}
+            {{-- <a href="{{ route('potongan-bonus.edit', $potongan_terlambat['id']) }}" class="text-xs text-red-600 font-bold">Edit?</a> --}}
             </div>
         </div>
     </div>
