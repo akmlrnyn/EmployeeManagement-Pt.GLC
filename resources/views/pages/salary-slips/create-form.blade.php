@@ -76,12 +76,12 @@
                 </div>
 
                 <div class="relative z-0 w-full mb-5">
-                    <label class="text-gray-500 text-xs sm:text-sm" for="late">Late</label>
+                    <label class="text-gray-500 text-xs sm:text-sm" for="late">Late / Permission</label>
                     <input
                         type="number"
                         name="late"
                         placeholder="Late ( Times )"
-                        value="{{ $late }}"
+                        value="{{ old('late') ?? $late }}"
                         required
                         class="pt-3 pb-2 block text-sm sm:text-base w-full px-0 mt-0 bg-transparent border-0 border-b-2 appearance-none focus:outline-none focus:ring-0 focus:border-blue border-gray-200"
                     />

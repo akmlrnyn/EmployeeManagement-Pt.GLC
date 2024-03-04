@@ -19,7 +19,7 @@
                             <p><span></span></p>
 
                             <div class="flex flex-wrap justify-between items-center my-3 sm:my-5 px-6">
-                                <p class="text-gray-500 rounded transition duration-150 ease-in font-medium text-xs sm:text-sm text-center w-1/2 sm:w-1/4 py-3">All Details</p>
+                                <p class="text-gray-500 border-b-2 sm:border-b-4 rounded transition duration-150 ease-in font-medium text-xs sm:text-sm text-center w-1/2 sm:w-1/4 py-3">All Details</p>
                                 <a href="{{ route('profile.leave_request') }}" class="text-gray-500 hover:text-gray-900 hover:bg-blue-100 rounded transition duration-150 ease-in font-medium text-xs sm:text-sm text-center w-1/2 sm:w-1/4 py-3">Ask Leave Requests</a>
                                 <a href="{{ route('profile.permission') }}" class="text-gray-500 hover:text-gray-900 hover:bg-blue-100 rounded transition duration-150 ease-in font-medium text-xs sm:text-sm text-center w-1/2 sm:w-1/4 py-3">Ask Permission</a>
                                 <a href="{{ route('profile.salary_slip') }}" class="text-gray-500 hover:text-gray-900 hover:bg-blue-100 rounded transition duration-150 ease-in font-medium text-xs sm:text-sm text-center w-1/2 sm:w-1/4 py-3">My Salary Slips</a>
