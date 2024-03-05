@@ -26,16 +26,6 @@
                                     </div>
 
                                     <div class="md:col-span-5">
-                                        <label for="phone">Phone</label>
-                                        <input type="number" name="phone" id="phone"
-                                            class="h-10 border mt-1 rounded px-4 w-full bg-gray-50"
-                                            value="{{ old('phone') ?? $staff->phone }}" />
-                                        @if($errors->has('phone'))
-                                        <li class="text-red-500">{{$errors->first('phone')}}</li>
-                                        @endif
-                                    </div>
-
-                                    <div class="md:col-span-5">
                                         <label for="position">Position</label>
                                         <input type="text" name="position" id="position"
                                             class="h-10 border mt-1 rounded px-4 w-full bg-gray-50"

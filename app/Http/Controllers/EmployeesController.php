@@ -17,7 +17,7 @@ class EmployeesController extends Controller
     }
 
     public function create() {
-        $user = User::whereDoesntHave('employee')->get();
+        $user = User::whereDoesntHave('employee')->where('roles', 'user')->get();
         return view('pages.employee.create-employee', compact('user'));
     }
 

@@ -4,7 +4,10 @@
     <p>The workers here</p>
     <div class="bg-white shadow-md rounded-md overflow-hidden mx-auto mt-5">
       <div class="px-4 mx-auto my-2">
-        <input type="text" id="search" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded w-full" placeholder="Search staff..." onkeyup="search_staff()">
+        <form action="#" class="flex gap-x-3">
+          <input type="text" id="search" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded w-full" placeholder="Search staff..." onkeydown="searchStaffOnKeyPress(event)">
+          <button class="text-xs bg-gray-200 rounded-md px-3 py-2" onclick="searchStaff()">Search</button>
+        </form>
     </div>
       <div class="bg-gray-200 py-2 px-4">
         <h2 class="text-lg sm:text-xl font-bold text-gray-800">Staff list</h2>
@@ -75,17 +78,29 @@
   </div>
 </x-app-layout>
 <script type="text/javascript">
-  function search_staff() {
-      let input = document.getElementById("search").value;
-      input = input.toLowerCase();
-      let x = document.getElementsByClassName("staff");
+  function searchStaff() {
+  const input = document.getElementById("search").value;
+  const staffElements = document.getElementsByClassName("staff");
 
-      for (let i = 0; i < x.length; i++) {
-        if (!x[i].innerHTML.toLowerCase().includes(input)) {
-          x[i].style.display = "none";
-        } else {
-          x[i].style.display = "flex";
-        }
-      }
+  for (let i = 0; i < staffElements.length; i++) {
+    staffElements[i].style.display = ""; // Reset to default display
+  }
+  const searchTerm = input.toLowerCase();
+
+  for (let i = 0; i < staffElements.length; i++) {
+    const staffContent = staffElements[i].textContent.toLowerCase();
+    if (!staffContent.includes(searchTerm)) {
+      staffElements[i].style.display = "none";
+    } else {
+      staffElements[i].style.display = "flex"; // Or your preferred display style
     }
+  }
+}
+
+// Handle keyboard search (optional)
+function searchStaffOnKeyPress(event) {
+  if (event.key === "Enter") {
+    searchStaff();
+  }
+}
 </script>
