@@ -40,15 +40,15 @@
                                         <span class="text-gray-500 text-xs">{{ $user->phone }}</span>
                                     </p>
 
-                                    @if ($user->secondary_phone)
-                                        
+                                    
                                     <p class="w-full border-t font-semibold border-gray-100 text-gray-700 py-4 pl-6 pr-3 w-full block hover:bg-gray-100 transition duration-150">
                                         <img src="{{ url('img/logo_company.png') }}" alt="" class="rounded-full h-6 shadow-md inline-block mr-2" />
                                         Secondary Phone
+                                        @if (!$user->secondary_phone)
+                                        <span class="text-gray-500 text-xs">You haven't input secondary phone</span>
+                                        @endif
                                         <span class="text-gray-500 text-xs">{{ $user->secondary_phone }}</span>
                                     </p>
-
-                                    @endif
 
 
                                     <p class="w-full border-t font-semibold border-gray-100 text-gray-700 py-4 pl-6 pr-3 w-full block hover:bg-gray-100 transition duration-150">
