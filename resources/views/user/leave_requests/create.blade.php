@@ -4,10 +4,9 @@
         <div class="container max-w-screen-lg mx-auto">
             <div>
                 <div class="bg-white rounded shadow-lg p-4 px-4 md:p-8 mb-6">
-            @if (!Auth::user()->employee->leave_request_left <= 0)
             <div class="grid gap-4 gap-y-2 text-sm grid-cols-1 lg:grid-cols-3">
                 <div class="text-gray-600">
-                <p class="font-medium text-base sm:text-lg">Employee Details</p>
+                <p class="font-medium text-base sm:text-lg">Form Leave Request</p>
                 <p class="text-xs sm:text-sm">Please fill out all the fields.</p>
                 </div>
 
@@ -27,7 +26,9 @@
                             <option disabled>Option</option>
                             <option value="sick">Sick</option>
                             <option value="permit">Permit</option>
+                            @if (!Auth::user()->employee->leave_request_left == 0)
                             <option value="leave">Paid Leave</option>
+                            @endif
                             </select>
                         </div>
 
@@ -50,12 +51,12 @@
                     </div>
                 </form>
             </div>
-            @else
+            @if (Auth::user()->employee->leave_request_left == 0)
                 <div class="text-gray-600">
-                <h1 class="font-medium text-lg">Sorry, your leave requests chance is over</p>
+                <h1 class="font-medium text-base text-red-500">Sorry, your paid leave quota has run out!</p>
                 </div>
+                @endif
             </div>
-            @endif
         </div>
     </div>
         </div>
