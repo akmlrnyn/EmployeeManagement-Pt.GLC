@@ -30,15 +30,11 @@
             <p class="text-gray-600 text-center sm:text-start text-xs sm:text-base">{{ $item->position }}</p>
           </div>
           <div class="flex flex-row items-center sm:ml-auto gap-x-2">
-            <form action="{{ route('employee.destroy', $item->id) }}" method="post">
-              @csrf
-              @method('DELETE')
               
               {{-- button trigger for delete-modal --}}
               <button data-modal-target="delete-modal-{{$item->id}}" data-modal-toggle="delete-modal-{{$item->id}}" class="focus:outline-none text-white bg-red-700 hover:bg-red-800 focus:ring-4 focus:ring-red-300 sm:font-medium rounded sm:rounded-lg text-xs px-3 sm:px-5 py-1 sm:py-2.5 sm:me-2 mb-2 dark:bg-red-600 dark:hover:bg-red-700 dark:focus:ring-red-900" type="button">
                 Remove
               </button>
-            </form>
             {{-- detail employee --}}
             <a href="{{ route('employee.detail', $item->id) }}" type="button" class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 sm:font-medium rounded sm:rounded-lg text-xs px-3 sm:px-5 py-1 sm:py-2.5 sm:me-2 mb-2 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800">Show</a>
             <a href="{{ route('employee.edit', $item->id) }}" type="button" class="text-white bg-gray-700 hover:bg-gray-800 focus:ring-4 focus:ring-gray-300 sm:font-medium rounded sm:rounded-lg text-xs px-3 sm:px-5 py-1 sm:py-2.5 mb-2 dark:bg-gray-600 dark:hover:bg-gray-700 focus:outline-none dark:focus:ring-gray-800">Edit</a>

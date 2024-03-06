@@ -19,14 +19,14 @@
                     <li class="py-3 sm:py-4">
                         <div class="flex flex-col sm:flex-row items-center">
                             <div class="flex-shrink-0">
-                                <span class="text-gray-800 text-sm sm:text-base mr-4">{{ $number }}</span>
+                                <span class="text-gray-800 text-sm sm:text-base sm:mr-4">{{ $number }}</span>
                             </div>
                             <div class="flex-1 min-w-0 sm:ms-4">
-                                <p class="text-sm font-medium text-gray-900 truncate ">
+                                <p class="text-sm font-medium text-gray-900 text-center sm:text-start">
                                     {{ $item->employee->name }}
                                 </p>
                                 <p
-                                    class="text-center sm:text-start text-xs sm:text-sm text-gray-500 truncate dark:text-gray-400">
+                                    class="text-center sm:text-start text-xs sm:text-sm text-gray-500 dark:text-gray-400">
                                     {{ $item->month }}
                                 </p>
                             </div>
