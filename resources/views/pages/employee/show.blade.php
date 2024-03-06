@@ -24,7 +24,7 @@
 
             <div class="flex justify-between items-center my-5 px-6">
               <p
-                class="text-gray-500 hover:text-gray-900 hover:bg-blue-100 rounded transition duration-150 ease-in font-medium text-sm text-center w-full py-3"
+                class="text-gray-500 border-b-4 rounded transition duration-150 ease-in font-medium text-sm text-center w-full py-3"
                 >All Details</p
               >
             </div>

@@ -24,7 +24,7 @@ class ProfileController extends Controller
         $data = $request->all();
         LeaveRequest::create($data);
 
-        return redirect()->route('profile.index');
+        return redirect()->route('profile.leave_requests.show');
     }
     public function leave_request_show() {
         $leave_requests = LeaveRequest::all()->where('employee_id', Auth::user()->employee->id);
@@ -53,7 +53,7 @@ class ProfileController extends Controller
         $data['qpa'] = 3;
         $data['month'] = $currentMonth;
         Permission::create($data);
-        return redirect()->route('profile.index');
+        return redirect()->route('profile.permission.show');
     }
 
     public function permission_show() {
