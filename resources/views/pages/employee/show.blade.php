@@ -16,7 +16,7 @@
 
           <div class="mt-8">
             <h1 class="font-bold text-center text-lg lg:text-3xl text-gray-900">
-              {{ $employee->user->name }}
+              {{ $employee->name }}
             </h1>
             <p class="text-center text-sm text-gray-400 font-medium">
               {{ $employee->position }}
@@ -40,7 +40,7 @@
                   class="w-full border-t font-semibold border-gray-100 text-gray-700 py-4 pl-6 pr-3 w-full block hover:bg-gray-100 transition duration-150"
                 >
                     Name : 
-                  <span class="text-gray-500 text-xs">{{ $employee->user->name }}</span>
+                  <span class="text-gray-500 text-xs">{{ $employee->name }}</span>
             </p>
 
                 <p

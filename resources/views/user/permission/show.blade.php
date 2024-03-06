@@ -12,7 +12,7 @@
 
       <ul class="divide-y divide-gray-200">
         @php($number = 1)
-        @foreach ($permission as $item)
+        @foreach ($permission->reverse() as $item)
         <li class="flex lg:flex-row flex-col sm:items-center py-4 px-6">
           <span class="text-gray-700 text-sm sm:text-lg font-medium mr-4">{{ $number }}</span>
           <img

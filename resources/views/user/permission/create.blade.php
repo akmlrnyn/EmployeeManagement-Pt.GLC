@@ -21,7 +21,7 @@
                         </div>
 
                         <div class="md:col-span-5">
-                            <label for="amount_of_times ">Permits</label>
+                            <label for="amount_of_times ">Permits (How many minutes?)</label>
                             <input type="number" name="amount_of_times" placeholder="Permits ( Minutes )" class="h-10 border mt-1 rounded px-4 w-full bg-gray-50 text-sm" value="" placeholder="Write your reason for taking permit" required/>
                         </div>
 
