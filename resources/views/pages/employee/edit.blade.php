@@ -1,64 +1,67 @@
 <x-app-layout>
-    <!-- component -->
-    <div class=" p-6 bg-gray-100 flex items-center justify-center">
-        <div class="container max-w-screen-lg mx-auto">
-            <div>
-                <div class="bg-white rounded shadow-lg p-4 px-4 md:p-8 mb-6">
-                    <div class="grid gap-4 gap-y-2 text-sm grid-cols-1 lg:grid-cols-3">
-                        <div class="text-gray-600">
-                            <p class="font-medium text-2xl">Edit Staff Details</p>
-                            <p>Fill out the fields.</p>
-                        </div>
-
-                        <div class="lg:col-span-2">
-                            <form action="{{ route('employee.update', $staff->id) }}" method="post">
-                                @csrf
-                                @method('PATCH')
-                                <div class="grid gap-4 gap-y-2 text-sm grid-cols-1 md:grid-cols-5">
-                                    <div class="md:col-span-5">
-                                        <label for="name">Name</label>
-                                        <input type="text" name="name" id="name"
-                                            class="h-10 border mt-1 rounded px-4 w-full bg-gray-50"
-                                            value="{{ old('name') ?? $staff->name }}" />
-                                        @if($errors->has('name'))
-                                        <li class="text-red-500">{{$errors->first('name')}}</li>
-                                        @endif
-                                    </div>
-
-                                    <div class="md:col-span-5">
-                                        <label for="position">Position</label>
-                                        <input type="text" name="position" id="position"
-                                            class="h-10 border mt-1 rounded px-4 w-full bg-gray-50"
-                                            value="{{ old('position') ?? $staff->position }}" />
-                                        @if($errors->has('position'))
-                                        <li class="text-red-500">{{$errors->first('position')}}</li>
-                                        @endif
-                                    </div>
-                                    <div class="md:col-span-5">
-                                        <label for="base_salary">Base Salary (Rp)</label>
-                                        <input type="number" name="base_salary" id="base_salary"
-                                            class="h-10 border mt-1 rounded px-4 w-full bg-gray-50"
-                                            value="{{ old('base_salary') ?? $staff->base_salary }}" />
-                                        @if($errors->has('base_salary'))
-                                        <li class="text-red-500">{{$errors->first('base_salary')}}</li>
-                                        @endif
-                                    </div>
-
-                                    <div class="md:col-span-5 text-right">
-                                        <div class="inline-flex items-end gap-3">
-                                            <button class="bg-blue-500 hover:bg-blue-700 text-white py-2 px-4 rounded"
-                                                type="submit">Submit</button>
-                                            <a href="{{ route('employees.index') }}"
-                                                class="bg-red-500 hover:bg-red-700 text-white py-2 px-4 rounded">Cancel</a>
-                                        </div>
-                                    </div>
-                                </div>
-                            </form>
-
-                        </div>
-                    </div>
-                </div>
+    <div class="min-h-screen bg-gray-100 p-3 sm:p-12">
+        <div class="mx-auto max-w-lg px-6 py-12 bg-white border-0 shadow-lg rounded sm:rounded-2xl">
+            <div class="mx-auto mb-4">
+                <h2 class="text-gray-700 text-xl sm:text-3xl font-bold">Edit Staff Details</h2>
+                <p class="text-sm sm:text-base text-gray-500">Fill out all the fields.</p>
             </div>
+            <form action="{{ route('employee.update', $staff->id) }}" method="post">
+                @csrf
+                @method('PATCH')
+                <div class="relative z-0 w-full mb-2">
+                    <label class="text-gray-500 text-xs sm:text-sm" for="name">Name</label>
+                    <input
+                        id="name"
+                        type="text"
+                        name="name"
+                        required
+                        value="{{ old('name') ?? $staff->name }}"
+                        class="pb-2 block text-sm sm:text-base w-full px-0 mt-0 bg-transparent border-0 border-b-2 appearance-none focus:outline-none focus:ring-0 focus:border-blue border-gray-200"
+                    />
+                    @if($errors->has('name'))
+                    <li class="text-red-500">{{$errors->first('name')}}</li>
+                    @endif
+                </div>
+                <div class="relative z-0 w-full mb-2">
+                    <label class="text-gray-500 text-xs sm:text-sm" for="position">Position</label>
+                    <input
+                        id="position"
+                        type="text"
+                        name="position"
+                        required
+                        value="{{ old('position') ?? $staff->position }}"
+                        class="pb-2 block text-sm sm:text-base w-full px-0 mt-0 bg-transparent border-0 border-b-2 appearance-none focus:outline-none focus:ring-0 focus:border-blue border-gray-200"
+                    />
+                    @if($errors->has('position'))
+                    <li class="text-red-500">{{$errors->first('position')}}</li>
+                    @endif
+                </div>
+                <div class="relative z-0 w-full mb-2">
+                    <label class="text-gray-500 text-xs sm:text-sm" for="base_salary">Current Salary (Rp.)</label>
+                    <input
+                        id="base_salary"
+                        type="number"
+                        name="base_salary"
+                        required
+                        value="{{ old('base_salary') ?? $staff->base_salary }}"
+                        class="pb-2 block text-sm sm:text-base w-full px-0 mt-0 bg-transparent border-0 border-b-2 appearance-none focus:outline-none focus:ring-0 focus:border-blue border-gray-200"
+                    />
+                    @if($errors->has('base_salary'))
+                    <li class="text-red-500">{{$errors->first('base_salary')}}</li>
+                    @endif
+                </div>
+
+                
+                <button
+                    id="button"
+                    type="submit"
+                    class="px-4 py-2 mt-3 text-xs text-lg text-white transition-all duration-150 ease-linear rounded shadow outline-none bg-blue-500 hover:bg-blue-600 hover:shadow-lg focus:outline-none mb-3"
+                >
+                    Edit Details
+                </button>
+                <a href="{{ route('employees.index') }}" class="text-xs bg-red-500 hover:bg-red-700 text-white py-2 px-4 rounded">Cancel</a>
+            </form>
         </div>
     </div>
 </x-app-layout>
+
