@@ -6,8 +6,9 @@
             <div>
                 <div class="bg-white rounded-lg shadow-lg p-4 px-4 md:p-8 sm:mb-6">
                     <div class="grid gap-4 gap-y-2 text-sm grid-cols-1 lg:grid-cols-3">
-                        <div class="text-gray-600">
-                            <p class="font-medium text-base sm:text-lg">Employee Details</p>
+                        <div class="text-gray-700">
+                            <p class="font-medium text-lg sm:text-xl">Recruit Employee</p>
+                            <p class="text-base">Employee Details</p>
                             <p class="text-xs">Please fill out all the fields.</p>
                         </div>
 

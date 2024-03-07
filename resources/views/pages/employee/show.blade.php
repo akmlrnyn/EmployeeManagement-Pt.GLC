@@ -1,13 +1,13 @@
 <x-app-layout>
-    <div class="container mx-auto py-40">
+    <div class="container mx-auto px-1 py-40">
         <div
-          class="bg-white relative shadow-lg rounded-lg w-5/6 md:w-5/6 lg:w-4/6 xl:w-3/6 mx-auto"
+          class="bg-white relative shadow-lg rounded-lg w-full sm:w-5/6 lg:w-4/6 mx-auto"
         >
           <div class="flex justify-center">
             <img
               src="{{ url('img/logo_company.png') }}"
               alt=""
-              class="rounded-full mx-auto absolute -top-20 w-32 h-32 shadow-md border-4 border-white"
+              class="rounded-full mx-auto absolute -top-12 sm:-top-20 w-24 sm:w-32 h-24 sm:h-32 shadow-md border-4 border-white"
             />
           </div>
           <a href="{{ route('employees.index') }}">
