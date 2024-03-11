@@ -23,10 +23,12 @@
                     src="{{ url('img/icon_avatar.png') }}" alt="Bonnie image" />
                 <h5 class="sm:mb-1 text-base sm:text-xl font-normal text-gray-900">{{ $slip->employee->name }}</h5>
                 <span class="text-xs sm:text-sm text-gray-500 dark:text-gray-500">{{ $slip->employee->position }}</span>
+                @if($currentMonth == $slip->month)
                 <div class="flex mt-4 md:mt-6 gap-5">
                     <a class="px-2 sm:px-3 py-2 sm:py-2.5 bg-blue-500 rounded text-xs text-white shadow"
                         href="{{route('salary-slips.print_pdf', $slip->id)}}" target="_blank">Print Salary Slip</a>
                 </div>
+                @endif
             </div>
             <hr>
             <div class="flex flex-col sm:flex-row gap-x-3 px-5 sm:px-3 py-3 justify-start items-start sm:items-center">
