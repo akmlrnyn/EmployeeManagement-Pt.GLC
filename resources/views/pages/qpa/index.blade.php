@@ -27,7 +27,7 @@
 
             {{-- information qpa --}}
             <div
-                class="transition ease-in duration-200 shadow-sm hover:shadow-md hover:shadow-blue-400/50 px-3 sm:px-7 pt-6 bg-white ring-1 ring-gray-900/5 rounded-lg">
+                class="transition ease-in duration-200 shadow-sm hover:shadow-md hover:shadow-gray-400/50 px-3 sm:px-7 pt-6 bg-white ring-1 ring-gray-900/5 rounded-lg">
                 <div class="">
                     <p class="text-sm sm:text-base text-slate-800">How the <strong>QPA</strong> works to calculate
                         employee predicates?</p>
@@ -157,7 +157,7 @@
         </div>
         {{-- information qpa --}}
         <div
-            class="transition ease-in duration-200 shadow-sm hover:shadow-md hover:shadow-blue-400/50 px-3 sm:px-7 pt-6 bg-white ring-1 ring-gray-900/5 rounded-lg">
+            class="transition ease-in duration-200 shadow-sm hover:shadow-md hover:shadow-gray-400/50 px-3 sm:px-7 pt-6 bg-white ring-1 ring-gray-900/5 rounded-lg">
             <div class="">
                 <p class="text-sm sm:text-base text-slate-800">How the <strong>QPA</strong> works to calculate
                     employee predicates?</p>
