@@ -46,7 +46,7 @@
                     </div>
                     <div>
                         <a href="{{ route('salary-slips.create_form', $item->id) }}" type="button"
-                            class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 sm:font-medium rounded sm:rounded-lg text-xs sm:text-sm px-2 sm:px-5 py-1.5 sm:py-2.5 me-2 sm:mb-2 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800">+</a>
+                            class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 sm:font-medium rounded sm:rounded-lg text-xs sm:text-sm px-2 sm:px-5 py-1.5 sm:py-2.5 me-2 sm:mb-2 focus:outline-none">+</a>
                     </div>
                 </li>
                 @php($number++)
