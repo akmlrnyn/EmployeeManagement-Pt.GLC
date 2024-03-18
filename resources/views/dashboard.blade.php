@@ -7,7 +7,7 @@
           class="dashboard-title mb-5 md:pb-4 flex flex-col items-start md:flex-row md:items-center md:justify-between"
         >
           <div>
-            <h1 class="text-gray-700 text-2xl sm:text-4xl font-bold">Welcome, <span class="text-xl sm:text-3xl">{{ Auth::user()->name }}</span></h1>
+            <h1 class="text-gray-700 text-2xl sm:text-4xl font-bold">Welcome, <span class="text-xl sm:text-3xl">{{ Auth::user()->name }}, test!!!!</span></h1>
             <p class="text-sm sm:text-base text-gray-700">
               Welcome to the PT GLC Indonesia Employees Dashboard
             </p>
@@ -198,7 +198,7 @@
                   </div>
                 </li>
                 @endforeach
-                
+
               </ul>
               <hr />
               <a
@@ -246,7 +246,7 @@
                   </div>
                 </li>
                 @endforeach
-                
+
               </ul>
               <hr />
               <a
@@ -262,5 +262,5 @@
       </div>
     </div>
     </div>
-    
+
 </x-app-layout>
