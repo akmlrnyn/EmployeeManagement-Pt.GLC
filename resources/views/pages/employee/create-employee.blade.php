@@ -5,7 +5,7 @@
                 <h2 class="text-gray-700 text-xl sm:text-3xl font-bold">Recruit New Employee</h2>
                 <p class="text-sm sm:text-base text-gray-500">Fill out all the fields.</p>
             </div>
-            <form action="{{ route('employees.create') }}" method="post">
+            <form action="{{ route('employee.store') }}" method="post">
                 @csrf
                 <div class="relative z-0 w-full mb-2">
                     <label class="text-gray-500 text-xs sm:text-sm" for="user">Select User</label>
@@ -70,7 +70,7 @@
                     @endif
                 </div>
 
-                
+
                 <button
                     id="button"
                     type="submit"

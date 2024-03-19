@@ -55,7 +55,7 @@ Route::middleware([
     // Staffs
     Route::get('/employees', [EmployeesController::class,'index'])->name('employees.index');
     Route::get('/employees/create', [EmployeesController::class, 'create'])->name('employees.create');
-    Route::post('/employees', [EmployeesController::class, 'store']);
+    Route::post('/employees', [EmployeesController::class, 'store'])->name('employee.store');
     Route::get('/employee/details/{id}', [EmployeesController::class, 'show'])->name('employee.detail');
     Route::get('/employee/edit/{id}', [EmployeesController::class, 'edit'])->name('employee.edit');
     Route::patch('/employee/update/{id}', [EmployeesController::class, 'update'])->name('employee.update');
