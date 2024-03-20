@@ -30,8 +30,8 @@
         .container-title {
             display: flex;
             justify-content: center;
-            margin-top: 10px;
-            margin-bottom: 4px;
+            margin-top: 5px;
+            margin-bottom: 3px;
         }
 
         .table-slip {
@@ -39,7 +39,7 @@
             border-collapse: collapse;
             width: 500px;
             margin: auto;
-            margin-bottom: 1rem;
+            margin-bottom: 0.2rem;
         }
 
         .header-table,

@@ -17,7 +17,7 @@
 
       <ul class="divide-y divide-gray-200">
         @php($number = 1)
-        @foreach ($permission as $item)
+        @foreach ($permission->reverse() as $item)
         <li class="flex sm:flex-row flex-col items-center py-4 px-6">
           <span class="text-gray-700 text-base sm:text-lg font-medium mr-4">{{ $number }}</span>
           <img class="w-12 h-12 rounded-full object-cover mr-4" src="{{ url('img/icon_avatar.png') }}" alt="User avatar" />
@@ -48,7 +48,7 @@
 
       <ul class="divide-y divide-gray-200">
         @php($number = 1)
-        @foreach ($permission_accepted as $item)
+        @foreach ($permission_accepted->reverse() as $item)
         <li class="flex flex-col sm:flex-row items-center py-4 px-6">
           <span class="text-gray-700 text-lg font-medium mr-4">{{ $number }}</span>
           <img class="w-12 h-12 rounded-full object-cover mr-4" src="{{ url('img/icon_avatar.png') }}" alt="User avatar" />
@@ -73,7 +73,7 @@
 
       <ul class="divide-y divide-gray-200">
         @php($number = 1)
-        @foreach ($permission_rejected as $item)
+        @foreach ($permission_rejected->reverse() as $item)
         <li class="flex flex-col sm:flex-row items-center py-4 px-6">
           <span class="text-gray-700 text-lg font-medium mr-4">{{ $number }}</span>
           <img class="w-12 h-12 rounded-full object-cover mr-4" src="{{ url('img/icon_avatar.png') }}" alt="User avatar" />

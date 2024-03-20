@@ -133,7 +133,7 @@
                     />
                 </div>
                 <div class="relative z-0 w-full mb-5">
-                    <label class="text-gray-500 text-xs sm:text-sm" for="information">Bonus-Deduction information</label>
+                    <label class="text-gray-500 text-xs sm:text-sm" for="information">Bonus-Deduction information ( If no bonus and deduction, leave blank (-) )</label>
                     <input
                         type="text"
                         name="information"
