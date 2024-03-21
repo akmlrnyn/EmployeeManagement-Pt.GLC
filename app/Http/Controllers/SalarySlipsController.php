@@ -82,6 +82,7 @@ class SalarySlipsController extends Controller
         $data = $request->all();
         $currentMonth = Carbon::now()->format('F');
         $slip = SalarySlip::findOrFail($id);
+        $employee = Employee::where('id', $slip->employee_id);
         $potongan_terlambat = PotonganBonus::all()->first();
         $bonus_overtime = PotonganBonus::all()->first();
        
@@ -97,6 +98,9 @@ class SalarySlipsController extends Controller
 
         $data['salary'] = $gaji_bersih;
         $slip->update($data);
+        $employee->update([
+            'qpa' => 100
+        ]);
         return redirect()->route('salary-slips.index');
     }
 
