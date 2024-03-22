@@ -26,15 +26,15 @@ class SalarySlipsController extends Controller
         $currentMonth = Carbon::now()->format('F');
         $potongan_terlambat = PotonganBonus::all()->first();
         $bonus_overtime = PotonganBonus::all()->first();
-       
+
 
         $total_potongan_terlambat = $request['late']  * $potongan_terlambat['potongan_terlambat'];
         $total_bonus_overtime = $request['overtime'] * $bonus_overtime['bonus_overtime'];
 
-        $gaji_bersih = $request['salary'] 
-        - $total_potongan_terlambat 
-        + $total_bonus_overtime 
-        - $request['deduction'] 
+        $gaji_bersih = $request['salary']
+        - $total_potongan_terlambat
+        + $total_bonus_overtime
+        - $request['deduction']
         + $request['bonus'];
 
 
@@ -75,32 +75,28 @@ class SalarySlipsController extends Controller
         $now = new DateTime();
         $currentMonth = $now->format('F');
 
-        return view('pages.salary-slips.edit-form', compact('slip', 'currentMonth')); 
+        return view('pages.salary-slips.edit-form', compact('slip', 'currentMonth'));
     }
 
     public function update (Request $request, $id) {
         $data = $request->all();
-        $currentMonth = Carbon::now()->format('F');
         $slip = SalarySlip::findOrFail($id);
-        $employee = Employee::where('id', $slip->employee_id);
         $potongan_terlambat = PotonganBonus::all()->first();
         $bonus_overtime = PotonganBonus::all()->first();
-       
+
 
         $total_potongan_terlambat = $request['late'] * $potongan_terlambat['potongan_terlambat'];
         $total_bonus_overtime = $request['overtime'] * $bonus_overtime['bonus_overtime'];
 
-        $gaji_bersih = $request['salary'] 
-        - $total_potongan_terlambat 
-        + $total_bonus_overtime 
-        - $request['deduction'] 
+        $gaji_bersih = $request['salary']
+        - $total_potongan_terlambat
+        + $total_bonus_overtime
+        - $request['deduction']
         + $request['bonus'];
 
         $data['salary'] = $gaji_bersih;
         $slip->update($data);
-        $employee->update([
-            'qpa' => 100
-        ]);
+        Employee::where('id', $slip->employee_id)->update(['qpa' => 100]);
         return redirect()->route('salary-slips.index');
     }
 
@@ -109,7 +105,7 @@ class SalarySlipsController extends Controller
         $currentMonth = Carbon::now()->format('F');
         $staff_permit = Permission::where([['employee_id', $slips->employee->id],['month', $currentMonth], ['status', 'accepted']])->count();
         $pdf = FacadePdf::loadView('pages.salary-slips.salary-pdf', ['slips' => $slips, 'staff_permit' => $staff_permit]);
-        
+
         return $pdf->download($slips->employee->name.'_'.$slips->month. '.pdf');
     }
 }
